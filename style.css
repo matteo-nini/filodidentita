@@ -2,7 +2,10 @@
 Theme Name: Filo d'Identità
 Theme URI: https://filodidentita.it
 Author: Matteo Nini
-Description: Tema custom per il sito Filo d'Identità
-Version: 1.0
+Description: Tema personalizzato per il sito Filo d'Identità
+Version: 1.0.0
+Author URI: https://filodidentita.it
 Text Domain: filodidentita
 */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
