@@ -1,148 +1,438 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
-  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Edizioni — Filo d'identità</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="css/base.css" /><link rel="stylesheet" href="css/nav-footer.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/nav-footer.css" />
   <style>
-  /* Hero CHIARO → data-nav="dark" (default), nav scura */
-  .page-hero { padding: 9rem var(--gutter) 5rem; border-bottom: 1px solid var(--linen); }
-  .page-hero h1 { font-style: italic; font-size: clamp(3rem,7vw,7rem); line-height: .95; margin-top: 1.25rem; }
-  .hero-sub { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: end; margin-top: 4rem; }
-  .hero-sub p { color: var(--stone); line-height: 1.85; }
-  .ed-counts { display: flex; gap: 3rem; flex-wrap: wrap; }
-  .ec { display: flex; flex-direction: column; gap: .2rem; }
-  .ec-n { font-family: var(--font-serif); font-size: 3.5rem; font-weight: 300; line-height: 1; color: var(--ink); }
-  .ec-l { font-family: var(--font-sans); font-size: .58rem; font-weight: 500; letter-spacing: .22em; text-transform: uppercase; color: var(--stone); }
+    /* Hero CHIARO → data-nav="dark" (default), nav scura */
+    .page-hero {
+      padding: 9rem var(--gutter) 5rem;
+      border-bottom: 1px solid var(--linen);
+    }
 
-  .ed-current { padding-block: var(--section-gap); }
-  .ed-current-inner { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--linen); overflow: hidden; }
-  .ed-visual { background: var(--ink); min-height: 480px; position: relative; overflow: hidden; }
-  .ed-visual img { width: 100%; height: 100%; object-fit: cover; opacity: .4; }
-  .ed-visual-overlay { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 3rem; background: linear-gradient(transparent, rgba(28,16,20,.8)); }
-  .ed-badge-current { font-family: var(--font-sans); font-size: .58rem; font-weight: 500; letter-spacing: .22em; text-transform: uppercase; color: var(--rosa); border: 1px solid rgba(226,65,119,.4); padding: .3rem .8rem; width: fit-content; margin-bottom: 1.25rem; }
-  .ed-visual h2 { color: var(--parchment); font-size: clamp(2.5rem,5vw,4.5rem); font-style: italic; line-height: .95; }
-  .ed-visual .ed-dates { color: rgba(250,246,247,.4); font-family: var(--font-sans); font-size: .72rem; letter-spacing: .08em; margin-top: .75rem; }
-  .ed-content { padding: clamp(2.5rem,5vw,4rem); display: flex; flex-direction: column; justify-content: center; gap: 1.75rem; }
-  .ed-content h3 { font-style: italic; }
-  .ed-content p { color: var(--charcoal); line-height: 1.85; }
-  .ed-highlights { border: 1px solid var(--linen); }
-  .ed-hi { display: flex; align-items: center; gap: 1rem; padding: .9rem 1.25rem; border-bottom: 1px solid var(--linen); font-size: .82rem; }
-  .ed-hi:last-child { border-bottom: none; }
-  .ed-hi-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--rosa); flex-shrink: 0; }
+    .page-hero h1 {
+      font-style: italic;
+      font-size: clamp(3rem, 7vw, 7rem);
+      line-height: .95;
+      margin-top: 1.25rem;
+    }
 
-  .past { background: var(--shell); padding-block: var(--section-gap); }
-  .past-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5px; background: var(--linen); margin-top: 3.5rem; }
-  .past-card { background: var(--parchment); overflow: hidden; display: flex; flex-direction: column; transition: transform .4s var(--ease); }
-  .past-card:hover { transform: translateY(-4px); }
-  .past-img { aspect-ratio: 4/3; overflow: hidden; background: var(--ink); position: relative; }
-  .past-img img { width: 100%; height: 100%; object-fit: cover; opacity: .6; transition: opacity .4s, transform .6s var(--ease); }
-  .past-card:hover .past-img img { opacity: .75; transform: scale(1.04); }
-  .past-year { position: absolute; bottom: 1.25rem; left: 1.25rem; font-family: var(--font-serif); font-size: 3.5rem; font-weight: 300; color: var(--parchment); opacity: .22; line-height: 1; }
-  .past-badge { position: absolute; top: 1rem; left: 1rem; font-family: var(--font-sans); font-size: .56rem; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: #fff; background: var(--rosa); padding: .2rem .6rem; }
-  .past-body { padding: 2rem; flex: 1; display: flex; flex-direction: column; gap: .85rem; }
-  .past-body h3 { font-style: italic; font-size: 1.35rem; }
-  .past-body p { font-size: .82rem; color: var(--stone); line-height: 1.7; flex: 1; }
-  .past-meta { display: flex; flex-wrap: wrap; gap: .3rem .85rem; }
-  .past-meta span { font-family: var(--font-sans); font-size: .58rem; letter-spacing: .14em; text-transform: uppercase; color: var(--fog); }
-  .past-link { display: inline-flex; align-items: center; gap: .4rem; font-family: var(--font-sans); font-size: .62rem; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; color: var(--rosa); margin-top: auto; transition: gap .28s; }
-  .past-link:hover { gap: .8rem; }
-  .past-link svg { width: 1.4rem; height: .8rem; }
+    .hero-sub {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: end;
+      margin-top: 4rem;
+    }
 
-  @media (max-width: 860px) {
-    .hero-sub { grid-template-columns: 1fr; gap: 2.5rem; }
-    .ed-current-inner { grid-template-columns: 1fr; }
-    .ed-visual { min-height: 260px; }
-    .past-grid { grid-template-columns: 1fr 1fr; }
-  }
-  @media (max-width: 560px) {
-    .past-grid { grid-template-columns: 1fr; }
-    .page-hero { padding-top: 7rem; }
-  }
+    .hero-sub p {
+      color: var(--stone);
+      line-height: 1.85;
+    }
+
+    .ed-counts {
+      display: flex;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .ec {
+      display: flex;
+      flex-direction: column;
+      gap: .2rem;
+    }
+
+    .ec-n {
+      font-family: var(--font-serif);
+      font-size: 3.5rem;
+      font-weight: 300;
+      line-height: 1;
+      color: var(--ink);
+    }
+
+    .ec-l {
+      font-family: var(--font-sans);
+      font-size: .58rem;
+      font-weight: 500;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--stone);
+    }
+
+    .ed-current {
+      padding-block: var(--section-gap);
+    }
+
+    .ed-current-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border: 1px solid var(--linen);
+      overflow: hidden;
+    }
+
+    .ed-visual {
+      background: var(--ink);
+      min-height: 480px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ed-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: .4;
+    }
+
+    .ed-visual-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 3rem;
+      background: linear-gradient(transparent, rgba(28, 16, 20, .8));
+    }
+
+    .ed-badge-current {
+      font-family: var(--font-sans);
+      font-size: .58rem;
+      font-weight: 500;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--rosa);
+      border: 1px solid rgba(226, 65, 119, .4);
+      padding: .3rem .8rem;
+      width: fit-content;
+      margin-bottom: 1.25rem;
+    }
+
+    .ed-visual h2 {
+      color: var(--parchment);
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      font-style: italic;
+      line-height: .95;
+    }
+
+    .ed-visual .ed-dates {
+      color: rgba(250, 246, 247, .4);
+      font-family: var(--font-sans);
+      font-size: .72rem;
+      letter-spacing: .08em;
+      margin-top: .75rem;
+    }
+
+    .ed-content {
+      padding: clamp(2.5rem, 5vw, 4rem);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1.75rem;
+    }
+
+    .ed-content h3 {
+      font-style: italic;
+    }
+
+    .ed-content p {
+      color: var(--charcoal);
+      line-height: 1.85;
+    }
+
+    .ed-highlights {
+      border: 1px solid var(--linen);
+    }
+
+    .ed-hi {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: .9rem 1.25rem;
+      border-bottom: 1px solid var(--linen);
+      font-size: .82rem;
+    }
+
+    .ed-hi:last-child {
+      border-bottom: none;
+    }
+
+    .ed-hi-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--rosa);
+      flex-shrink: 0;
+    }
+
+    .past {
+      background: var(--shell);
+      padding-block: var(--section-gap);
+    }
+
+    .past-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5px;
+      background: var(--linen);
+      margin-top: 3.5rem;
+    }
+
+    .past-card {
+      background: var(--parchment);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform .4s var(--ease);
+    }
+
+    .past-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .past-img {
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      background: var(--ink);
+      position: relative;
+    }
+
+    .past-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: .6;
+      transition: opacity .4s, transform .6s var(--ease);
+    }
+
+    .past-card:hover .past-img img {
+      opacity: .75;
+      transform: scale(1.04);
+    }
+
+    .past-year {
+      position: absolute;
+      bottom: 1.25rem;
+      left: 1.25rem;
+      font-family: var(--font-serif);
+      font-size: 3.5rem;
+      font-weight: 300;
+      color: var(--parchment);
+      opacity: .22;
+      line-height: 1;
+    }
+
+    .past-badge {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      font-family: var(--font-sans);
+      font-size: .56rem;
+      font-weight: 500;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: #fff;
+      background: var(--rosa);
+      padding: .2rem .6rem;
+    }
+
+    .past-body {
+      padding: 2rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: .85rem;
+    }
+
+    .past-body h3 {
+      font-style: italic;
+      font-size: 1.35rem;
+    }
+
+    .past-body p {
+      font-size: .82rem;
+      color: var(--stone);
+      line-height: 1.7;
+      flex: 1;
+    }
+
+    .past-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .3rem .85rem;
+    }
+
+    .past-meta span {
+      font-family: var(--font-sans);
+      font-size: .58rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--fog);
+    }
+
+    .past-link {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      font-family: var(--font-sans);
+      font-size: .62rem;
+      font-weight: 500;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--rosa);
+      margin-top: auto;
+      transition: gap .28s;
+    }
+
+    .past-link:hover {
+      gap: .8rem;
+    }
+
+    .past-link svg {
+      width: 1.4rem;
+      height: .8rem;
+    }
+
+    @media (max-width: 860px) {
+      .hero-sub {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .ed-current-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .ed-visual {
+        min-height: 260px;
+      }
+
+      .past-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .past-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .page-hero {
+        padding-top: 7rem;
+      }
+    }
   </style>
 </head>
 <!-- Hero chiaro → nav scura (default, nessun data-nav necessario, ma lo indichiamo) -->
+
 <body data-nav="dark">
 
-<header class="page-hero">
-  <div class="container">
-    <span class="label fade-up">Dal 2022</span>
-    <h1 class="fade-up" data-delay="70">Quattro anni<br/>di filo.</h1>
-    <div class="hero-sub">
-      <p class="fade-up" data-delay="110">Dal 2022 costruiamo ogni anno un'edizione del festival, ciascuna con una propria identità ma con lo stesso filo conduttore: la parola, l'incontro, la comunità.</p>
-      <div class="ed-counts fade-up" data-delay="150">
-        <div class="ec"><span class="ec-n">4</span><span class="ec-l">Edizioni</span></div>
-        <div class="ec"><span class="ec-n">4</span><span class="ec-l">Comuni</span></div>
-        <div class="ec"><span class="ec-n">100+</span><span class="ec-l">Ospiti totali</span></div>
-      </div>
-    </div>
-  </div>
-</header>
-
-<section class="ed-current">
-  <div class="container">
-    <div class="ed-current-inner">
-      <div class="ed-visual">
-        <img src="assets/edition-2025.jpg" alt="Filo d'identità 2025" loading="lazy" />
-        <div class="ed-visual-overlay">
-          <span class="ed-badge-current">4ª edizione · In programma</span>
-          <h2>7–13<br/>luglio<br/>2025</h2>
-          <p class="ed-dates">Pontedera · San Miniato · Fucecchio · Montopoli</p>
+  <header class="page-hero">
+    <div class="container">
+      <span class="label fade-up">Dal 2022</span>
+      <h1 class="fade-up" data-delay="70">Quattro anni<br />di filo.</h1>
+      <div class="hero-sub">
+        <p class="fade-up" data-delay="110">Dal 2022 costruiamo ogni anno un'edizione del festival, ciascuna con una
+          propria identità ma con lo stesso filo conduttore: la parola, l'incontro, la comunità.</p>
+        <div class="ed-counts fade-up" data-delay="150">
+          <div class="ec"><span class="ec-n">4</span><span class="ec-l">Edizioni</span></div>
+          <div class="ec"><span class="ec-n">4</span><span class="ec-l">Comuni</span></div>
+          <div class="ec"><span class="ec-n">100+</span><span class="ec-l">Ospiti totali</span></div>
         </div>
       </div>
-      <div class="ed-content fade-up" data-delay="80">
-        <span class="label">Edizione corrente</span>
-        <h3>La 4ª edizione</h3>
-        <p>Sette giorni di incontri, letture, performance musicali e spettacoli teatrali. Il tema: l'identità attraverso il corpo — come spazio narrativo, politico, culturale.</p>
-        <div class="ed-highlights">
-          <div class="ed-hi"><span class="ed-hi-dot"></span>7–13 luglio 2025 · 7 giornate</div>
-          <div class="ed-hi"><span class="ed-hi-dot"></span>4 comuni · oltre 15 venue</div>
-          <div class="ed-hi"><span class="ed-hi-dot"></span>Ospiti: Tagliaferri, Lucchesi, Sgrena, Fumettibrutti e altri</div>
-          <div class="ed-hi"><span class="ed-hi-dot"></span>Ingresso libero per la maggior parte degli eventi</div>
+    </div>
+  </header>
+
+  <section class="ed-current">
+    <div class="container">
+      <div class="ed-current-inner">
+        <div class="ed-visual">
+          <img src="assets/edition-2025.jpg" alt="Filo d'identità 2025" loading="lazy" />
+          <div class="ed-visual-overlay">
+            <span class="ed-badge-current">4ª edizione · L'ultima edizione</span>
+            <h2>7–13<br />luglio<br />2025</h2>
+            <p class="ed-dates">Pontedera · San Miniato · Fucecchio · Montopoli</p>
+          </div>
         </div>
-        <a href="edizioni/4-2025.html" class="btn btn-rosa">Programma completo</a>
+        <div class="ed-content fade-up" data-delay="80">
+          <span class="label">L'ultima edizione</span>
+          <h3>La 4ª edizione</h3>
+          <p>Sette giorni di incontri, letture, performance musicali e spettacoli teatrali. Il tema: l'identità
+            attraverso il corpo — come spazio narrativo, politico, culturale.</p>
+          <div class="ed-highlights">
+            <div class="ed-hi"><span class="ed-hi-dot"></span>7–13 luglio 2025 · 7 giornate</div>
+            <div class="ed-hi"><span class="ed-hi-dot"></span>4 comuni · oltre 15 venue</div>
+            <div class="ed-hi"><span class="ed-hi-dot"></span>Ospiti: Tagliaferri, Lucchesi, Sgrena, Fumettibrutti e
+              altri</div>
+            <div class="ed-hi"><span class="ed-hi-dot"></span>Ingresso libero per la maggior parte degli eventi</div>
+          </div>
+          <a href="edizioni/4-2025.html" class="btn btn-rosa">Programma completo</a>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="past">
-  <div class="container">
-    <span class="label fade-up">Archivio</span>
-    <h2 class="fade-up" data-delay="70" style="font-style:italic;margin-top:1rem">Le edizioni<br/>passate</h2>
-    <div class="past-grid">
-      <article class="past-card fade-up">
-        <div class="past-img"><img src="assets/edition-2024.jpg" alt="2024" loading="lazy" /><span class="past-year">24</span><span class="past-badge">3ª edizione</span></div>
-        <div class="past-body">
-          <h3>Edizione 2024</h3>
-          <div class="past-meta"><span>Luglio 2024</span><span>25+ ospiti</span><span>500+ partecipanti</span></div>
-          <p>Memoria e racconto collettivo come fili conduttori di una programmazione ricca tra letture, musica e teatro.</p>
-          <a href="edizioni/3-2024.html" class="past-link">Scopri l'edizione <svg viewBox="0 0 24 10" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="0" y1="5" x2="22" y2="5"/><polyline points="17,1 22,5 17,9"/></svg></a>
-        </div>
-      </article>
-      <article class="past-card fade-up" data-delay="60">
-        <div class="past-img"><img src="assets/edition-2023.jpg" alt="2023" loading="lazy" /><span class="past-year">23</span><span class="past-badge">2ª edizione</span></div>
-        <div class="past-body">
-          <h3>Edizione 2023</h3>
-          <div class="past-meta"><span>Luglio 2023</span><span>20+ ospiti</span><span>400+ partecipanti</span></div>
-          <p>La seconda edizione ha allargato i confini geografici del festival coinvolgendo per la prima volta tutti e quattro i comuni.</p>
-          <a href="edizioni/2-2023.html" class="past-link">Scopri l'edizione <svg viewBox="0 0 24 10" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="0" y1="5" x2="22" y2="5"/><polyline points="17,1 22,5 17,9"/></svg></a>
-        </div>
-      </article>
-      <article class="past-card fade-up" data-delay="120">
-        <div class="past-img"><img src="assets/edition-2022.jpg" alt="2022" loading="lazy" /><span class="past-year">22</span><span class="past-badge">1ª edizione</span></div>
-        <div class="past-body">
-          <h3>Edizione 2022</h3>
-          <div class="past-meta"><span>Luglio 2022</span><span>10+ ospiti</span><span>200+ partecipanti</span></div>
-          <p>Tutto è cominciato qui. La prima edizione ha dimostrato che c'era spazio — e desiderio — per un festival così.</p>
-          <a href="edizioni/1-2022.html" class="past-link">Scopri l'edizione <svg viewBox="0 0 24 10" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="0" y1="5" x2="22" y2="5"/><polyline points="17,1 22,5 17,9"/></svg></a>
-        </div>
-      </article>
+  <section class="past">
+    <div class="container">
+      <span class="label fade-up">Archivio</span>
+      <h2 class="fade-up" data-delay="70" style="font-style:italic;margin-top:1rem">Le edizioni<br />passate</h2>
+      <div class="past-grid">
+        <article class="past-card fade-up">
+          <div class="past-img"><img src="assets/edition-2024.jpg" alt="2024" loading="lazy" /><span
+              class="past-year">24</span><span class="past-badge">3ª edizione</span></div>
+          <div class="past-body">
+            <h3>Edizione 2024</h3>
+            <div class="past-meta"><span>Luglio 2024</span><span>25+ ospiti</span><span>500+ partecipanti</span></div>
+            <p>Memoria e racconto collettivo come fili conduttori di una programmazione ricca tra letture, musica e
+              teatro.</p>
+            <a href="edizioni/3-2024.html" class="past-link">Scopri l'edizione <svg viewBox="0 0 24 10" fill="none"
+                stroke="currentColor" stroke-width="1.5">
+                <line x1="0" y1="5" x2="22" y2="5" />
+                <polyline points="17,1 22,5 17,9" />
+              </svg></a>
+          </div>
+        </article>
+        <article class="past-card fade-up" data-delay="60">
+          <div class="past-img"><img src="assets/edition-2023.jpg" alt="2023" loading="lazy" /><span
+              class="past-year">23</span><span class="past-badge">2ª edizione</span></div>
+          <div class="past-body">
+            <h3>Edizione 2023</h3>
+            <div class="past-meta"><span>Luglio 2023</span><span>20+ ospiti</span><span>400+ partecipanti</span></div>
+            <p>La seconda edizione ha allargato i confini geografici del festival coinvolgendo per la prima volta tutti
+              e quattro i comuni.</p>
+            <a href="edizioni/2-2023.html" class="past-link">Scopri l'edizione <svg viewBox="0 0 24 10" fill="none"
+                stroke="currentColor" stroke-width="1.5">
+                <line x1="0" y1="5" x2="22" y2="5" />
+                <polyline points="17,1 22,5 17,9" />
+              </svg></a>
+          </div>
+        </article>
+        <article class="past-card fade-up" data-delay="120">
+          <div class="past-img"><img src="assets/edition-2022.jpg" alt="2022" loading="lazy" /><span
+              class="past-year">22</span><span class="past-badge">1ª edizione</span></div>
+          <div class="past-body">
+            <h3>Edizione 2022</h3>
+            <div class="past-meta"><span>Maggio 2022</span><span>10+ ospiti</span><span>200+ partecipanti</span></div>
+            <p>Tutto è cominciato qui. La prima edizione ha dimostrato che c'era spazio — e desiderio — per un festival
+              così.</p>
+            <a href="edizioni/1-2022.html" class="past-link">Scopri l'edizione <svg viewBox="0 0 24 10" fill="none"
+                stroke="currentColor" stroke-width="1.5">
+                <line x1="0" y1="5" x2="22" y2="5" />
+                <polyline points="17,1 22,5 17,9" />
+              </svg></a>
+          </div>
+        </article>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<script src="js/main.js"></script><script src="js/partials.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/partials.js"></script>
 </body>
+
 </html>
