@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>1ª edizione 2022 — Filo d'identità</title>
+  <meta name="description" content="La prima edizione di Filo d'identità, maggio 2022 — prove generali online, un bel esperimento che ha fatto diventare il festival quello che è oggi."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="stylesheet" href="../css/base.css"/>
+  <link rel="stylesheet" href="../css/nav-footer.css"/>
+  <link rel="stylesheet" href="../css/edition.css"/>
+  <style>
+  /* Stile speciale per edizione online — hero con tono diverso */
+  .ed-hero-bg img { opacity:.18; filter: grayscale(.4); }
+  /* Card senza foto colonna (tutto online, le foto esistono ma il formato è diverso) */
+  .ev-card-online {
+    background: var(--shell);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+    position: relative;
+    transition: background .32s;
+  }
+  .ev-card-online::before { content:''; position:absolute; left:0; top:0; bottom:0; width:3px; background:var(--rosa); transform:scaleY(0); transform-origin:top; transition:transform .32s var(--ease); }
+  .ev-card-online:hover { background:var(--rosa-pale); }
+  .ev-card-online:hover::before { transform:scaleY(1); }
+  .ev-card-online .ev-body { padding:2.25rem 2.25rem 2.25rem 2.5rem; display:flex; flex-direction:column; gap:.7rem; }
+  .ev-card-online .ev-photo-wrap { overflow:hidden; background:var(--linen); min-height:200px; position:relative; }
+  .ev-card-online .ev-photo-wrap img { width:100%; height:100%; object-fit:cover; object-position:top; display:block; transition:transform .6s var(--ease); }
+  .ev-card-online:hover .ev-photo-wrap img { transform:scale(1.04); }
+
+  .note-online {
+    background: var(--rosa-pale);
+    border: 1px solid var(--rosa-tint);
+    border-left: 3px solid var(--rosa);
+    padding: 1.25rem 1.75rem;
+    margin-bottom: 3rem;
+    font-size: .88rem;
+    color: var(--bordeaux);
+    line-height: 1.75;
+  }
+  .note-online strong { font-family: var(--font-serif); font-style: italic; }
+
+  @media (max-width:860px) {
+    .ev-card-online { grid-template-columns:1fr; }
+    .ev-card-online .ev-photo-wrap { min-height:200px; }
+  }
+  @media (max-width:560px) { .ev-card-online .ev-body { padding:1.5rem; } }
+  </style>
+</head>
+<body data-nav="light">
+
+<header class="ed-hero">
+  <div class="ed-hero-bg"><img src="https://filodidentita.it/wp-content/uploads/2025/06/alectrenta.png" alt="Filo d'identità 2022"/></div>
+  <div class="container"><div class="ed-hero-content">
+    <nav class="ed-breadcrumb" aria-label="Breadcrumb">
+      <a href="../index.html">Home</a><span>›</span>
+      <a href="../edizioni.html">Edizioni</a><span>›</span>
+      <span style="color:rgba(250,246,247,.55)">2022</span>
+    </nav>
+    <span class="ed-badge">1ª edizione · Archivio</span>
+    <span class="online-badge" style="display:inline-flex;align-items:center;gap:.5rem;margin-bottom:1rem;margin-left:.75rem">✦ Edizione online</span>
+    <h1>9–23 maggio<br/><em>2022</em></h1>
+    <div class="ed-hero-meta">
+      <span><strong>5 incontri</strong> su Instagram Live</span>
+      <span>Prove generali a ridosso della crisi pandemica</span>
+    </div>
+    <p class="ed-tagline">— incontri, storie, corpi —<br/>L'esperimento che ha dato vita a tutto ciò che il festival è diventato.</p>
+  </div></div>
+</header>
+
+<!-- No sticky day nav — la 1ª edizione è organizzata per date singole, non per giornate festival -->
+
+<main class="program-main"><div class="container">
+
+  <div class="note-online">
+    <strong>Edizione speciale — online.</strong> La prima edizione di Filo d'identità si è svolta interamente su Instagram Live, come «prove generali» del formato festival prima di portarlo in presenza. Ogni incontro è ancora visibile sulla pagina Instagram <a href="https://www.instagram.com/filodidentitafestival/" target="_blank" rel="noopener" style="color:var(--rosa)">@filodidentitafestival</a>.
+  </div>
+
+  <!-- 9 MAGGIO -->
+  <div class="day-block fade-up" id="day-9-maggio">
+    <div class="day-header">
+      <span class="day-num">09</span>
+      <div class="day-info">
+        <span class="day-name">Lunedì 9 maggio</span>
+        <span class="day-where">Instagram Live · @filodidentitafestival</span>
+      </div>
+    </div>
+    <div class="event-list">
+      <article class="ev-card-online">
+        <div class="ev-body">
+          <div class="ev-meta-top"><span class="ev-tag tag-lett">Letteratura</span><span class="ev-tag tag-online">Online · Instagram Live</span></div>
+          <h2 class="ev-title">Identità di genere: «La teoria degli ombrelli»</h2>
+          <p class="ev-book">«Barba – Storia di come sono nato due volte» — Laterza</p>
+          <div class="ev-guests">
+            <span class="ev-guest-name">Alec Trenta</span>
+          </div>
+          <p class="ev-desc">Alec Trenta racconta la propria storia di transizione: nascere due volte, costruire una nuova identità, trovare il proprio posto nel mondo. Un'apertura sincera e coraggiosa sul tema dell'identità di genere.</p>
+          <a href="https://www.instagram.com/p/CdWFuYeIaOx/" class="ev-ig" target="_blank" rel="noopener" aria-label="Rivedi l'incontro su Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            Rivedi l'incontro
+            <svg viewBox="0 0 24 10" fill="none" stroke="currentColor" stroke-width="1.5" style="width:1.4rem;height:.8rem"><line x1="0" y1="5" x2="22" y2="5"/><polyline points="17,1 22,5 17,9"/></svg>
+          </a>
+        </div>
+        <div class="ev-photo-wrap">
+          <img src="https://filodidentita.it/wp-content/uploads/2025/06/alectrenta-1024x1024.png" alt="Alec Trenta" loading="lazy"/>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <!-- 10 MAGGIO -->
+  <div class="day-block fade-up" id="day-10-maggio">
+    <div class="day-header">
+      <span class="day-num">10</span>
+      <div class="day-info">
+        <span class="day-name">Martedì 10 maggio</span>
+        <span class="day-where">Instagram Live · @filodidentitafestival</span>
+      </div>
+    </div>
+    <div class="event-list">
+      <article class="ev-card-online">
+        <div class="ev-body">
+          <div class="ev-meta-top"><span class="ev-tag tag-lett">Letteratura · Cinema</span><span class="ev-tag tag-online">Online · Instagram Live</span></div>
+          <h2 class="ev-title">L'estensione del linguaggio nel cinema contemporaneo</h2>
+          <p class="ev-book">«Albicocche al miele» — Mondadori</p>
+          <div class="ev-guests">
+            <span class="ev-guest-name">Elisa Pellegrino</span>
+          </div>
+          <p class="ev-desc">Elisa Pellegrino esplora come il linguaggio cinematografico si estenda oltre lo schermo, contaminando la letteratura e il racconto visivo. Una conversazione tra narrativa e immagine in movimento.</p>
+          <a href="https://www.instagram.com/p/CdYn8S1IZpW/" class="ev-ig" target="_blank" rel="noopener" aria-label="Rivedi l'incontro su Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            Rivedi l'incontro
+            <svg viewBox="0 0 24 10" fill="none" stroke="currentColor" stroke-width="1.5" style="width:1.4rem;height:.8rem"><line x1="0" y1="5" x2="22" y2="5"/><polyline points="17,1 22,5 17,9"/></svg>
+          </a>
+        </div>
+        <div class="ev-photo-wrap">
+          <img src="https://filodidentita.it/wp-content/uploads/2025/06/pellegrino-1024x1024.png" alt="Elisa Pellegrino" loading="lazy"/>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <!-- 13 MAGGIO -->
+  <div class="day-block fade-up" id="day-13-maggio">
+    <div class="day-header">
+      <span class="day-num">13</span>
+      <div class="day-info">
+        <span class="day-name">Venerdì 13 maggio</span>
+        <span class="day-where">Instagram Live · @filodidentitafestival</span>
+      </div>
+    </div>
+    <div class="event-list">
+      <article class="ev-card-online">
+        <div class="ev-body">
+          <div class="ev-meta-top"><span class="ev-tag tag-lett">Letteratura · Serialità</span><span class="ev-tag tag-online">Online · Instagram Live</span></div>
+          <h2 class="ev-title">La narrazione del corpo grasso nella serialità televisiva</h2>
+          <div class="ev-guests">
+            <span class="ev-guest-name">Claudia Marsicano</span>
+            <span class="ev-guest-role">attrice · protagonista di «Noi» (Rai1)</span>
+          </div>
+          <p class="ev-desc">Claudia Marsicano, protagonista della serie Rai «Noi», racconta come la televisione italiana stia (lentamente) cambiando il modo di rappresentare il corpo femminile fuori dai canoni standardizzati.</p>
+          <a href="https://www.instagram.com/p/CdYtyEjoWjo/" class="ev-ig" target="_blank" rel="noopener" aria-label="Rivedi l'incontro su Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            Rivedi l'incontro
+            <svg viewBox="0 0 24 10" fill="none" stroke="currentColor" stroke-width="1.5" style="width:1.4rem;height:.8rem"><line x1="0" y1="5" x2="22" y2="5"/><polyline points="17,1 22,5 17,9"/></svg>
+          </a>
+        </div>
+        <div class="ev-photo-wrap">
+          <img src="https://filodidentita.it/wp-content/uploads/2025/06/marsicano-1024x1024.png" alt="Claudia Marsicano" loading="lazy"/>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <!-- 16 MAGGIO -->
+  <div class="day-block fade-up" id="day-16-maggio">
+    <div class="day-header">
+      <span class="day-num">16</span>
+      <div class="day-info">
+        <span class="day-name">Lunedì 16 maggio</span>
+        <span class="day-where">Instagram Live · @filodidentitafestival</span>
+      </div>
+    </div>
+    <div class="event-list">
+      <article class="ev-card-online">
+        <div class="ev-body">
+          <div class="ev-meta-top"><span class="ev-tag tag-lett">Letteratura</span><span class="ev-tag tag-online">Online · Instagram Live</span></div>
+          <h2 class="ev-title">Diventare adultə: riti di passaggio</h2>
+          <p class="ev-book">«Il primo che passa» — Mondadori Strade Blu</p>
+          <div class="ev-guests">
+            <span class="ev-guest-name">Gianluca Nativo</span>
+          </div>
+          <p class="ev-desc">Gianluca Nativo esplora i riti di passaggio che segnano il confine tra adolescenza e vita adulta, tra chi si è stati e chi si sta diventando. Un romanzo sull'inevitabilità del cambiamento.</p>
+          <a href="https://www.instagram.com/p/CdggFbmI4fF/" class="ev-ig" target="_blank" rel="noopener" aria-label="Rivedi l'incontro su Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            Rivedi l'incontro
+            <svg viewBox="0 0 24 10" fill="none" stroke="currentColor" stroke-width="1.5" style="width:1.4rem;height:.8rem"><line x1="0" y1="5" x2="22" y2="5"/><polyline points="17,1 22,5 17,9"/></svg>
+          </a>
+        </div>
+        <div class="ev-photo-wrap">
+          <img src="https://filodidentita.it/wp-content/uploads/2025/06/nativo-1024x1024.png" alt="Gianluca Nativo" loading="lazy"/>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <!-- 23 MAGGIO -->
+  <div class="day-block fade-up" id="day-23-maggio">
+    <div class="day-header">
+      <span class="day-num">23</span>
+      <div class="day-info">
+        <span class="day-name">Lunedì 23 maggio · Chiusura</span>
+        <span class="day-where">Instagram Live · @filodidentitafestival</span>
+      </div>
+    </div>
+    <div class="event-list">
+      <article class="ev-card-online">
+        <div class="ev-body">
+          <div class="ev-meta-top"><span class="ev-tag tag-lett">Letteratura</span><span class="ev-tag tag-online">Online · Instagram Live</span></div>
+          <h2 class="ev-title">Diventare adultə: riti di passaggio</h2>
+          <p class="ev-book">«Frenesia» — Fandango</p>
+          <div class="ev-guests">
+            <span class="ev-guest-name">Flavio Nuccitelli</span>
+          </div>
+          <p class="ev-desc">Flavio Nuccitelli torna a Filo d'identità — prima come ospite della prima edizione, poi come voce ricorrente del festival. «Frenesia» racconta il tremore dell'età adulta, l'urgenza di trovare un proprio posto.</p>
+          <a href="https://www.instagram.com/p/CdoDe9Boeqy/" class="ev-ig" target="_blank" rel="noopener" aria-label="Rivedi l'incontro su Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            Rivedi l'incontro
+            <svg viewBox="0 0 24 10" fill="none" stroke="currentColor" stroke-width="1.5" style="width:1.4rem;height:.8rem"><line x1="0" y1="5" x2="22" y2="5"/><polyline points="17,1 22,5 17,9"/></svg>
+          </a>
+        </div>
+        <div class="ev-photo-wrap">
+          <img src="https://filodidentita.it/wp-content/uploads/2025/06/nuccitelli-1024x1024.png" alt="Flavio Nuccitelli" loading="lazy"/>
+        </div>
+      </article>
+    </div>
+  </div>
+
+</div></main>
+
+<section class="ed-gallery"><div class="container">
+  <span class="label fade-up">Una piccola storia</span>
+  <h2 class="fade-up" data-delay="70" style="font-style:italic;margin-top:1rem">Da cinque Instagram Live<br/>a un festival vero</h2>
+  <p class="fade-up" data-delay="110" style="color:var(--stone);max-width:60ch;margin-top:1rem;line-height:1.85">Prove generali online a ridosso della crisi pandemica: un bell'esperimento che ha portato a creare tutto quello che il festival è poi diventato. Cinque incontri, cinque libri, cinque voci — e l'intuizione che c'era un pubblico pronto ad ascoltarci.</p>
+  <div style="margin-top:2.5rem" class="fade-up" data-delay="150">
+    <a href="https://www.instagram.com/filodidentitafestival/" class="btn btn-dark" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.6rem">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:1rem;height:1rem"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      Rivedi tutti gli incontri su Instagram
+    </a>
+  </div>
+</div></section>
+
+<div class="ed-nav"><div class="container"><div class="ed-nav-inner">
+  <div><p class="ed-nav-label">Archivio edizioni</p><h3>Esplora le altre edizioni</h3></div>
+  <div class="ed-nav-links">
+    <a href="../edizioni.html" class="btn btn-ghost">Tutte le edizioni</a>
+    <a href="2-2023.html" class="btn btn-light">2ª edizione 2023 →</a>
+  </div>
+</div></div></div>
+
+<script>window.SITE_ROOT='../';</script>
+<script src="../js/main.js"></script><script src="../js/partials.js"></script>
+</body></html>
