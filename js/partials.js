@@ -147,7 +147,7 @@
     const href = (a.getAttribute('href') || '').replace(/^\.\.\//, '');
     if (!href || href.includes('index.html')) return;
     const hrefPath = '/' + href.replace(/^\//, '');
-    if (path === hrefPath) a.classList.add('active');
+    if (path.endsWith(hrefPath)) a.classList.add('active');
   });
 
 })();
