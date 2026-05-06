@@ -131,16 +131,5 @@ document.addEventListener('DOMContentLoaded', () => {
     io.observe(el);
   });
 
-  /* ════════════════════════════════════════
-     ACTIVE NAV LINK
-     ════════════════════════════════════════ */
-  const path = window.location.pathname;
-  document.querySelectorAll('.nav-links a, .nav-mobile a').forEach(a => {
-    const href = (a.getAttribute('href') || '').replace(/^\.\.\//, '/');
-    if (!href || href === '/' || href === '/index.html') return;
-    // match by filename stem
-    const stem = href.replace(/\.html$/, '').split('/').pop();
-    if (stem && path.includes(stem)) a.classList.add('active');
-  });
 
 });
