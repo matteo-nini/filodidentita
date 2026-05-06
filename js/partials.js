@@ -144,10 +144,10 @@
   /* ── Active link highlight ── */
   const path = window.location.pathname;
   document.querySelectorAll('.nav-links a, .nav-mobile a').forEach(a => {
-    const href = a.getAttribute('href') || '';
-    if (!href || href === '/' || href.includes('index.html')) return;
-    const stem = href.replace(/\.html$/, '').split('/').pop();
-    if (stem && path.includes(stem)) a.classList.add('active');
+    const href = (a.getAttribute('href') || '').replace(/^\.\.\//, '');
+    if (!href || href.includes('index.html')) return;
+    const hrefPath = '/' + href.replace(/^\//, '');
+    if (path === hrefPath) a.classList.add('active');
   });
 
 })();
