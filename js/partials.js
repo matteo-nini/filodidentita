@@ -70,8 +70,8 @@
         <h4>Informazioni</h4>
         <ul>
           <li><a href="${ROOT}contatti.html">Contatti</a></li>
-          <li><a href="${ROOT}privacy.html">Privacy Policy</a></li>
-          <li><a href="${ROOT}cookie.html">Cookie Policy</a></li>
+          <li><a href="${ROOT}policies/privacy.html">Privacy Policy</a></li>
+          <li><a href="${ROOT}policies/cookie.html">Cookie Policy</a></li>
         </ul>
       </div>
       <div class="footer-col">
