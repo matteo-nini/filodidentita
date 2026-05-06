@@ -85,6 +85,119 @@ document.addEventListener('DOMContentLoaded', () => {
   })();
 
   /* ════════════════════════════════════════
+     IMMAGINI PER EDIZIONE
+     ════════════════════════════════════════ */
+  (function () {
+    const B = 'https://filodidentita.it/wp-content/uploads/';
+
+    const PHOTOS = {
+      2025: [
+        B+'2025/06/Michela-Panichi-819x1024.jpeg',
+        B+'2025/06/Gabriele-Cavallini-819x1024.jpeg',
+        B+'2025/06/Chiara-Tagliaferri-819x1024.png',
+        B+'2025/06/Giulia-Muscatelli-819x1024.png',
+        B+'2025/06/Fumettibrutti-opzione-1-819x1024.png',
+        B+'2025/06/Flavio-Nuccitelli-819x1024.png',
+        B+'2025/06/Veronica-Lucchesi-opzione-1-819x1024.png',
+        B+'2025/06/Giuliana-Sgrena-819x1024.png',
+        B+'2025/06/Aldo-Simeone-819x1024.png',
+        B+'2025/06/Beatrice-Salvioni--819x1024.png',
+        B+'2025/06/Emanuela-Crosetti-819x1024.png',
+        B+'2025/06/TARA-approvata-819x1024.png',
+        B+'2025/06/Carolina-Capria-819x1024.png',
+        B+'2025/06/Simona-Conigliaro-819x1024.png',
+        B+'2025/06/Simone-Matteuzzi-819x1024.png',
+        B+'2025/06/Teresa-Ciabatti-819x1024.png',
+        B+'2025/06/Gloria-Riggio-819x1024.png',
+        B+'2025/06/Fabio-Schember-819x1024.png',
+      ],
+      2024: [
+        B+'2025/02/Filo.marte-38-scaled.jpg', B+'2025/02/Filo.marte-34-scaled.jpg',
+        B+'2025/02/Filo.marte-35-scaled.jpg', B+'2025/02/Filo.marte-21-scaled.jpg',
+        B+'2025/02/Filo.marte-37-scaled.jpg', B+'2025/02/Filo.marte-23-scaled.jpg',
+        B+'2025/02/Filo.marte-22-scaled.jpg', B+'2025/02/Filo.marte-36-scaled.jpg',
+        B+'2025/02/Filo.marte-32-scaled.jpg', B+'2025/02/Filo.marte-26-scaled.jpg',
+        B+'2025/02/Filo.marte-27-scaled.jpg', B+'2025/02/Filo.marte-33-scaled.jpg',
+        B+'2025/02/Filo.marte-25-scaled.jpg', B+'2025/02/Filo.marte-31-scaled.jpg',
+        B+'2025/02/Filo.marte-19-scaled.jpg', B+'2025/02/Filo.marte-18-scaled.jpg',
+        B+'2025/02/Filo.marte-30-scaled.jpg', B+'2025/02/Filo.marte-24-scaled.jpg',
+        B+'2025/02/Filo.marte-62-scaled.jpg', B+'2025/02/Filo.marte-76-1-scaled.jpg',
+      ],
+      2023: [
+        B+'2025/02/28-scaled.jpg', B+'2025/02/29-scaled.jpg', B+'2025/02/23-scaled.jpg',
+        B+'2025/02/33-scaled.jpg', B+'2025/02/27-scaled.jpg', B+'2025/02/26-scaled.jpg',
+        B+'2025/02/32-scaled.jpg', B+'2025/02/24-scaled.jpg', B+'2025/02/30-scaled.jpg',
+        B+'2025/02/31-scaled.jpg', B+'2025/02/25-scaled.jpg',
+      ],
+      2022: [
+        B+'2025/06/alectrenta.png',           B+'2025/06/pellegrino-1024x1024.png',
+        B+'2025/06/marsicano-1024x1024.png',  B+'2025/06/nativo-1024x1024.png',
+        B+'2025/06/nuccitelli-1024x1024.png',
+        B+'2025/02/Filo-didentita-background-img-scaled.jpg',
+        B+'2025/02/Filo-dIdentita-2023-Brochure-sfondo-scaled.jpg',
+      ],
+    };
+
+    function shuffle(arr) {
+      const a = [...arr];
+      for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+      }
+      return a;
+    }
+
+    // 1. Immagine casuale edizione corrente (edizioni.html)
+    const edVisualImg = document.querySelector('.ed-visual img');
+    if (edVisualImg) edVisualImg.src = shuffle(PHOTOS[2025])[0];
+
+    // 2. Immagini casuali edizioni passate (edizioni.html)
+    document.querySelectorAll('.past-card').forEach(card => {
+      const link = card.querySelector('.past-link');
+      if (!link) return;
+      const m = (link.getAttribute('href') || '').match(/(\d{4})\.html/);
+      if (!m) return;
+      const pool = PHOTOS[parseInt(m[1])];
+      if (!pool) return;
+      const img = card.querySelector('.past-img img');
+      if (img) img.src = shuffle(pool)[0];
+    });
+
+    // 3. Carosello hero singole pagine edizione
+    const heroBg = document.querySelector('.ed-hero-bg');
+    if (!heroBg) return;
+    const pm = window.location.pathname.match(/(\d{4})\.html/);
+    if (!pm) return;
+    const pool = PHOTOS[parseInt(pm[1])];
+    if (!pool) return;
+
+    const shuffled = shuffle(pool);
+    let imgs = Array.from(heroBg.querySelectorAll('img'));
+    if (imgs.length === 1) {
+      const clone = document.createElement('img');
+      clone.alt = imgs[0].alt;
+      heroBg.appendChild(clone);
+      imgs = Array.from(heroBg.querySelectorAll('img'));
+    }
+
+    let idx = 0;
+    let cur = imgs[0], nxt = imgs[1];
+    cur.src = shuffled[idx];
+    cur.classList.add('active');
+    idx = (idx + 1) % shuffled.length;
+
+    setInterval(() => {
+      nxt.onload = () => {
+        cur.classList.remove('active');
+        nxt.classList.add('active');
+        [cur, nxt] = [nxt, cur];
+        idx = (idx + 1) % shuffled.length;
+      };
+      nxt.src = shuffled[idx];
+    }, 5000);
+  })();
+
+  /* ════════════════════════════════════════
      FADE-UP ON SCROLL
      ════════════════════════════════════════ */
   const fadeEls = document.querySelectorAll('.fade-up');
