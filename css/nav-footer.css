@@ -213,6 +213,36 @@ body[data-nav="dark"] .site-nav:not(.scrolled) .nav-links a {
 }
 .nav-mobile a.nav-mobile-cta:hover { background: var(--bordeaux); color: #fff; }
 
+/* Bottone chiudi nel menu mobile */
+.nav-mobile-close {
+  position: absolute;
+  top: 1.6rem;
+  right: var(--gutter);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0;
+  width: 34px;
+  height: 34px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  z-index: 111;
+}
+.nav-mobile-close span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: rgba(250, 246, 247, 0.7);
+  position: absolute;
+  left: 6px;
+  transition: background 0.28s var(--ease);
+}
+.nav-mobile-close span:nth-child(1) { transform: rotate(45deg); }
+.nav-mobile-close span:nth-child(2) { transform: rotate(-45deg); }
+.nav-mobile-close:hover span { background: var(--rosa); }
+
 /* Social nel menu mobile */
 .nav-mobile-footer {
   position: absolute;

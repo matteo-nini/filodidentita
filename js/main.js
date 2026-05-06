@@ -22,50 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ════════════════════════════════════════
-     HAMBURGER / MOBILE MENU
-     ════════════════════════════════════════ */
-  const hamburger = document.querySelector('.nav-hamburger');
-  const mobileMenu = document.querySelector('.nav-mobile');
-
-  function openMenu() {
-    hamburger.classList.add('open');
-    mobileMenu.classList.add('open');
-    hamburger.setAttribute('aria-expanded', 'true');
-    document.body.style.overflow = 'hidden';
-    // Hamburger spans always appear light on dark overlay
-    hamburger.querySelectorAll('span').forEach(s => {
-      s.style.background = 'var(--parchment)';
-    });
-  }
-
-  function closeMenu() {
-    hamburger.classList.remove('open');
-    mobileMenu.classList.remove('open');
-    hamburger.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
-    // Restore correct colour based on scroll + hero
-    hamburger.querySelectorAll('span').forEach(s => {
-      s.style.background = '';
-    });
-  }
-
-  if (hamburger && mobileMenu) {
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.contains('open') ? closeMenu() : openMenu();
-    });
-
-    // Close on link click
-    mobileMenu.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', closeMenu);
-    });
-
-    // Close on Escape
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape' && mobileMenu.classList.contains('open')) closeMenu();
-    });
-  }
-
-  /* ════════════════════════════════════════
      FADE-UP ON SCROLL
      ════════════════════════════════════════ */
   const fadeEls = document.querySelectorAll('.fade-up');

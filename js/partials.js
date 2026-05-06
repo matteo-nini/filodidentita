@@ -31,6 +31,9 @@
 </nav>
 
 <div class="nav-mobile" id="nav-mobile" role="dialog" aria-label="Menu mobile" aria-modal="true">
+  <button class="nav-mobile-close" aria-label="Chiudi menu">
+    <span></span><span></span>
+  </button>
   <a href="${ROOT}chi-siamo.html">Chi siamo</a>
   <a href="${ROOT}edizioni.html">Edizioni</a>
   <a href="${ROOT}edizioni/4-2025.html">Programma</a>
@@ -115,6 +118,15 @@
   window.addEventListener('scroll', updateScrollState, { passive: true });
   updateScrollState();
 
+  const closeBtn = document.querySelector('.nav-mobile-close');
+
+  function closeMenu() {
+    hamburger.classList.remove('open');
+    mobile.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
   if (hamburger && mobile) {
     hamburger.addEventListener('click', () => {
       const isOpen = hamburger.classList.toggle('open');
@@ -122,21 +134,10 @@
       hamburger.setAttribute('aria-expanded', String(isOpen));
       document.body.style.overflow = isOpen ? 'hidden' : '';
     });
-    mobile.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => {
-        hamburger.classList.remove('open');
-        mobile.classList.remove('open');
-        hamburger.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-      });
-    });
+    if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+    mobile.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
     document.addEventListener('keydown', e => {
-      if (e.key === 'Escape' && mobile.classList.contains('open')) {
-        hamburger.classList.remove('open');
-        mobile.classList.remove('open');
-        hamburger.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-      }
+      if (e.key === 'Escape' && mobile.classList.contains('open')) closeMenu();
     });
   }
 
