@@ -73,12 +73,23 @@
     overflow: hidden;
     min-height: 360px;
   }
-  .hero-right img {
+  .hero-carousel {
+    position: absolute;
+    inset: 0;
+  }
+  .hero-carousel img {
+    position: absolute;
+    inset: 0;
     width: 100%; height: 100%;
     object-fit: cover;
-    transition: transform 7s var(--ease);
+    opacity: 0;
+    transition: opacity 1.2s ease, transform 8s var(--ease);
+    transform: scale(1.04);
   }
-  .hero-right:hover img { transform: scale(1.04); }
+  .hero-carousel img.active {
+    opacity: 1;
+    transform: scale(1);
+  }
   .hero-overlay {
     position: absolute; inset: 0;
     background: linear-gradient(135deg, rgba(124,46,65,.3) 0%, transparent 60%);
@@ -365,7 +376,10 @@
     </div>
   </div>
   <div class="hero-right">
-    <img src="assets/hero-photo.jpg" alt="Un momento del festival Filo d'identità" loading="eager" />
+    <div class="hero-carousel">
+      <img alt="Festival Filo d'identità" class="active" />
+      <img alt="Festival Filo d'identità" />
+    </div>
     <div class="hero-overlay"></div>
     <span class="hero-vtext" aria-hidden="true">Incontri · Storie · Corpi</span>
   </div>
