@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Filo d'identità</title>
+  <meta name="description"
+    content="Informativa sul trattamento dei dati personali ai sensi del Regolamento UE 2016/679 (GDPR)." />
+  <meta name="robots" content="noindex, follow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/nav-footer.css" />
+  <style>
+    .legal-hero {
+      padding: 9rem var(--gutter) 4rem;
+      border-bottom: 1px solid var(--linen);
+    }
+
+    .legal-hero .label {
+      margin-bottom: 1.25rem;
+      display: flex;
+    }
+
+    .legal-hero h1 {
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+
+    .legal-hero p {
+      color: var(--stone);
+      font-size: .88rem;
+      max-width: 55ch;
+    }
+
+    .legal-body {
+      padding-block: var(--section-gap);
+    }
+
+    .legal-grid {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    /* Sidebar index */
+    .legal-index {
+      position: sticky;
+      top: 5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border-left: 2px solid var(--linen);
+      padding-left: 1.25rem;
+    }
+
+    .legal-index a {
+      font-family: var(--font-sans);
+      font-size: .68rem;
+      font-weight: 400;
+      letter-spacing: .05em;
+      color: var(--stone);
+      padding: .4rem 0;
+      transition: color .25s;
+      text-decoration: none;
+    }
+
+    .legal-index a:hover {
+      color: var(--rosa);
+    }
+
+    .legal-index a.active {
+      color: var(--rosa);
+      font-weight: 500;
+    }
+
+    /* Content */
+    .legal-content {
+      display: flex;
+      flex-direction: column;
+      gap: 3.5rem;
+    }
+
+    .legal-section {
+      scroll-margin-top: 5rem;
+    }
+
+    .legal-section h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.35rem, 2.5vw, 1.85rem);
+      font-weight: 400;
+      margin-bottom: 1.25rem;
+      padding-bottom: .75rem;
+      border-bottom: 1px solid var(--linen);
+      position: relative;
+    }
+
+    .legal-section h2::before {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 2rem;
+      height: 2px;
+      background: var(--rosa);
+    }
+
+    .legal-section h3 {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin-top: 1.5rem;
+      margin-bottom: .6rem;
+      color: var(--charcoal);
+    }
+
+    .legal-section p {
+      font-size: .9rem;
+      line-height: 1.85;
+      color: var(--charcoal);
+      margin-bottom: .85rem;
+    }
+
+    .legal-section p:last-child {
+      margin-bottom: 0;
+    }
+
+    .legal-section ul,
+    .legal-section ol {
+      margin: .75rem 0 .85rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: .4rem;
+    }
+
+    .legal-section li {
+      font-size: .9rem;
+      line-height: 1.75;
+      color: var(--charcoal);
+    }
+
+    .legal-section a {
+      color: var(--rosa);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .legal-section a:hover {
+      color: var(--bordeaux);
+    }
+
+    /* Info box */
+    .info-box {
+      background: var(--shell);
+      border-left: 3px solid var(--rosa);
+      padding: 1.25rem 1.5rem;
+      margin: 1rem 0;
+      font-size: .88rem;
+      color: var(--charcoal);
+      line-height: 1.75;
+    }
+
+    .info-box strong {
+      color: var(--bordeaux);
+    }
+
+    /* Table */
+    .legal-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: .85rem;
+      margin: 1rem 0;
+    }
+
+    .legal-table th {
+      font-family: var(--font-sans);
+      font-size: .6rem;
+      font-weight: 600;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--rosa);
+      padding: .75rem 1rem;
+      text-align: left;
+      border-bottom: 2px solid var(--linen);
+    }
+
+    .legal-table td {
+      padding: .85rem 1rem;
+      border-bottom: 1px solid var(--linen);
+      color: var(--charcoal);
+      line-height: 1.6;
+      vertical-align: top;
+    }
+
+    .legal-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .legal-table tr:hover td {
+      background: var(--shell);
+    }
+
+    /* Update date */
+    .update-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      font-family: var(--font-sans);
+      font-size: .62rem;
+      font-weight: 500;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--stone);
+      background: var(--shell);
+      padding: .4rem .9rem;
+      margin-top: 1.25rem;
+    }
+
+    @media (max-width: 860px) {
+      .legal-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .legal-index {
+        position: static;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: .5rem;
+        border-left: none;
+        border-top: 1px solid var(--linen);
+        padding: 1rem 0 0;
+      }
+
+      .legal-index a {
+        padding: .3rem .75rem;
+        background: var(--shell);
+      }
+
+      .legal-index a.active {
+        background: var(--rosa);
+        color: #fff;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .legal-hero {
+        padding-top: 7rem;
+      }
+    }
+  </style>
+</head>
+
+<body data-nav="dark">
+
+  <header class="legal-hero">
+    <div class="container">
+      <span class="label">Documenti legali</span>
+      <h1>Privacy Policy</h1>
+      <p>Informativa sul trattamento dei dati personali ai sensi del Regolamento UE 2016/679 (GDPR) e del D.Lgs.
+        196/2003 come modificato dal D.Lgs. 101/2018.</p>
+      <span class="update-badge">Ultimo aggiornamento: luglio 2025</span>
+    </div>
+  </header>
+
+  <main class="legal-body">
+    <div class="container">
+      <div class="legal-grid">
+
+        <!-- Sidebar -->
+        <nav class="legal-index" aria-label="Indice privacy policy">
+          <a href="#titolare">1. Titolare</a>
+          <a href="#dati-raccolti">2. Dati raccolti</a>
+          <a href="#finalita">3. Finalità</a>
+          <a href="#base-giuridica">4. Base giuridica</a>
+          <a href="#conservazione">5. Conservazione</a>
+          <a href="#condivisione">6. Condivisione</a>
+          <a href="#diritti">7. Diritti</a>
+          <a href="#cookie">8. Cookie</a>
+          <a href="#minori">9. Minori</a>
+          <a href="#modifiche">10. Modifiche</a>
+          <a href="#contatti">11. Contatti</a>
+        </nav>
+
+        <!-- Content -->
+        <div class="legal-content">
+
+          <section class="legal-section" id="titolare">
+            <h2>1. Titolare del trattamento</h2>
+            <div class="info-box">
+              <strong>Filo d'identità</strong><br />
+              Progetto culturale con sede operativa nei comuni di Pontedera (PI), Fucecchio (FI), San Miniato (PI) e
+              Montopoli in Val d'Arno (PI).<br />
+              Email: <a href="mailto:filodidentita@gmail.com">filodidentita@gmail.com</a>
+            </div>
+            <p>Il Titolare del trattamento è il soggetto che determina le finalità e i mezzi del trattamento dei dati
+              personali degli utenti che visitano il sito web <strong>filodidentita.it</strong> e di tutti i soggetti
+              che interagiscono con i servizi erogati dal festival.</p>
+          </section>
+
+          <section class="legal-section" id="dati-raccolti">
+            <h2>2. Dati personali raccolti</h2>
+            <p>Il sito raccoglie dati personali nelle seguenti modalità:</p>
+
+            <h3>Dati forniti volontariamente dall'utente</h3>
+            <ul>
+              <li><strong>Modulo di contatto:</strong> nome, cognome, indirizzo email, motivo del contatto e testo del
+                messaggio.</li>
+              <li><strong>Iscrizione alla newsletter:</strong> indirizzo email.</li>
+              <li><strong>Prenotazione eventi (Eventbrite):</strong> i dati inseriti per la prenotazione degli eventi
+                sono trattati direttamente da Eventbrite Inc. secondo la propria privacy policy.</li>
+            </ul>
+
+            <h3>Dati raccolti automaticamente</h3>
+            <ul>
+              <li><strong>Dati di navigazione:</strong> indirizzo IP, tipo di browser, sistema operativo, pagine
+                visitate, orario di accesso, URL di provenienza. Questi dati sono raccolti in forma anonima o aggregata.
+              </li>
+              <li><strong>Cookie tecnici:</strong> necessari al corretto funzionamento del sito. Per i dettagli si
+                rimanda alla <a href="cookie.html">Cookie Policy</a>.</li>
+            </ul>
+
+            <h3>Dati non raccolti</h3>
+            <p>Il sito <strong>non raccoglie</strong> dati sensibili (salute, opinioni politiche, dati biometrici,
+              ecc.), non effettua profilazione automatizzata né processo decisionale automatizzato.</p>
+          </section>
+
+          <section class="legal-section" id="finalita">
+            <h2>3. Finalità del trattamento</h2>
+            <table class="legal-table">
+              <thead>
+                <tr>
+                  <th>Finalità</th>
+                  <th>Dati trattati</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Rispondere a richieste inviate tramite il modulo di contatto</td>
+                  <td>Nome, cognome, email, messaggio</td>
+                </tr>
+                <tr>
+                  <td>Inviare la newsletter con aggiornamenti sul festival</td>
+                  <td>Indirizzo email</td>
+                </tr>
+                <tr>
+                  <td>Gestione tecnica e sicurezza del sito</td>
+                  <td>Dati di navigazione, log di accesso</td>
+                </tr>
+                <tr>
+                  <td>Statistiche anonime sull'utilizzo del sito</td>
+                  <td>Dati aggregati e anonimi</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>I dati personali non vengono utilizzati per finalità di marketing commerciale verso terzi, né ceduti o
+              venduti a soggetti terzi per i loro scopi commerciali.</p>
+          </section>
+
+          <section class="legal-section" id="base-giuridica">
+            <h2>4. Base giuridica del trattamento</h2>
+            <ul>
+              <li><strong>Consenso dell'interessato</strong> (art. 6, par. 1, lett. a GDPR): per l'iscrizione alla
+                newsletter e per l'invio di comunicazioni promozionali. Il consenso è sempre revocabile.</li>
+              <li><strong>Esecuzione di un contratto o misure precontrattuali</strong> (art. 6, par. 1, lett. b GDPR):
+                per rispondere alle richieste di informazioni e gestire i rapporti con ospiti, partner e collaboratori.
+              </li>
+              <li><strong>Legittimo interesse</strong> (art. 6, par. 1, lett. f GDPR): per la sicurezza del sito e la
+                prevenzione di attività fraudolente.</li>
+            </ul>
+          </section>
+
+          <section class="legal-section" id="conservazione">
+            <h2>5. Periodo di conservazione</h2>
+            <table class="legal-table">
+              <thead>
+                <tr>
+                  <th>Categoria di dati</th>
+                  <th>Periodo di conservazione</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Messaggi ricevuti tramite form di contatto</td>
+                  <td>12 mesi dalla ricezione, salvo necessità di contenzioso</td>
+                </tr>
+                <tr>
+                  <td>Dati di iscrizione alla newsletter</td>
+                  <td>Fino alla revoca del consenso</td>
+                </tr>
+                <tr>
+                  <td>Log di accesso al sito</td>
+                  <td>30 giorni in forma anonima</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>Al termine del periodo di conservazione i dati vengono cancellati o resi anonimi in modo irreversibile.
+            </p>
+          </section>
+
+          <section class="legal-section" id="condivisione">
+            <h2>6. Condivisione dei dati</h2>
+            <p>I dati personali possono essere condivisi con:</p>
+            <ul>
+              <li><strong>Fornitori di servizi tecnici</strong> che agiscono in qualità di responsabili del trattamento
+                (es. provider di hosting SiteGround, servizi email). Questi soggetti trattano i dati esclusivamente per
+                le finalità indicate e secondo le istruzioni del Titolare.</li>
+              <li><strong>Eventbrite Inc.</strong> per la gestione delle prenotazioni agli eventi — soggetto autonomo
+                titolare del trattamento.</li>
+              <li><strong>Autorità competenti</strong> ove richiesto dalla legge.</li>
+            </ul>
+            <p>I dati <strong>non vengono trasferiti</strong> verso Paesi terzi al di fuori dello Spazio Economico
+              Europeo, salvo che per i servizi di terze parti (es. Eventbrite, con sede negli USA) che adottano misure
+              adeguate di protezione ai sensi degli artt. 46–49 GDPR.</p>
+          </section>
+
+          <section class="legal-section" id="diritti">
+            <h2>7. Diritti dell'interessato</h2>
+            <p>Ai sensi degli artt. 15–22 del GDPR, hai il diritto di:</p>
+            <ul>
+              <li><strong>Accesso</strong> — ottenere conferma che sia o meno in corso un trattamento di dati che ti
+                riguardano e, in caso positivo, accedere a tali dati.</li>
+              <li><strong>Rettifica</strong> — ottenere la correzione di dati inesatti o incompleti.</li>
+              <li><strong>Cancellazione</strong> ("diritto all'oblio") — ottenere la cancellazione dei tuoi dati, ove
+                sussistano le condizioni previste dalla normativa.</li>
+              <li><strong>Limitazione del trattamento</strong> — ottenere la limitazione del trattamento in determinati
+                casi.</li>
+              <li><strong>Opposizione</strong> — opporti al trattamento per motivi legati alla tua situazione
+                particolare, quando il trattamento si basa sul legittimo interesse.</li>
+              <li><strong>Portabilità</strong> — ricevere i dati forniti in formato strutturato e leggibile da
+                dispositivo automatico.</li>
+              <li><strong>Revoca del consenso</strong> — revocare in qualsiasi momento il consenso prestato, senza
+                pregiudizio per la liceità del trattamento basato sul consenso prima della revoca.</li>
+            </ul>
+            <p>Per esercitare i tuoi diritti scrivi a <a
+                href="mailto:filodidentita@gmail.com">filodidentita@gmail.com</a>. Risponderemo entro 30 giorni dalla
+              ricezione della richiesta.</p>
+            <p>Hai inoltre il diritto di proporre reclamo al <strong>Garante per la protezione dei dati
+                personali</strong> (<a href="https://www.garanteprivacy.it" target="_blank"
+                rel="noopener">www.garanteprivacy.it</a>).</p>
+          </section>
+
+          <section class="legal-section" id="cookie">
+            <h2>8. Cookie</h2>
+            <p>Il sito utilizza cookie tecnici necessari al funzionamento e cookie di terze parti (es. per le
+              funzionalità di prenotazione Eventbrite). Non vengono utilizzati cookie di profilazione di proprietà del
+              Titolare.</p>
+            <p>Per informazioni dettagliate sulla tipologia, finalità e durata dei cookie utilizzati, consulta la nostra
+              <a href="cookie.html">Cookie Policy</a>.
+            </p>
+          </section>
+
+          <section class="legal-section" id="minori">
+            <h2>9. Minori</h2>
+            <p>Il sito non è destinato a minori di 14 anni e non raccoglie consapevolmente dati personali di minori. Se
+              sei a conoscenza che un minore ci ha inviato dati personali, ti chiediamo di contattarci a <a
+                href="mailto:filodidentita@gmail.com">filodidentita@gmail.com</a> affinché possiamo provvedere alla
+              cancellazione.</p>
+          </section>
+
+          <section class="legal-section" id="modifiche">
+            <h2>10. Modifiche alla presente informativa</h2>
+            <p>Il Titolare si riserva il diritto di apportare modifiche alla presente informativa in qualsiasi momento,
+              dandone pubblicità agli utenti mediante aggiornamento della data in cima alla pagina. Si invita pertanto a
+              consultare periodicamente questa pagina.</p>
+            <p>Le modifiche hanno effetto dalla data di pubblicazione sul sito. L'uso continuato del sito dopo tale data
+              costituisce accettazione delle modifiche.</p>
+          </section>
+
+          <section class="legal-section" id="contatti">
+            <h2>11. Contatti</h2>
+            <div class="info-box">
+              Per qualsiasi domanda relativa al trattamento dei tuoi dati personali:<br /><br />
+              <strong>Email:</strong> <a href="mailto:filodidentita@gmail.com">filodidentita@gmail.com</a><br />
+              <strong>Sito:</strong> <a href="contatti.html">filodidentita.it/contatti</a>
+            </div>
+          </section>
+
+        </div><!-- /legal-content -->
+      </div><!-- /legal-grid -->
+    </div><!-- /container -->
+  </main>
+
+  <script src="js/main.js"></script>
+  <script src="js/partials.js"></script>
+  <script>
+    // Highlight sidebar link on scroll
+    const sections = document.querySelectorAll('.legal-section[id]');
+    const links = document.querySelectorAll('.legal-index a');
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          links.forEach(l => l.classList.remove('active'));
+          const active = document.querySelector(`.legal-index a[href="#${e.target.id}"]`);
+          if (active) active.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-20% 0px -70% 0px' });
+    sections.forEach(s => io.observe(s));
+  </script>
+</body>
+
+</html>

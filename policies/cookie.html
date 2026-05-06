@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cookie Policy — Filo d'identità</title>
+  <meta name="description"
+    content="Informativa sull'uso dei cookie sul sito filodidentita.it, ai sensi dell'art. 122 del D.Lgs. 196/2003 e delle Linee Guida del Garante Privacy." />
+  <meta name="robots" content="noindex, follow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/nav-footer.css" />
+  <style>
+    /* Stesso stile di privacy.html */
+    .legal-hero {
+      padding: 9rem var(--gutter) 4rem;
+      border-bottom: 1px solid var(--linen);
+    }
+
+    .legal-hero .label {
+      margin-bottom: 1.25rem;
+      display: flex;
+    }
+
+    .legal-hero h1 {
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+
+    .legal-hero p {
+      color: var(--stone);
+      font-size: .88rem;
+      max-width: 55ch;
+    }
+
+    .update-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      font-family: var(--font-sans);
+      font-size: .62rem;
+      font-weight: 500;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--stone);
+      background: var(--shell);
+      padding: .4rem .9rem;
+      margin-top: 1.25rem;
+    }
+
+    .legal-body {
+      padding-block: var(--section-gap);
+    }
+
+    .legal-grid {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .legal-index {
+      position: sticky;
+      top: 5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border-left: 2px solid var(--linen);
+      padding-left: 1.25rem;
+    }
+
+    .legal-index a {
+      font-family: var(--font-sans);
+      font-size: .68rem;
+      font-weight: 400;
+      letter-spacing: .05em;
+      color: var(--stone);
+      padding: .4rem 0;
+      transition: color .25s;
+      text-decoration: none;
+    }
+
+    .legal-index a:hover {
+      color: var(--rosa);
+    }
+
+    .legal-index a.active {
+      color: var(--rosa);
+      font-weight: 500;
+    }
+
+    .legal-content {
+      display: flex;
+      flex-direction: column;
+      gap: 3.5rem;
+    }
+
+    .legal-section {
+      scroll-margin-top: 5rem;
+    }
+
+    .legal-section h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.35rem, 2.5vw, 1.85rem);
+      font-weight: 400;
+      margin-bottom: 1.25rem;
+      padding-bottom: .75rem;
+      border-bottom: 1px solid var(--linen);
+      position: relative;
+    }
+
+    .legal-section h2::before {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 2rem;
+      height: 2px;
+      background: var(--rosa);
+    }
+
+    .legal-section h3 {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin-top: 1.5rem;
+      margin-bottom: .6rem;
+      color: var(--charcoal);
+    }
+
+    .legal-section p {
+      font-size: .9rem;
+      line-height: 1.85;
+      color: var(--charcoal);
+      margin-bottom: .85rem;
+    }
+
+    .legal-section p:last-child {
+      margin-bottom: 0;
+    }
+
+    .legal-section ul {
+      margin: .75rem 0 .85rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: .4rem;
+    }
+
+    .legal-section li {
+      font-size: .9rem;
+      line-height: 1.75;
+      color: var(--charcoal);
+    }
+
+    .legal-section a {
+      color: var(--rosa);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .legal-section a:hover {
+      color: var(--bordeaux);
+    }
+
+    .info-box {
+      background: var(--shell);
+      border-left: 3px solid var(--rosa);
+      padding: 1.25rem 1.5rem;
+      margin: 1rem 0;
+      font-size: .88rem;
+      color: var(--charcoal);
+      line-height: 1.75;
+    }
+
+    .info-box strong {
+      color: var(--bordeaux);
+    }
+
+    /* Cookie table */
+    .cookie-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: .83rem;
+      margin: 1rem 0;
+    }
+
+    .cookie-table th {
+      font-family: var(--font-sans);
+      font-size: .58rem;
+      font-weight: 600;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--rosa);
+      padding: .75rem 1rem;
+      text-align: left;
+      border-bottom: 2px solid var(--linen);
+      background: var(--shell);
+    }
+
+    .cookie-table td {
+      padding: .85rem 1rem;
+      border-bottom: 1px solid var(--linen);
+      color: var(--charcoal);
+      line-height: 1.6;
+      vertical-align: top;
+    }
+
+    .cookie-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .cookie-table tr:hover td {
+      background: var(--rosa-pale);
+    }
+
+    .cookie-table td:first-child {
+      font-family: var(--font-mono, monospace);
+      font-size: .78rem;
+      color: var(--bordeaux);
+      white-space: nowrap;
+    }
+
+    /* Cookie type badge */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      font-family: var(--font-sans);
+      font-size: .56rem;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      padding: .2rem .6rem;
+      border: 1px solid;
+      border-radius: 0;
+    }
+
+    .badge-tecnico {
+      color: var(--stone);
+      border-color: var(--linen);
+      background: var(--shell);
+    }
+
+    .badge-terze {
+      color: var(--bordeaux);
+      border-color: rgba(124, 46, 65, .3);
+      background: rgba(124, 46, 65, .05);
+    }
+
+    /* Opt-out section */
+    .browser-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .75rem;
+      margin: .75rem 0;
+    }
+
+    .browser-item {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      font-size: .85rem;
+      color: var(--charcoal);
+      padding: .75rem 1rem;
+      background: var(--shell);
+      border: 1px solid var(--linen);
+      transition: border-color .25s;
+    }
+
+    .browser-item:hover {
+      border-color: var(--rosa);
+    }
+
+    .browser-item a {
+      color: var(--rosa);
+      text-decoration: underline;
+    }
+
+    @media (max-width:860px) {
+      .legal-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .legal-index {
+        position: static;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: .5rem;
+        border-left: none;
+        border-top: 1px solid var(--linen);
+        padding: 1rem 0 0;
+      }
+
+      .legal-index a {
+        padding: .3rem .75rem;
+        background: var(--shell);
+      }
+
+      .legal-index a.active {
+        background: var(--rosa);
+        color: #fff;
+      }
+
+      .browser-list {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width:560px) {
+      .legal-hero {
+        padding-top: 7rem;
+      }
+    }
+  </style>
+</head>
+
+<body data-nav="dark">
+
+  <header class="legal-hero">
+    <div class="container">
+      <span class="label">Documenti legali</span>
+      <h1>Cookie Policy</h1>
+      <p>Informativa sull'uso dei cookie ai sensi dell'art. 122 del D.Lgs. 196/2003 (Codice Privacy) e delle Linee Guida
+        del Garante per la Protezione dei Dati Personali.</p>
+      <span class="update-badge">Ultimo aggiornamento: luglio 2025</span>
+    </div>
+  </header>
+
+  <main class="legal-body">
+    <div class="container">
+      <div class="legal-grid">
+
+        <nav class="legal-index" aria-label="Indice cookie policy">
+          <a href="#cosa-sono">1. Cosa sono i cookie</a>
+          <a href="#tipi">2. Tipi di cookie</a>
+          <a href="#cookie-usati">3. Cookie utilizzati</a>
+          <a href="#terze-parti">4. Cookie di terze parti</a>
+          <a href="#gestione">5. Gestione del consenso</a>
+          <a href="#browser">6. Impostazioni browser</a>
+          <a href="#conseguenze">7. Conseguenze</a>
+          <a href="#contatti">8. Contatti</a>
+        </nav>
+
+        <div class="legal-content">
+
+          <section class="legal-section" id="cosa-sono">
+            <h2>1. Cosa sono i cookie</h2>
+            <p>I cookie sono piccoli file di testo che i siti web visitati dall'utente inviano al suo dispositivo
+              (computer, smartphone, tablet), dove vengono memorizzati per essere poi ritrasmessi allo stesso sito alla
+              visita successiva.</p>
+            <p>I cookie permettono al sito di ricordare le azioni e le preferenze dell'utente (come la lingua, la
+              dimensione dei caratteri, altre impostazioni di visualizzazione) in modo da non doverle reinserire ogni
+              volta. Vengono utilizzati anche per analizzare l'utilizzo del sito e per garantirne il corretto
+              funzionamento.</p>
+            <div class="info-box">
+              Il sito <strong>filodidentita.it</strong> — nelle pagine statiche custom gestite da Filo d'identità —
+              utilizza esclusivamente cookie tecnici necessari al funzionamento. Non vengono installati cookie di
+              profilazione o tracking di proprietà del Titolare. La sezione blog ospitata su WordPress
+              (<strong>/blog</strong>) può utilizzare cookie aggiuntivi descritti nella propria configurazione.
+            </div>
+          </section>
+
+          <section class="legal-section" id="tipi">
+            <h2>2. Tipi di cookie in base alla funzione</h2>
+
+            <h3>Cookie tecnici (necessari)</h3>
+            <p>Sono indispensabili per il corretto funzionamento del sito. Senza questi cookie alcune funzionalità non
+              potrebbero essere erogate. Non richiedono il consenso dell'utente ai sensi dell'art. 122 del Codice
+              Privacy e del Provvedimento del Garante dell'8 maggio 2014.</p>
+            <p>Rientrano in questa categoria: cookie di sessione, cookie di sicurezza, cookie per il funzionamento di
+              form e prenotazioni.</p>
+
+            <h3>Cookie analitici (anonimizzati)</h3>
+            <p>Se utilizzati con mascheramento dell'indirizzo IP e senza incrocio con altri dati, sono assimilabili ai
+              cookie tecnici e non richiedono il consenso. Eventuali strumenti analitici sono configurati per rispettare
+              questi requisiti.</p>
+
+            <h3>Cookie di profilazione</h3>
+            <p>Il Titolare <strong>non utilizza</strong> cookie di profilazione propri. Alcuni servizi di terze parti
+              integrati nel sito (es. Eventbrite, social media) possono installare propri cookie di profilazione secondo
+              le rispettive policy.</p>
+          </section>
+
+          <section class="legal-section" id="cookie-usati">
+            <h2>3. Cookie utilizzati dal sito</h2>
+            <p>La seguente tabella elenca i cookie installati dalle pagine statiche del sito (esclusa la sezione
+              <code>/blog</code> gestita da WordPress):
+            </p>
+
+            <table class="cookie-table">
+              <thead>
+                <tr>
+                  <th>Nome</th>
+                  <th>Tipo</th>
+                  <th>Finalità</th>
+                  <th>Scadenza</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>_session</td>
+                  <td><span class="badge badge-tecnico">Tecnico</span></td>
+                  <td>Gestione sessione utente, sicurezza dei form di contatto</td>
+                  <td>Sessione (eliminato alla chiusura del browser)</td>
+                </tr>
+                <tr>
+                  <td>cookie_consent</td>
+                  <td><span class="badge badge-tecnico">Tecnico</span></td>
+                  <td>Memorizza la preferenza espressa dall'utente sull'uso dei cookie</td>
+                  <td>12 mesi</td>
+                </tr>
+                <tr>
+                  <td>PHPSESSID</td>
+                  <td><span class="badge badge-tecnico">Tecnico</span></td>
+                  <td>Identificatore di sessione PHP per il server di hosting (SiteGround)</td>
+                  <td>Sessione</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p>Questa lista viene aggiornata periodicamente. Se noti discrepanze o cookie non elencati, segnalacelo a <a
+                href="mailto:filodidentita@gmail.com">filodidentita@gmail.com</a>.</p>
+          </section>
+
+          <section class="legal-section" id="terze-parti">
+            <h2>4. Cookie di terze parti</h2>
+            <p>Alcune funzionalità del sito coinvolgono servizi gestiti da soggetti terzi che possono installare propri
+              cookie. Il Titolare non ha controllo diretto su tali cookie e invita a consultare le rispettive
+              informative:</p>
+
+            <table class="cookie-table">
+              <thead>
+                <tr>
+                  <th>Servizio</th>
+                  <th>Tipo</th>
+                  <th>Finalità</th>
+                  <th>Privacy policy</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Eventbrite</td>
+                  <td><span class="badge badge-terze">Terze parti</span></td>
+                  <td>Gestione prenotazioni eventi. Cookie installati solo nelle pagine Eventbrite linkate, non
+                    direttamente su filodidentita.it</td>
+                  <td><a
+                      href="https://www.eventbrite.it/support/articles/it/Troubleshooting/informativa-sulla-privacy-di-eventbrite"
+                      target="_blank" rel="noopener">Policy Eventbrite</a></td>
+                </tr>
+                <tr>
+                  <td>Google Fonts</td>
+                  <td><span class="badge badge-terze">Terze parti</span></td>
+                  <td>Caricamento dei font tipografici (Cormorant Garamond, DM Sans). Può comportare il trasferimento
+                    dell'IP a server Google</td>
+                  <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Policy Google</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Instagram (embed)</td>
+                  <td><span class="badge badge-terze">Terze parti</span></td>
+                  <td>Eventuali contenuti Instagram incorporati (solo sezione edizioni passate). I cookie vengono
+                    installati solo se si interagisce con i contenuti</td>
+                  <td><a href="https://privacycenter.instagram.com/policy" target="_blank" rel="noopener">Policy
+                      Instagram</a></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h3>Nota su Google Fonts</h3>
+            <p>Il sito carica i font tipografici tramite Google Fonts. Questo comporta una connessione ai server di
+              Google che può trasmettere l'indirizzo IP dell'utente. Per eliminare questo trasferimento, è possibile
+              configurare i font affinché vengano serviti localmente. Se desideri che modifichiamo questa
+              configurazione, scrivici a <a href="mailto:filodidentita@gmail.com">filodidentita@gmail.com</a>.</p>
+          </section>
+
+          <section class="legal-section" id="gestione">
+            <h2>5. Gestione del consenso</h2>
+            <p>Poiché il sito filodidentita.it utilizza esclusivamente cookie tecnici nelle pagine statiche, non è
+              richiesto il consenso preventivo per la loro installazione ai sensi della normativa vigente.</p>
+            <p>Qualora in futuro venissero introdotti cookie non tecnici (es. cookie analitici non anonimizzati, cookie
+              di profilazione o di social media), sarà implementato un banner di consenso conforme alle Linee Guida del
+              Garante del 10 giugno 2021.</p>
+            <p>Per la sezione <strong>/blog</strong> (WordPress), il sistema di gestione del consenso è gestito
+              separatamente tramite il plugin di cookie consent configurato su WordPress.</p>
+          </section>
+
+          <section class="legal-section" id="browser">
+            <h2>6. Come gestire i cookie tramite il browser</h2>
+            <p>Puoi controllare e gestire i cookie direttamente dal browser. Di seguito i link alle guide dei principali
+              browser:</p>
+
+            <div class="browser-list">
+              <div class="browser-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                  style="width:1.1rem;height:1.1rem;flex-shrink:0;color:var(--rosa)">
+                  <circle cx="12" cy="12" r="10" />
+                  <path
+                    d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
+                </svg>
+                <span>Google Chrome — <a href="https://support.google.com/chrome/answer/95647" target="_blank"
+                    rel="noopener">Istruzioni</a></span>
+              </div>
+              <div class="browser-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                  style="width:1.1rem;height:1.1rem;flex-shrink:0;color:var(--rosa)">
+                  <circle cx="12" cy="12" r="10" />
+                  <path
+                    d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
+                </svg>
+                <span>Mozilla Firefox — <a href="https://support.mozilla.org/it/kb/Eliminare%20i%20cookie"
+                    target="_blank" rel="noopener">Istruzioni</a></span>
+              </div>
+              <div class="browser-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                  style="width:1.1rem;height:1.1rem;flex-shrink:0;color:var(--rosa)">
+                  <circle cx="12" cy="12" r="10" />
+                  <path
+                    d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
+                </svg>
+                <span>Safari — <a href="https://support.apple.com/it-it/guide/safari/sfri11471/mac" target="_blank"
+                    rel="noopener">Istruzioni</a></span>
+              </div>
+              <div class="browser-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                  style="width:1.1rem;height:1.1rem;flex-shrink:0;color:var(--rosa)">
+                  <circle cx="12" cy="12" r="10" />
+                  <path
+                    d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
+                </svg>
+                <span>Microsoft Edge — <a
+                    href="https://support.microsoft.com/it-it/microsoft-edge/eliminare-i-cookie-in-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09"
+                    target="_blank" rel="noopener">Istruzioni</a></span>
+              </div>
+            </div>
+
+            <p>Puoi anche utilizzare strumenti per la gestione della privacy come <a
+                href="https://www.youronlinechoices.eu" target="_blank" rel="noopener">Your Online Choices</a> (per i
+              cookie pubblicitari delle reti di advertising) o <a href="https://optout.networkadvertising.org"
+                target="_blank" rel="noopener">NAI Opt-Out</a>.</p>
+          </section>
+
+          <section class="legal-section" id="conseguenze">
+            <h2>7. Conseguenze della disabilitazione dei cookie</h2>
+            <p>La disabilitazione dei cookie tecnici può compromettere il corretto funzionamento di alcune funzionalità
+              del sito, in particolare:</p>
+            <ul>
+              <li>Il modulo di contatto potrebbe non funzionare correttamente (protezione anti-spam).</li>
+              <li>Le preferenze di visualizzazione potrebbero non essere mantenute.</li>
+            </ul>
+            <p>La disabilitazione dei cookie di terze parti (es. Eventbrite) non influisce sul funzionamento del sito
+              filodidentita.it, ma potrebbe limitare la fruibilità delle piattaforme esterne.</p>
+          </section>
+
+          <section class="legal-section" id="contatti">
+            <h2>8. Contatti e ulteriori informazioni</h2>
+            <p>Per qualsiasi domanda relativa all'uso dei cookie su questo sito, o per segnalare la presenza di cookie
+              non elencati nella presente informativa:</p>
+            <div class="info-box">
+              <strong>Email:</strong> <a href="mailto:filodidentita@gmail.com">filodidentita@gmail.com</a><br /><br />
+              Per le questioni relative alla Privacy Policy generale, consulta la nostra <a href="privacy.html">Privacy
+                Policy</a>.
+            </div>
+            <p>Per ulteriori informazioni sui cookie e sulla normativa applicabile, puoi consultare il sito del <a
+                href="https://www.garanteprivacy.it/temi/cookie" target="_blank" rel="noopener">Garante per la
+                Protezione dei Dati Personali</a>.</p>
+          </section>
+
+        </div><!-- /legal-content -->
+      </div><!-- /legal-grid -->
+    </div><!-- /container -->
+  </main>
+
+  <script src="js/main.js"></script>
+  <script src="js/partials.js"></script>
+  <script>
+    const sections = document.querySelectorAll('.legal-section[id]');
+    const links = document.querySelectorAll('.legal-index a');
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          links.forEach(l => l.classList.remove('active'));
+          const active = document.querySelector(`.legal-index a[href="#${e.target.id}"]`);
+          if (active) active.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-20% 0px -70% 0px' });
+    sections.forEach(s => io.observe(s));
+  </script>
+</body>
+
+</html>
