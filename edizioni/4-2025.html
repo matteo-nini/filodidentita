@@ -1,608 +1,446 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Programma 2025 — Filo d'identità</title>
-  <meta name="description" content="Il programma completo della 4ª edizione di Filo d'identità, 7–13 luglio 2025." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="../css/base.css" />
-  <link rel="stylesheet" href="../css/nav-footer.css" />
-  <link rel="stylesheet" href="../css/edition.css" />
-  <style>
-
-  /* ─── HERO ─── */
-  .ed-hero {
-    min-height: 72svh;
-    background: var(--ink);
-    display: flex; flex-direction: column; justify-content: flex-end;
-    padding: 9rem var(--gutter) 5rem;
-    position: relative; overflow: hidden;
-  }
-  .ed-hero-bg { position: absolute; inset: 0; z-index: 0; }
-  .ed-hero-bg img { width: 100%; height: 100%; object-fit: cover; opacity: .22; }
-  .ed-hero-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, var(--ink) 30%, rgba(28,16,20,.55) 80%); }
-  .ed-hero-content { position: relative; z-index: 1; max-width: 780px; }
-  .ed-breadcrumb {
-    display: flex; align-items: center; gap: .5rem;
-    font-family: var(--font-sans); font-size: .58rem; font-weight: 400;
-    letter-spacing: .2em; text-transform: uppercase;
-    color: rgba(250,246,247,.3); margin-bottom: 2.5rem;
-  }
-  .ed-breadcrumb a { color: rgba(250,246,247,.3); transition: color .28s; }
-  .ed-breadcrumb a:hover { color: var(--rosa); }
-  .ed-breadcrumb span { color: rgba(250,246,247,.15); }
-  .ed-badge {
-    display: inline-flex; align-items: center; gap: .5rem;
-    font-family: var(--font-sans); font-size: .58rem; font-weight: 500;
-    letter-spacing: .22em; text-transform: uppercase;
-    color: var(--rosa); border: 1px solid rgba(226,65,119,.4);
-    padding: .3rem .85rem; margin-bottom: 1.5rem;
-  }
-  .ed-hero h1 { font-size: clamp(3rem,7vw,6.5rem); color: var(--parchment); line-height: .95; margin-bottom: 1rem; }
-  .ed-hero h1 em { font-style: italic; color: var(--rosa); }
-  .ed-hero-meta { display: flex; flex-wrap: wrap; gap: .35rem 2rem; margin-bottom: 2.5rem; }
-  .ed-hero-meta span { font-family: var(--font-sans); font-size: .72rem; font-weight: 300; color: rgba(250,246,247,.4); }
-  .ed-hero-meta span strong { color: rgba(250,246,247,.72); font-weight: 400; }
-  .ed-tagline { font-family: var(--font-serif); font-size: clamp(1.05rem,2vw,1.4rem); font-style: italic; color: rgba(250,246,247,.45); margin-bottom: 2.5rem; line-height: 1.55; }
-
-  /* ─── DAY NAV ─── */
-  .day-nav {
-    position: sticky; top: 0; z-index: 50;
-    background: rgba(250,246,247,.96);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--linen);
-  }
-  .day-nav-inner {
-    display: flex; overflow-x: auto;
-    scrollbar-width: none; -ms-overflow-style: none;
-  }
-  .day-nav-inner::-webkit-scrollbar { display: none; }
-  .day-tab {
-    flex-shrink: 0;
-    padding: 1rem 1.25rem;
-    font-family: var(--font-sans); font-size: .6rem; font-weight: 500;
-    letter-spacing: .16em; text-transform: uppercase;
-    color: var(--stone); background: none; border: none;
-    border-bottom: 2px solid transparent;
-    cursor: pointer; white-space: nowrap;
-    text-decoration: none; display: block;
-    transition: color .28s, border-color .28s;
-  }
-  .day-tab:hover { color: var(--rosa); }
-  .day-tab.active { color: var(--rosa); border-bottom-color: var(--rosa); }
-
-  /* ─── PROGRAM ─── */
-  .program-main { padding-block: var(--section-gap); }
-  .day-block { margin-bottom: 5rem; scroll-margin-top: 4rem; }
-  .day-header {
-    display: flex; align-items: baseline; gap: 1.75rem;
-    margin-bottom: 2.5rem; padding-bottom: 1.25rem;
-    border-bottom: 1px solid var(--linen);
-    position: relative;
-  }
-  .day-header::before {
-    content: ''; position: absolute; bottom: -1px; left: 0;
-    width: 3rem; height: 2px; background: var(--rosa);
-  }
-  .day-num { font-family: var(--font-serif); font-size: clamp(3rem,5vw,5rem); font-weight: 300; line-height: 1; color: var(--linen); }
-  .day-info { display: flex; flex-direction: column; gap: .2rem; }
-  .day-name { font-family: var(--font-serif); font-size: clamp(1.3rem,2.5vw,2rem); font-style: italic; color: var(--ink); }
-  .day-where { font-family: var(--font-sans); font-size: .6rem; font-weight: 400; letter-spacing: .16em; text-transform: uppercase; color: var(--stone); }
-
-  /* ─── EVENT CARD ─── */
-  .event-list { display: flex; flex-direction: column; gap: 2px; }
-  .ev-card {
-    background: var(--shell);
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    overflow: hidden;
-    transition: background .32s;
-    position: relative;
-  }
-  .ev-card::before {
-    content: ''; position: absolute;
-    left: 0; top: 0; bottom: 0;
-    width: 3px; background: var(--rosa);
-    transform: scaleY(0); transform-origin: top;
-    transition: transform .32s var(--ease);
-  }
-  .ev-card:hover { background: var(--rosa-pale); }
-  .ev-card:hover::before { transform: scaleY(1); }
-
-  .ev-body {
-    padding: 2.25rem 2.25rem 2.25rem 2.5rem;
-    display: flex; flex-direction: column; gap: .7rem;
-  }
-  .ev-meta-top { display: flex; flex-wrap: wrap; gap: .35rem 1rem; align-items: center; }
-  .ev-time { font-family: var(--font-sans); font-size: .58rem; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: var(--rosa); }
-  .ev-tag { font-family: var(--font-sans); font-size: .54rem; font-weight: 500; letter-spacing: .18em; text-transform: uppercase; padding: .2rem .6rem; border: 1px solid var(--linen); color: var(--stone); }
-  .ev-tag.tag-lett  { border-color: var(--rosa); color: var(--rosa); }
-  .ev-tag.tag-music { border-color: var(--bordeaux); color: var(--bordeaux); }
-  .ev-tag.tag-perf  { border-color: var(--stone); }
-
-  .ev-title { font-family: var(--font-serif); font-size: clamp(1.1rem,1.8vw,1.5rem); font-weight: 400; line-height: 1.2; color: var(--ink); }
-  .ev-book { font-family: var(--font-serif); font-style: italic; font-size: .9rem; color: var(--bordeaux); }
-  .ev-guests { display: flex; flex-direction: column; gap: .15rem; }
-  .ev-guest-name { font-family: var(--font-sans); font-size: .82rem; font-weight: 400; color: var(--charcoal); }
-  .ev-guest-role { font-size: .75rem; color: var(--stone); line-height: 1.55; }
-  .ev-notes { font-size: .78rem; color: var(--stone); line-height: 1.6; padding-top: .5rem; border-top: 1px solid var(--linen); font-style: italic; }
-
-  .ev-footer {
-    margin-top: auto; padding-top: 1.1rem;
-    display: flex; align-items: center; justify-content: space-between;
-    gap: 1rem; flex-wrap: wrap;
-  }
-  .ev-location { font-family: var(--font-sans); font-size: .66rem; color: var(--stone); display: flex; align-items: center; gap: .35rem; }
-  .ev-location svg { width: .75rem; height: .75rem; color: var(--rosa); flex-shrink: 0; }
-
-  .ev-book-btn {
-    display: inline-flex; align-items: center; gap: .4rem;
-    font-family: var(--font-sans); font-size: .6rem; font-weight: 500;
-    letter-spacing: .16em; text-transform: uppercase;
-    color: #fff; background: var(--rosa); padding: .6rem 1.25rem;
-    transition: background .28s; flex-shrink: 0; white-space: nowrap;
-  }
-  .ev-book-btn:hover { background: var(--bordeaux); }
-
-  /* Photos column */
-  .ev-photos { display: grid; overflow: hidden; background: var(--linen); gap: 2px; }
-  .ev-photos.photos-1 { grid-template-columns: 1fr; }
-  .ev-photos.photos-2 { grid-template-columns: 1fr 1fr; }
-  .ev-photos.photos-3 { grid-template-columns: 1fr 1fr; }
-  .ev-photos.photos-3 .ev-photo:first-child { grid-row: span 2; }
-  .ev-photos.photos-4 { grid-template-columns: 1fr 1fr; }
-
-  .ev-photo { overflow: hidden; background: var(--shell); position: relative; min-height: 160px; }
-  .ev-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; transition: transform .6s var(--ease); }
-  .ev-card:hover .ev-photo img { transform: scale(1.04); }
-  .ev-photo figcaption {
-    position: absolute; bottom: 0; left: 0; right: 0;
-    padding: .5rem .75rem;
-    background: linear-gradient(transparent, rgba(28,16,20,.75));
-    font-family: var(--font-sans); font-size: .56rem; letter-spacing: .08em;
-    color: rgba(250,246,247,.8); opacity: 0; transition: opacity .28s;
-  }
-  .ev-card:hover .ev-photo figcaption { opacity: 1; }
-
-  /* No photo */
-  .ev-card.no-photo { grid-template-columns: 1fr; }
-
-  /* Featured (dark) */
-  .ev-card.featured { background: var(--bordeaux); }
-  .ev-card.featured .ev-title { color: var(--parchment); }
-  .ev-card.featured .ev-book { color: var(--rosa-tint); }
-  .ev-card.featured .ev-guest-name { color: rgba(250,246,247,.8); }
-  .ev-card.featured .ev-guest-role, .ev-card.featured .ev-location { color: rgba(250,246,247,.4); }
-  .ev-card.featured .ev-notes { color: rgba(250,246,247,.4); border-color: rgba(255,255,255,.1); }
-  .ev-card.featured .ev-tag { border-color: rgba(255,255,255,.2); color: rgba(250,246,247,.5); }
-  .ev-card.featured::before { background: var(--rosa); }
-  .ev-card.featured:hover { filter: brightness(1.07); background: var(--bordeaux); }
-
-  /* ─── BOOKING CTA ─── */
-  .ed-cta { background: var(--shell); padding-block: 5rem; text-align: center; }
-  .ed-cta h2 { font-style: italic; margin-bottom: .75rem; }
-  .ed-cta p { color: var(--stone); max-width: 44ch; margin: 0 auto 2.5rem; line-height: 1.85; }
-
-  /* ─── ARCHIVE STRIP ─── */
-  .ed-archive { background: var(--ink); padding-block: 3.5rem; }
-  .ed-archive-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; }
-  .ed-archive h3 { color: var(--parchment); font-style: italic; }
-  .ed-archive p { color: rgba(250,246,247,.35); font-size: .82rem; }
-
-  /* ─── RESPONSIVE ─── */
-  @media (max-width: 860px) {
-    .ed-hero { padding-top: 6rem; min-height: 60svh; }
-    .ev-card { grid-template-columns: 1fr; }
-    .ev-photos { min-height: 200px; }
-    .ev-photos.photos-2,
-    .ev-photos.photos-3,
-    .ev-photos.photos-4 { grid-template-columns: repeat(2,1fr); }
-    .ev-photos.photos-3 .ev-photo:first-child { grid-row: auto; }
-    .ed-archive-inner { flex-direction: column; align-items: flex-start; }
-  }
-  @media (max-width: 560px) {
-    .ed-hero { padding-bottom: 3.5rem; }
-    .ev-body { padding: 1.5rem; }
-    .ev-footer { flex-direction: column; align-items: flex-start; }
-    .ev-book-btn { width: 100%; justify-content: center; }
-    .ed-hero h1 { font-size: clamp(2.5rem,9vw,4rem); }
-  }
-  </style>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>4ª edizione 2025 — Filo d'identità</title>
+  <meta name="description" content="Il programma completo della 4ª edizione di Filo d'identità, 7–13 luglio 2025 tra Fucecchio, San Miniato, Pontedera e Montopoli in Val d'Arno."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="stylesheet" href="../css/base.css"/>
+  <link rel="stylesheet" href="../css/nav-footer.css"/>
+  <link rel="stylesheet" href="../css/edition.css"/>
 </head>
-<!-- Dark hero → nav testo bianco -->
 <body data-nav="light">
-
-<!-- nav injected by partials.js (with SITE_ROOT = '../') -->
 
 <header class="ed-hero">
   <div class="ed-hero-bg">
-    <img src="../assets/edition-2025.jpg" alt="Filo d'identità 2025" />
+    <img src="https://filodidentita.it/wp-content/uploads/2025/06/Michela-Panichi-819x1024.jpeg" alt="Filo d'identità 2025"/>
   </div>
-  <div class="container">
-    <div class="ed-hero-content">
-      <nav class="ed-breadcrumb" aria-label="Breadcrumb">
-        <a href="../index.html">Home</a>
-        <span>›</span>
-        <a href="../edizioni.html">Edizioni</a>
-        <span>›</span>
-        <span style="color:rgba(250,246,247,.55)">2025</span>
-      </nav>
-      <span class="ed-badge">4ª edizione · In programma</span>
-      <h1>7–13 luglio<br/><em>2025</em></h1>
-      <div class="ed-hero-meta">
-        <span><strong>7 giorni</strong> di eventi</span>
-        <span><strong>4 comuni</strong> della Toscana</span>
-        <span>Ingresso prevalentemente <strong>libero</strong></span>
-      </div>
-      <p class="ed-tagline">— incontri, storie, corpi —</p>
-      <a href="#programma" class="btn btn-rosa">Scorri il programma ↓</a>
+  <div class="container"><div class="ed-hero-content">
+    <nav class="ed-breadcrumb" aria-label="Breadcrumb">
+      <a href="../index.html">Home</a><span>›</span>
+      <a href="../edizioni.html">Edizioni</a><span>›</span>
+      <span style="color:rgba(250,246,247,.55)">2025</span>
+    </nav>
+    <span class="ed-badge">4ª edizione · In programma</span>
+    <h1>7–13 luglio<br/><em>2025</em></h1>
+    <div class="ed-hero-meta">
+      <span><strong>7 giorni</strong> di eventi</span>
+      <span>Fucecchio · San Miniato · Pontedera · Montopoli in Val d'Arno</span>
+      <span>Ingresso prevalentemente <strong>libero</strong></span>
     </div>
-  </div>
+    <p class="ed-tagline">— incontri, storie, corpi —<br/>Il corpo come spazio narrativo, politico e culturale.</p>
+    <a href="#programma" class="btn btn-rosa">Scorri il programma ↓</a>
+  </div></div>
 </header>
 
 <nav class="day-nav" aria-label="Navigazione giorni">
-  <div class="container">
-    <div class="day-nav-inner">
-      <a href="#day-7"  class="day-tab active">Lun 7</a>
-      <a href="#day-8"  class="day-tab">Mar 8</a>
-      <a href="#day-9"  class="day-tab">Mer 9</a>
-      <a href="#day-10" class="day-tab">Gio 10</a>
-      <a href="#day-11" class="day-tab">Ven 11</a>
-      <a href="#day-12" class="day-tab">Sab 12</a>
-      <a href="#day-13" class="day-tab">Dom 13</a>
-    </div>
-  </div>
+  <div class="container"><div class="day-nav-inner">
+    <a href="#day-7"  class="day-tab active">Lun 7</a>
+    <a href="#day-8"  class="day-tab">Mar 8</a>
+    <a href="#day-9"  class="day-tab">Mer 9</a>
+    <a href="#day-10" class="day-tab">Gio 10</a>
+    <a href="#day-11" class="day-tab">Ven 11</a>
+    <a href="#day-12" class="day-tab">Sab 12</a>
+    <a href="#day-13" class="day-tab">Dom 13</a>
+  </div></div>
 </nav>
 
-<main id="programma" class="program-main">
-  <div class="container">
+<main id="programma" class="program-main"><div class="container">
 
-    <!-- ═══ 7 LUGLIO ═══ -->
-    <div class="day-block fade-up" id="day-7">
-      <div class="day-header">
-        <span class="day-num">07</span>
-        <div class="day-info">
-          <span class="day-name">Lunedì · Serata inaugurale</span>
-          <span class="day-where">Libreria Blume — Fucecchio (FI)</span>
-        </div>
-      </div>
-      <div class="event-list">
-
-        <article class="ev-card">
-          <div class="ev-body">
-            <div class="ev-meta-top"><span class="ev-time">ore 21:00</span><span class="ev-tag tag-lett">Letteratura</span></div>
-            <h2 class="ev-title">L'estate di Cecilia: il corpo come spazio narrativo</h2>
-            <p class="ev-book">«La Cecilia» — Nottetempo</p>
-            <div class="ev-guests">
-              <span class="ev-guest-name">Michela Panichi</span>
-              <span class="ev-guest-role">in dialogo con Stefano Colli e Kendra Fiumanò</span>
-            </div>
-            <p class="ev-notes">Firmacopie a cura di Libreria Blume. La prenotazione è valida per entrambi gli eventi della serata.</p>
-            <div class="ev-footer">
-              <span class="ev-location"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Libreria Blume, Fucecchio</span>
-              <a href="https://www.eventbrite.it/e/uno-sguardo-sullesordio-tickets-1406913619509" class="ev-book-btn" target="_blank" rel="noopener">Prenota →</a>
-            </div>
-          </div>
-          <div class="ev-photos photos-1">
-            <figure class="ev-photo"><img src="../assets/ospiti/michela-panichi.jpg" alt="Michela Panichi" loading="lazy" /><figcaption>Michela Panichi</figcaption></figure>
-          </div>
-        </article>
-
-        <article class="ev-card">
-          <div class="ev-body">
-            <div class="ev-meta-top"><span class="ev-time">ore 21:00</span><span class="ev-tag tag-lett">Letteratura</span></div>
-            <h2 class="ev-title">Nella terra del cuoio: salvare un mondo in rovina</h2>
-            <p class="ev-book">«Cuoio» — Einaudi</p>
-            <div class="ev-guests">
-              <span class="ev-guest-name">Gabriele Cavallini</span>
-              <span class="ev-guest-role">in dialogo con Emma Donnini (Sindaca di Fucecchio)</span>
-            </div>
-            <p class="ev-notes">Firmacopie a cura di Libreria Blume.</p>
-            <div class="ev-footer">
-              <span class="ev-location"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Libreria Blume, Fucecchio</span>
-              <a href="https://www.eventbrite.it/e/uno-sguardo-sullesordio-tickets-1406913619509" class="ev-book-btn" target="_blank" rel="noopener">Prenota →</a>
-            </div>
-          </div>
-          <div class="ev-photos photos-1">
-            <figure class="ev-photo"><img src="../assets/ospiti/gabriele-cavallini.jpg" alt="Gabriele Cavallini" loading="lazy" /><figcaption>Gabriele Cavallini</figcaption></figure>
-          </div>
-        </article>
-
+  <!-- ═══ 7 LUGLIO ═══ -->
+  <div class="day-block fade-up" id="day-7">
+    <div class="day-header">
+      <span class="day-num">07</span>
+      <div class="day-info">
+        <span class="day-name">Lunedì · Serata inaugurale</span>
+        <span class="day-where">Libreria Blume — Fucecchio (FI) · ore 21:00</span>
       </div>
     </div>
+    <div class="event-list">
 
-    <!-- ═══ 8 LUGLIO ═══ -->
-    <div class="day-block fade-up" id="day-8">
-      <div class="day-header">
-        <span class="day-num">08</span>
-        <div class="day-info">
-          <span class="day-name">Martedì</span>
-          <span class="day-where">Poggio Salamartano — Fucecchio (FI)</span>
+      <article class="ev-card">
+        <div class="ev-body">
+          <div class="ev-meta-top"><span class="ev-tag tag-lett">Letteratura</span></div>
+          <h2 class="ev-title">L'estate di Cecilia: il corpo come spazio narrativo</h2>
+          <p class="ev-book">«La Cecilia» — Nottetempo</p>
+          <div class="ev-guests">
+            <span class="ev-guest-name">Michela Panichi</span>
+            <span class="ev-guest-role">in dialogo con Stefano Colli e Kendra Fiumanò</span>
+          </div>
+          <p class="ev-notes">Firmacopie a cura di Libreria Blume. La prenotazione è valida per entrambi gli eventi della serata.</p>
+          <div style="margin-top:auto;padding-top:1rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem">
+            <span class="ev-location"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:.75rem;height:.75rem;color:var(--rosa);flex-shrink:0"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Libreria Blume, Fucecchio</span>
+            <a href="https://www.eventbrite.it/e/uno-sguardo-sullesordio-tickets-1406913619509" class="ev-book-btn" target="_blank" rel="noopener">Prenota →</a>
+          </div>
         </div>
-      </div>
-      <div class="event-list">
-        <article class="ev-card">
-          <div class="ev-body">
-            <div class="ev-meta-top"><span class="ev-time">ore 21:00</span><span class="ev-tag tag-lett">Letteratura</span></div>
-            <h2 class="ev-title">Indossare il corpo: incontro con Chiara Tagliaferri</h2>
-            <p class="ev-book">«Morgana. Il corpo della madre» — Mondadori Strade Blu</p>
-            <div class="ev-guests">
-              <span class="ev-guest-name">Chiara Tagliaferri</span>
-              <span class="ev-guest-role">in dialogo con Giulia Muscatelli</span>
-              <span class="ev-guest-role">Letture: Elisa Lombardi · Pianoforte: Chiara Todeschi</span>
-            </div>
-            <p class="ev-notes">Firmacopie a cura di Libreria Blume.</p>
-            <div class="ev-footer">
-              <span class="ev-location"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Poggio Salamartano, Fucecchio</span>
-              <a href="https://www.eventbrite.it/e/chiara-tagliaferri-tickets-1406916849169" class="ev-book-btn" target="_blank" rel="noopener">Prenota →</a>
-            </div>
+        <div class="ev-photos p1">
+          <figure class="ev-photo"><img src="https://filodidentita.it/wp-content/uploads/2025/06/Michela-Panichi-819x1024.jpeg" alt="Michela Panichi" loading="lazy"/><figcaption>Michela Panichi</figcaption></figure>
+        </div>
+      </article>
+
+      <article class="ev-card">
+        <div class="ev-body">
+          <div class="ev-meta-top"><span class="ev-tag tag-lett">Letteratura</span></div>
+          <h2 class="ev-title">Nella terra del cuoio: salvare un mondo in rovina</h2>
+          <p class="ev-book">«Cuoio» — Einaudi</p>
+          <div class="ev-guests">
+            <span class="ev-guest-name">Gabriele Cavallini</span>
+            <span class="ev-guest-role">in dialogo con Emma Donnini (Sindaca di Fucecchio)</span>
           </div>
-          <div class="ev-photos photos-2">
-            <figure class="ev-photo"><img src="../assets/ospiti/chiara-tagliaferri.jpg" alt="Chiara Tagliaferri" loading="lazy" /><figcaption>Chiara Tagliaferri</figcaption></figure>
-            <figure class="ev-photo"><img src="../assets/ospiti/giulia-muscatelli.jpg" alt="Giulia Muscatelli" loading="lazy" /><figcaption>Giulia Muscatelli</figcaption></figure>
+          <p class="ev-notes">Firmacopie a cura di Libreria Blume. La prenotazione è valida per entrambi gli eventi della serata.</p>
+          <div style="margin-top:auto;padding-top:1rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem">
+            <span class="ev-location"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:.75rem;height:.75rem;color:var(--rosa);flex-shrink:0"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Libreria Blume, Fucecchio</span>
+            <a href="https://www.eventbrite.it/e/uno-sguardo-sullesordio-tickets-1406913619509" class="ev-book-btn" target="_blank" rel="noopener">Prenota →</a>
           </div>
-        </article>
+        </div>
+        <div class="ev-photos p1">
+          <figure class="ev-photo"><img src="https://filodidentita.it/wp-content/uploads/2025/06/Gabriele-Cavallini-819x1024.jpeg" alt="Gabriele Cavallini" loading="lazy"/><figcaption>Gabriele Cavallini</figcaption></figure>
+        </div>
+      </article>
+
+    </div>
+  </div><!-- /day-7 -->
+
+  <!-- ═══ 8 LUGLIO ═══ -->
+  <div class="day-block fade-up" id="day-8">
+    <div class="day-header">
+      <span class="day-num">08</span>
+      <div class="day-info">
+        <span class="day-name">Martedì</span>
+        <span class="day-where">Poggio Salamartano — Fucecchio (FI) · ore 21:00</span>
       </div>
     </div>
-
-    <!-- ═══ 9 LUGLIO ═══ -->
-    <div class="day-block fade-up" id="day-9">
-      <div class="day-header">
-        <span class="day-num">09</span>
-        <div class="day-info">
-          <span class="day-name">Mercoledì</span>
-          <span class="day-where">Loggiati di San Domenico — San Miniato (PI)</span>
+    <div class="event-list">
+      <article class="ev-card">
+        <div class="ev-body">
+          <div class="ev-meta-top"><span class="ev-tag tag-lett">Letteratura</span></div>
+          <h2 class="ev-title">Indossare il corpo: incontro con Chiara Tagliaferri</h2>
+          <p class="ev-book">«Morgana. Il corpo della madre» — Mondadori Strade Blu</p>
+          <div class="ev-guests">
+            <span class="ev-guest-name">Chiara Tagliaferri</span>
+            <span class="ev-guest-role">in dialogo con Giulia Muscatelli</span>
+            <span class="ev-guest-role">Letture: Elisa Lombardi · Pianoforte: Chiara Todeschi</span>
+          </div>
+          <p class="ev-notes">Firmacopie a cura di Libreria Blume.</p>
+          <div style="margin-top:auto;padding-top:1rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem">
+            <span class="ev-location"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:.75rem;height:.75rem;color:var(--rosa);flex-shrink:0"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Poggio Salamartano, Fucecchio</span>
+            <a href="https://www.eventbrite.it/e/chiara-tagliaferri-tickets-1406916849169" class="ev-book-btn" target="_blank" rel="noopener">Prenota →</a>
+          </div>
         </div>
-      </div>
-      <div class="event-list">
-        <article class="ev-card">
-          <div class="ev-body">
-            <div class="ev-meta-top"><span class="ev-time">ore 21:00</span><span class="ev-tag tag-lett">Letteratura</span></div>
-            <h2 class="ev-title">Il corpo è politico?</h2>
-            <p class="ev-book">«Tutte le mie cose belle sono rifatte» — Feltrinelli</p>
-            <div class="ev-guests">
-              <span class="ev-guest-name">Fumettibrutti</span>
-              <span class="ev-guest-role">in dialogo con Flavio Nuccitelli</span>
-            </div>
-            <div class="ev-footer">
-              <span class="ev-location"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Loggiati San Domenico, San Miniato</span>
-              <a href="https://www.eventbrite.it/e/fumettibrutti-e-veronica-lucchesi-tickets-1406923549209" class="ev-book-btn" target="_blank" rel="noopener">Prenota →</a>
-            </div>
-          </div>
-          <div class="ev-photos photos-2">
-            <figure class="ev-photo"><img src="../assets/ospiti/fumettibrutti.jpg" alt="Fumettibrutti" loading="lazy" /><figcaption>Fumettibrutti</figcaption></figure>
-            <figure class="ev-photo"><img src="../assets/ospiti/flavio-nuccitelli.jpg" alt="Flavio Nuccitelli" loading="lazy" /><figcaption>Flavio Nuccitelli</figcaption></figure>
-          </div>
-        </article>
+        <div class="ev-photos p2">
+          <figure class="ev-photo"><img src="https://filodidentita.it/wp-content/uploads/2025/06/Chiara-Tagliaferri-819x1024.png" alt="Chiara Tagliaferri" loading="lazy"/><figcaption>Chiara Tagliaferri</figcaption></figure>
+          <figure class="ev-photo"><img src="https://filodidentita.it/wp-content/uploads/2025/06/Giulia-Muscatelli-819x1024.png" alt="Giulia Muscatelli" loading="lazy"/><figcaption>Giulia Muscatelli</figcaption></figure>
+        </div>
+      </article>
+    </div>
+  </div><!-- /day-8 -->
 
-        <article class="ev-card">
-          <div class="ev-body">
-            <div class="ev-meta-top"><span class="ev-time">ore 21:00</span><span class="ev-tag tag-lett">Letteratura</span></div>
-            <h2 class="ev-title">Libertà, queerness e sorellanza: Veronica Lucchesi oltre La Rappresentante di Lista</h2>
-            <div class="ev-guests">
-              <span class="ev-guest-name">Veronica Lucchesi</span>
-              <span class="ev-guest-role">in dialogo con Stefano Colli</span>
-              <span class="ev-guest-role">Interviene Davide Mancini (Direttore Artistico Musicastrada)</span>
-            </div>
-            <p class="ev-notes">Firmacopie a cura di Libreria Blume e Libreria Equilibri. La prenotazione è valida per entrambi gli eventi.</p>
-            <div class="ev-footer">
-              <span class="ev-location"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Loggiati San Domenico, San Miniato</span>
-              <a href="https://www.eventbrite.it/e/fumettibrutti-e-veronica-lucchesi-tickets-1406923549209" class="ev-book-btn" target="_blank" rel="noopener">Prenota →</a>
-            </div>
-          </div>
-          <div class="ev-photos photos-1">
-            <figure class="ev-photo"><img src="../assets/ospiti/veronica-lucchesi.jpg" alt="Veronica Lucchesi" loading="lazy" /><figcaption>Veronica Lucchesi</figcaption></figure>
-          </div>
-        </article>
+  <!-- ═══ 9 LUGLIO ═══ -->
+  <div class="day-block fade-up" id="day-9">
+    <div class="day-header">
+      <span class="day-num">09</span>
+      <div class="day-info">
+        <span class="day-name">Mercoledì</span>
+        <span class="day-where">Loggiati di San Domenico — San Miniato (PI) · ore 21:00</span>
       </div>
     </div>
+    <div class="event-list">
 
-    <!-- ═══ 10 LUGLIO ═══ -->
-    <div class="day-block fade-up" id="day-10">
-      <div class="day-header">
-        <span class="day-num">10</span>
-        <div class="day-info">
-          <span class="day-name">Giovedì</span>
-          <span class="day-where">Arena estiva "Cinema sotto le stelle" — Pontedera (PI)</span>
+      <article class="ev-card">
+        <div class="ev-body">
+          <div class="ev-meta-top"><span class="ev-tag tag-lett">Letteratura</span></div>
+          <h2 class="ev-title">Il corpo è politico?</h2>
+          <p class="ev-book">«Tutte le mie cose belle sono rifatte» — Feltrinelli</p>
+          <div class="ev-guests">
+            <span class="ev-guest-name">Fumettibrutti</span>
+            <span class="ev-guest-role">in dialogo con Flavio Nuccitelli</span>
+          </div>
+          <div style="margin-top:auto;padding-top:1rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem">
+            <span class="ev-location"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:.75rem;height:.75rem;color:var(--rosa);flex-shrink:0"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Loggiati San Domenico, San Miniato</span>
+            <a href="https://www.eventbrite.it/e/fumettibrutti-e-veronica-lucchesi-tickets-1406923549209" class="ev-book-btn" target="_blank" rel="noopener">Prenota →</a>
+          </div>
         </div>
-      </div>
-      <div class="event-list">
-        <article class="ev-card">
-          <div class="ev-body">
-            <div class="ev-meta-top"><span class="ev-time">ore 21:00</span><span class="ev-tag tag-lett">Letteratura</span></div>
-            <h2 class="ev-title">Vent'anni dopo Baghdad: diari di una reporter di guerra</h2>
-            <p class="ev-book">«Me la sono andata a cercare» — Laterza</p>
-            <div class="ev-guests">
-              <span class="ev-guest-name">Giuliana Sgrena</span>
-              <span class="ev-guest-role">in dialogo con Simonetta Sciandivasci</span>
-            </div>
-            <p class="ev-notes">A seguire proiezione di «Il Nibbio» di Alessandro Tonda (Cinema Revolution — € 3,50). In collaborazione con Arci Valdera e Ponte di Parole. Firmacopie a cura di Libreria Equilibri.</p>
-            <div class="ev-footer">
-              <span class="ev-location"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Cinema sotto le stelle, Pontedera</span>
-              <a href="https://www.eventbrite.it/e/giuliana-sgrena-e-proiezione-il-nibbio-tickets-1406925344579" class="ev-book-btn" target="_blank" rel="noopener">Prenota →</a>
-            </div>
+        <div class="ev-photos p2">
+          <figure class="ev-photo"><img src="https://filodidentita.it/wp-content/uploads/2025/06/Fumettibrutti-opzione-1-819x1024.png" alt="Fumettibrutti" loading="lazy"/><figcaption>Fumettibrutti</figcaption></figure>
+          <figure class="ev-photo"><img src="https://filodidentita.it/wp-content/uploads/2025/06/Flavio-Nuccitelli-819x1024.png" alt="Flavio Nuccitelli" loading="lazy"/><figcaption>Flavio Nuccitelli</figcaption></figure>
+        </div>
+      </article>
+
+      <article class="ev-card">
+        <div class="ev-body">
+          <div class="ev-meta-top"><span class="ev-tag tag-lett">Letteratura</span></div>
+          <h2 class="ev-title">Libertà, queerness e sorellanza: Veronica Lucchesi oltre La Rappresentante di Lista</h2>
+          <div class="ev-guests">
+            <span class="ev-guest-name">Veronica Lucchesi</span>
+            <span class="ev-guest-role">in dialogo con Stefano Colli</span>
+            <span class="ev-guest-role">Interviene Davide Mancini (Direttore Artistico Musicastrada Festival)</span>
           </div>
-          <div class="ev-photos photos-1">
-            <figure class="ev-photo"><img src="../assets/ospiti/giuliana-sgrena.jpg" alt="Giuliana Sgrena" loading="lazy" /><figcaption>Giuliana Sgrena</figcaption></figure>
+          <p class="ev-notes">Firmacopie a cura di Libreria Blume e Libreria Equilibri. La prenotazione è valida per entrambi gli eventi della serata.</p>
+          <div style="margin-top:auto;padding-top:1rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem">
+            <span class="ev-location"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:.75rem;height:.75rem;color:var(--rosa);flex-shrink:0"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Loggiati San Domenico, San Miniato</span>
+            <a href="https://www.eventbrite.it/e/fumettibrutti-e-veronica-lucchesi-tickets-1406923549209" class="ev-book-btn" target="_blank" rel="noopener">Prenota →</a>
           </div>
-        </article>
+        </div>
+        <div class="ev-photos p1">
+          <figure class="ev-photo"><img src="https://filodidentita.it/wp-content/uploads/2025/06/Veronica-Lucchesi-opzione-1-819x1024.png" alt="Veronica Lucchesi" loading="lazy"/><figcaption>Veronica Lucchesi</figcaption></figure>
+        </div>
+      </article>
+
+    </div>
+  </div><!-- /day-9 -->
+
+  <!-- ═══ 10 LUGLIO ═══ -->
+  <div class="day-block fade-up" id="day-10">
+    <div class="day-header">
+      <span class="day-num">10</span>
+      <div class="day-info">
+        <span class="day-name">Giovedì</span>
+        <span class="day-where">Arena estiva "Cinema sotto le stelle" — Pontedera (PI) · ore 21:00</span>
       </div>
     </div>
-
-    <!-- ═══ 11 LUGLIO ═══ -->
-    <div class="day-block fade-up" id="day-11">
-      <div class="day-header">
-        <span class="day-num">11</span>
-        <div class="day-info">
-          <span class="day-name">Venerdì</span>
-          <span class="day-where">Piazza San Matteo — Montopoli in Valdarno (PI)</span>
+    <div class="event-list">
+      <article class="ev-card">
+        <div class="ev-body">
+          <div class="ev-meta-top"><span class="ev-tag tag-lett">Letteratura</span></div>
+          <h2 class="ev-title">Vent'anni dopo Baghdad: diari di una reporter di guerra</h2>
+          <p class="ev-book">«Me la sono andata a cercare» — Laterza</p>
+          <div class="ev-guests">
+            <span class="ev-guest-name">Giuliana Sgrena</span>
+            <span class="ev-guest-role">in dialogo con Simonetta Sciandivasci</span>
+          </div>
+          <p class="ev-notes">A seguire: proiezione del film «Il Nibbio» di Alessandro Tonda. In collaborazione con Cinema Revolution (Arci Valdera) e Ponte di Parole. La proiezione rientra nella promozione "Cinema Revolution" — costo € 3,50. Firmacopie a cura di Libreria Equilibri.</p>
+          <div style="margin-top:auto;padding-top:1rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem">
+            <span class="ev-location"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:.75rem;height:.75rem;color:var(--rosa);flex-shrink:0"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Cinema sotto le stelle, Pontedera</span>
+            <a href="https://www.eventbrite.it/e/giuliana-sgrena-e-proiezione-il-nibbio-tickets-1406925344579" class="ev-book-btn" target="_blank" rel="noopener">Prenota →</a>
+          </div>
         </div>
-      </div>
-      <div class="event-list">
-        <article class="ev-card">
-          <div class="ev-body">
-            <div class="ev-meta-top"><span class="ev-time">ore 21:00</span><span class="ev-tag tag-lett">Letteratura</span></div>
-            <h2 class="ev-title">Identità negate: storie di omosessuali al confino</h2>
-            <p class="ev-book">«L'isola dei femminielli» — Fazi Editore</p>
-            <div class="ev-guests">
-              <span class="ev-guest-name">Aldo Simeone</span>
-              <span class="ev-guest-role">in dialogo con Beatrice Salvioni</span>
-            </div>
-            <p class="ev-notes">Firmacopie a cura di Libreria Rinascita.</p>
-            <div class="ev-footer">
-              <span class="ev-location"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Piazza San Matteo, Montopoli</span>
-              <a href="https://www.eventbrite.it/e/aldo-simeone-emanuela-crosetti-e-tara-live-tickets-1406927099829" class="ev-book-btn" target="_blank" rel="noopener">Prenota →</a>
-            </div>
-          </div>
-          <div class="ev-photos photos-2">
-            <figure class="ev-photo"><img src="../assets/ospiti/aldo-simeone.jpg" alt="Aldo Simeone" loading="lazy" /><figcaption>Aldo Simeone</figcaption></figure>
-            <figure class="ev-photo"><img src="../assets/ospiti/beatrice-salvioni.jpg" alt="Beatrice Salvioni" loading="lazy" /><figcaption>Beatrice Salvioni</figcaption></figure>
-          </div>
-        </article>
+        <div class="ev-photos p1">
+          <figure class="ev-photo"><img src="https://filodidentita.it/wp-content/uploads/2025/06/Giuliana-Sgrena-819x1024.png" alt="Giuliana Sgrena" loading="lazy"/><figcaption>Giuliana Sgrena</figcaption></figure>
+        </div>
+      </article>
+    </div>
+  </div><!-- /day-10 -->
 
-        <article class="ev-card">
-          <div class="ev-body">
-            <div class="ev-meta-top"><span class="ev-time">a seguire</span><span class="ev-tag tag-lett">Letteratura</span></div>
-            <h2 class="ev-title">La resistenza quotidiana dei Palestinesi</h2>
-            <p class="ev-book">«Palestina Nonostante» — Exorma</p>
-            <div class="ev-guests">
-              <span class="ev-guest-name">Emanuela Crosetti</span>
-              <span class="ev-guest-role">in dialogo con Carla Cocilova</span>
-            </div>
-            <div class="ev-footer">
-              <span class="ev-location"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Piazza San Matteo, Montopoli</span>
-              <a href="https://www.eventbrite.it/e/aldo-simeone-emanuela-crosetti-e-tara-live-tickets-1406927099829" class="ev-book-btn" target="_blank" rel="noopener">Prenota →</a>
-            </div>
-          </div>
-          <div class="ev-photos photos-1">
-            <figure class="ev-photo"><img src="../assets/ospiti/emanuela-crosetti.jpg" alt="Emanuela Crosetti" loading="lazy" /><figcaption>Emanuela Crosetti</figcaption></figure>
-          </div>
-        </article>
-
-        <article class="ev-card featured">
-          <div class="ev-body">
-            <div class="ev-meta-top"><span class="ev-time">a seguire</span><span class="ev-tag tag-music">Musica live</span></div>
-            <h2 class="ev-title">L'Arab'NB come ponte tra identità e musica</h2>
-            <div class="ev-guests">
-              <span class="ev-guest-name">TÄRA</span>
-              <span class="ev-guest-role">live acustico</span>
-            </div>
-            <p class="ev-notes">La prenotazione è valida per tutti e tre gli eventi della serata.</p>
-            <div class="ev-footer">
-              <span class="ev-location"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Piazza San Matteo, Montopoli</span>
-              <a href="https://www.eventbrite.it/e/aldo-simeone-emanuela-crosetti-e-tara-live-tickets-1406927099829" class="ev-book-btn" target="_blank" rel="noopener">Prenota →</a>
-            </div>
-          </div>
-          <div class="ev-photos photos-1">
-            <figure class="ev-photo"><img src="../assets/ospiti/tara.jpg" alt="TÄRA" loading="lazy" /><figcaption>TÄRA</figcaption></figure>
-          </div>
-        </article>
+  <!-- ═══ 11 LUGLIO ═══ -->
+  <div class="day-block fade-up" id="day-11">
+    <div class="day-header">
+      <span class="day-num">11</span>
+      <div class="day-info">
+        <span class="day-name">Venerdì</span>
+        <span class="day-where">Piazza San Matteo — Montopoli in Valdarno (PI) · ore 21:00</span>
       </div>
     </div>
+    <div class="event-list">
 
-    <!-- ═══ 12 LUGLIO ═══ -->
-    <div class="day-block fade-up" id="day-12">
-      <div class="day-header">
-        <span class="day-num">12</span>
-        <div class="day-info">
-          <span class="day-name">Sabato</span>
-          <span class="day-where">Auditorium Biblioteca Gronchi — Pontedera (PI)</span>
+      <article class="ev-card">
+        <div class="ev-body">
+          <div class="ev-meta-top"><span class="ev-tag tag-lett">Letteratura</span></div>
+          <h2 class="ev-title">Identità negate: storie di omosessuali al confino</h2>
+          <p class="ev-book">«L'isola dei femminielli» — Fazi Editore</p>
+          <div class="ev-guests">
+            <span class="ev-guest-name">Aldo Simeone</span>
+            <span class="ev-guest-role">in dialogo con Beatrice Salvioni</span>
+          </div>
+          <p class="ev-notes">Firmacopie a cura di Libreria Rinascita. La prenotazione è valida per tutti e tre gli eventi della serata.</p>
+          <div style="margin-top:auto;padding-top:1rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem">
+            <span class="ev-location"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:.75rem;height:.75rem;color:var(--rosa);flex-shrink:0"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Piazza San Matteo, Montopoli</span>
+            <a href="https://www.eventbrite.it/e/aldo-simeone-emanuela-crosetti-e-tara-live-tickets-1406927099829" class="ev-book-btn" target="_blank" rel="noopener">Prenota →</a>
+          </div>
         </div>
-      </div>
-      <div class="event-list">
-        <article class="ev-card">
-          <div class="ev-body">
-            <div class="ev-meta-top"><span class="ev-time">ore 11:00</span><span class="ev-tag tag-lett">Letteratura</span></div>
-            <h2 class="ev-title">Viaggio nel cuore della letteratura femminile</h2>
-            <p class="ev-book">«Maestre. Disobbedire e ascoltare se stesse grazie a cinque scrittrici» — HarperCollins</p>
-            <div class="ev-guests">
-              <span class="ev-guest-name">Carolina Capria</span>
-              <span class="ev-guest-role">in dialogo con Simona Conigliaro</span>
-            </div>
-            <p class="ev-notes">Firmacopie a cura di Vivo!</p>
-            <div class="ev-footer">
-              <span class="ev-location"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Auditorium Biblioteca Gronchi, Pontedera</span>
-              <a href="https://www.eventbrite.it" class="ev-book-btn" target="_blank" rel="noopener">Prenota →</a>
-            </div>
+        <div class="ev-photos p2">
+          <figure class="ev-photo"><img src="https://filodidentita.it/wp-content/uploads/2025/06/Aldo-Simeone-819x1024.png" alt="Aldo Simeone" loading="lazy"/><figcaption>Aldo Simeone</figcaption></figure>
+          <figure class="ev-photo"><img src="https://filodidentita.it/wp-content/uploads/2025/06/Beatrice-Salvioni--819x1024.png" alt="Beatrice Salvioni" loading="lazy"/><figcaption>Beatrice Salvioni</figcaption></figure>
+        </div>
+      </article>
+
+      <article class="ev-card">
+        <div class="ev-body">
+          <div class="ev-meta-top"><span class="ev-tag tag-lett">Letteratura</span></div>
+          <h2 class="ev-title">La resistenza quotidiana dei Palestinesi</h2>
+          <p class="ev-book">«Palestina Nonostante» — Exorma</p>
+          <div class="ev-guests">
+            <span class="ev-guest-name">Emanuela Crosetti</span>
+            <span class="ev-guest-role">in dialogo con Carla Cocilova</span>
           </div>
-          <div class="ev-photos photos-1">
-            <figure class="ev-photo"><img src="../assets/ospiti/carolina-capria.jpg" alt="Carolina Capria" loading="lazy" /><figcaption>Carolina Capria</figcaption></figure>
+          <div style="margin-top:auto;padding-top:1rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem">
+            <span class="ev-location"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:.75rem;height:.75rem;color:var(--rosa);flex-shrink:0"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Piazza San Matteo, Montopoli</span>
+            <a href="https://www.eventbrite.it/e/aldo-simeone-emanuela-crosetti-e-tara-live-tickets-1406927099829" class="ev-book-btn" target="_blank" rel="noopener">Prenota →</a>
           </div>
-        </article>
+        </div>
+        <div class="ev-photos p1">
+          <figure class="ev-photo"><img src="https://filodidentita.it/wp-content/uploads/2025/06/Emanuela-Crosetti-819x1024.png" alt="Emanuela Crosetti" loading="lazy"/><figcaption>Emanuela Crosetti</figcaption></figure>
+        </div>
+      </article>
+
+      <article class="ev-card featured">
+        <div class="ev-body">
+          <div class="ev-meta-top"><span class="ev-tag tag-music">Musica live</span></div>
+          <h2 class="ev-title">L'Arab'NB come ponte tra identità e musica</h2>
+          <div class="ev-guests">
+            <span class="ev-guest-name">TÄRA</span>
+            <span class="ev-guest-role">live acustico</span>
+          </div>
+          <div style="margin-top:auto;padding-top:1rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem">
+            <span style="font-family:var(--font-sans);font-size:.66rem;color:rgba(250,246,247,.45);display:flex;align-items:center;gap:.35rem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:.75rem;height:.75rem;color:var(--rosa);flex-shrink:0"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Piazza San Matteo, Montopoli</span>
+            <a href="https://www.eventbrite.it/e/aldo-simeone-emanuela-crosetti-e-tara-live-tickets-1406927099829" class="ev-book-btn" target="_blank" rel="noopener">Prenota →</a>
+          </div>
+        </div>
+        <div class="ev-photos p1">
+          <figure class="ev-photo"><img src="https://filodidentita.it/wp-content/uploads/2025/06/TARA-approvata-819x1024.png" alt="TÄRA" loading="lazy"/><figcaption>TÄRA</figcaption></figure>
+        </div>
+      </article>
+
+    </div>
+  </div><!-- /day-11 -->
+
+  <!-- ═══ 12 LUGLIO ═══ -->
+  <div class="day-block fade-up" id="day-12">
+    <div class="day-header">
+      <span class="day-num">12</span>
+      <div class="day-info">
+        <span class="day-name">Sabato</span>
+        <span class="day-where">Pontedera (mattina) · Montopoli (sera)</span>
       </div>
     </div>
+    <div class="event-list">
 
-    <!-- ═══ 13 LUGLIO ═══ -->
-    <div class="day-block fade-up" id="day-13">
-      <div class="day-header">
-        <span class="day-num">13</span>
-        <div class="day-info">
-          <span class="day-name">Domenica · Chiusura</span>
-          <span class="day-where">Pontedera (PI) — venue TBA</span>
-        </div>
-      </div>
-      <div class="event-list">
-        <article class="ev-card no-photo">
-          <div class="ev-body">
-            <div class="ev-meta-top"><span class="ev-time">TBA</span><span class="ev-tag">In arrivo</span></div>
-            <h2 class="ev-title">Gran finale — serata di chiusura 4ª edizione</h2>
-            <p class="ev-guest-role" style="color:var(--stone);font-size:.88rem;margin-top:.5rem">Programma in definizione. Iscriviti alla newsletter per ricevere tutti gli aggiornamenti.</p>
-            <div class="ev-footer">
-              <span class="ev-location"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Pontedera (PI)</span>
-            </div>
+      <article class="ev-card">
+        <div class="ev-body">
+          <div class="ev-meta-top"><span class="ev-tag tag-lett">Letteratura</span></div>
+          <h2 class="ev-title">Viaggio nel cuore della letteratura femminile</h2>
+          <p class="ev-book">«Maestre. Disobbedire e ascoltare se stesse grazie a cinque scrittrici» — HarperCollins</p>
+          <div class="ev-guests">
+            <span class="ev-guest-name">Carolina Capria</span>
+            <span class="ev-guest-role">in dialogo con Simona Conigliaro</span>
           </div>
-        </article>
+          <p class="ev-notes">Firmacopie a cura di Vivo! · Auditorium Biblioteca Gronchi, Pontedera · ore 11:00</p>
+          <div style="margin-top:auto;padding-top:1rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem">
+            <span class="ev-location"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:.75rem;height:.75rem;color:var(--rosa);flex-shrink:0"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Auditorium Gronchi, Pontedera · ore 11:00</span>
+            <a href="https://www.eventbrite.it/e/carolina-capria-tickets-1406927832019" class="ev-book-btn" target="_blank" rel="noopener">Prenota →</a>
+          </div>
+        </div>
+        <div class="ev-photos p2">
+          <figure class="ev-photo"><img src="https://filodidentita.it/wp-content/uploads/2025/06/Carolina-Capria-819x1024.png" alt="Carolina Capria" loading="lazy"/><figcaption>Carolina Capria</figcaption></figure>
+          <figure class="ev-photo"><img src="https://filodidentita.it/wp-content/uploads/2025/06/Simona-Conigliaro-819x1024.png" alt="Simona Conigliaro" loading="lazy"/><figcaption>Simona Conigliaro</figcaption></figure>
+        </div>
+      </article>
+
+      <article class="ev-card featured">
+        <div class="ev-body">
+          <div class="ev-meta-top"><span class="ev-tag tag-music">Musica live</span></div>
+          <h2 class="ev-title">Tra cantautorato e sperimentazione: la musica caleidoscopica di Simone Matteuzzi</h2>
+          <div class="ev-guests">
+            <span class="ev-guest-name">Simone Matteuzzi</span>
+            <span class="ev-guest-role">«Invito a Colazione» — live acustico</span>
+          </div>
+          <div style="margin-top:auto;padding-top:1rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem">
+            <span style="font-family:var(--font-sans);font-size:.66rem;color:rgba(250,246,247,.45);display:flex;align-items:center;gap:.35rem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:.75rem;height:.75rem;color:var(--rosa);flex-shrink:0"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Piazza San Matteo, Montopoli · ore 21:00</span>
+            <a href="https://www.eventbrite.it/e/simone-matteuzzi-live-e-teresa-ciabatti-tickets-1406949256099" class="ev-book-btn" target="_blank" rel="noopener">Prenota →</a>
+          </div>
+        </div>
+        <div class="ev-photos p1">
+          <figure class="ev-photo"><img src="https://filodidentita.it/wp-content/uploads/2025/06/Simone-Matteuzzi-819x1024.png" alt="Simone Matteuzzi" loading="lazy"/><figcaption>Simone Matteuzzi</figcaption></figure>
+        </div>
+      </article>
+
+      <article class="ev-card">
+        <div class="ev-body">
+          <div class="ev-meta-top"><span class="ev-tag tag-lett">Letteratura</span></div>
+          <h2 class="ev-title">Un viaggio tra camorra e umanità: lessico familiare del superboss Peppe Misso</h2>
+          <p class="ev-book">«Donnaregina» — Mondadori</p>
+          <div class="ev-guests">
+            <span class="ev-guest-name">Teresa Ciabatti</span>
+            <span class="ev-guest-role">in dialogo con Gaja Cenciarelli</span>
+            <span class="ev-guest-role">Letture: Selene Demaria · Pianoforte: Davide Bertini</span>
+          </div>
+          <p class="ev-notes">Firmacopie a cura di Libreria Rinascita. La prenotazione è valida per entrambi gli eventi della serata.</p>
+          <div style="margin-top:auto;padding-top:1rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem">
+            <span class="ev-location"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:.75rem;height:.75rem;color:var(--rosa);flex-shrink:0"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Piazza San Matteo, Montopoli · ore 21:00</span>
+            <a href="https://www.eventbrite.it/e/simone-matteuzzi-live-e-teresa-ciabatti-tickets-1406949256099" class="ev-book-btn" target="_blank" rel="noopener">Prenota →</a>
+          </div>
+        </div>
+        <div class="ev-photos p2">
+          <figure class="ev-photo"><img src="https://filodidentita.it/wp-content/uploads/2025/06/Teresa-Ciabatti-819x1024.png" alt="Teresa Ciabatti" loading="lazy"/><figcaption>Teresa Ciabatti</figcaption></figure>
+          <figure class="ev-photo"><img src="https://filodidentita.it/wp-content/uploads/2025/06/Template-originale-libro.png-819x1024.png" alt="Donnaregina" loading="lazy"/><figcaption>«Donnaregina»</figcaption></figure>
+        </div>
+      </article>
+
+    </div>
+  </div><!-- /day-12 -->
+
+  <!-- ═══ 13 LUGLIO ═══ -->
+  <div class="day-block fade-up" id="day-13">
+    <div class="day-header">
+      <span class="day-num">13</span>
+      <div class="day-info">
+        <span class="day-name">Domenica · Chiusura</span>
+        <span class="day-where">Aula didattica del Bosco di Montopoli — Montopoli in Val d'Arno · ore 21:00</span>
       </div>
     </div>
+    <div class="event-list">
+      <article class="ev-card featured">
+        <div class="ev-body">
+          <div class="ev-meta-top"><span class="ev-tag tag-music">Poesia performativa</span></div>
+          <h2 class="ev-title">«Periodi ipotetici» — spettacolo di poesia orale e performativa</h2>
+          <p class="ev-book">«Ave Maria piena di rabbia» — BeccoGiallo</p>
+          <div class="ev-guests">
+            <span class="ev-guest-name">Gloria Riggio</span>
+            <span class="ev-guest-role">Musiche originali dal vivo: Fabio Schember</span>
+          </div>
+          <p class="ev-notes">Firmacopie a cura di Libreria Roma.</p>
+          <div style="margin-top:auto;padding-top:1rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem">
+            <span style="font-family:var(--font-sans);font-size:.66rem;color:rgba(250,246,247,.45);display:flex;align-items:center;gap:.35rem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:.75rem;height:.75rem;color:var(--rosa);flex-shrink:0"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Bosco di Montopoli</span>
+            <a href="https://www.eventbrite.it/e/gloria-riggio-in-periodi-ipotetici-performance-di-poesia-tickets-1406980489519" class="ev-book-btn" target="_blank" rel="noopener">Prenota →</a>
+          </div>
+        </div>
+        <div class="ev-photos p2">
+          <figure class="ev-photo"><img src="https://filodidentita.it/wp-content/uploads/2025/06/Gloria-Riggio-819x1024.png" alt="Gloria Riggio" loading="lazy"/><figcaption>Gloria Riggio</figcaption></figure>
+          <figure class="ev-photo"><img src="https://filodidentita.it/wp-content/uploads/2025/06/Fabio-Schember-819x1024.png" alt="Fabio Schember" loading="lazy"/><figcaption>Fabio Schember</figcaption></figure>
+        </div>
+      </article>
+    </div>
+  </div><!-- /day-13 -->
 
+</div></main>
+
+<!-- Extra CSS for ev-book-btn and ev-location (inline referenced above) -->
+<style>
+.ev-book-btn { display:inline-flex;align-items:center;gap:.4rem;font-family:var(--font-sans);font-size:.6rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:#fff;background:var(--rosa);padding:.6rem 1.25rem;transition:background .28s;flex-shrink:0;white-space:nowrap;text-decoration:none; }
+.ev-book-btn:hover { background:var(--bordeaux); }
+.ev-location { font-family:var(--font-sans);font-size:.66rem;color:var(--stone);display:flex;align-items:center;gap:.35rem; }
+</style>
+
+<section class="ed-gallery"><div class="container">
+  <span class="label fade-up">Momenti dell'edizione</span>
+  <h2 class="fade-up" data-delay="70" style="font-style:italic;margin-top:1rem">Rivivi la 4ª edizione</h2>
+  <p class="fade-up" data-delay="110" style="color:var(--stone);max-width:55ch;margin-bottom:0;line-height:1.8">Sette giorni, quattro comuni, infinite storie. Dalle piazze alle librerie, dai chiostri ai boschi.</p>
+  <div class="gallery-grid fade-up" data-delay="150">
+    <div class="gallery-thumb"><img src="https://filodidentita.it/wp-content/uploads/2025/02/Filo.marte-38-scaled.jpg" alt="" loading="lazy"/></div>
+    <div class="gallery-thumb"><img src="https://filodidentita.it/wp-content/uploads/2025/02/Filo.marte-37-scaled.jpg" alt="" loading="lazy"/></div>
+    <div class="gallery-thumb"><img src="https://filodidentita.it/wp-content/uploads/2025/02/Filo.marte-35-scaled.jpg" alt="" loading="lazy"/></div>
+    <div class="gallery-thumb"><img src="https://filodidentita.it/wp-content/uploads/2025/02/Filo.marte-34-scaled.jpg" alt="" loading="lazy"/></div>
+    <div class="gallery-thumb"><img src="https://filodidentita.it/wp-content/uploads/2025/02/Filo.marte-32-scaled.jpg" alt="" loading="lazy"/></div>
+    <div class="gallery-thumb"><img src="https://filodidentita.it/wp-content/uploads/2025/02/Filo.marte-33-scaled.jpg" alt="" loading="lazy"/></div>
+    <div class="gallery-thumb"><img src="https://filodidentita.it/wp-content/uploads/2025/02/Filo.marte-20-scaled.jpg" alt="" loading="lazy"/></div>
+    <div class="gallery-thumb"><img src="https://filodidentita.it/wp-content/uploads/2025/02/Filo.marte-11-scaled.jpg" alt="" loading="lazy"/></div>
   </div>
-</main>
-
-<section class="ed-cta">
-  <div class="container">
-    <span class="label fade-up" style="display:flex;justify-content:center;margin-bottom:1.25rem">Prenotazioni</span>
-    <h2 class="fade-up" data-delay="70">Prenota il tuo posto</h2>
-    <p class="fade-up" data-delay="110">La maggior parte degli eventi è a ingresso libero con prenotazione consigliata. Prenota in anticipo tramite Eventbrite per gli eventi con posti limitati.</p>
-    <a href="../contatti.html" class="btn btn-dark fade-up" data-delay="150">Hai domande? Scrivici</a>
+  <div style="text-align:center;margin-top:2.5rem" class="fade-up" data-delay="180">
+    <a href="../gallery.html" class="btn btn-dark">Vai alla gallery completa</a>
   </div>
-</section>
+</div></section>
 
-<div class="ed-archive">
-  <div class="container">
-    <div class="ed-archive-inner">
-      <div>
-        <p>Archivio edizioni</p>
-        <h3>Scopri le edizioni passate</h3>
-      </div>
-      <a href="../edizioni.html" class="btn btn-light">Tutte le edizioni</a>
-    </div>
+<div class="ed-nav"><div class="container"><div class="ed-nav-inner">
+  <div><p class="ed-nav-label">Archivio edizioni</p><h3>Esplora le edizioni passate</h3></div>
+  <div class="ed-nav-links">
+    <a href="3-2024.html" class="btn btn-light">← 3ª edizione 2024</a>
+    <a href="../edizioni.html" class="btn btn-ghost">Tutte le edizioni</a>
   </div>
-</div>
+</div></div></div>
 
+<script>window.SITE_ROOT='../';</script>
+<script src="../js/main.js"></script><script src="../js/partials.js"></script>
 <script>
-  // Set SITE_ROOT BEFORE loading partials.js
-  window.SITE_ROOT = '../';
+const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(!e.isIntersecting)return;document.querySelectorAll('.day-tab').forEach(t=>t.classList.remove('active'));const tab=document.querySelector(`.day-tab[href="#${e.target.id}"]`);if(tab){tab.classList.add('active');tab.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});}});},{rootMargin:'-25% 0px -65% 0px'});
+document.querySelectorAll('.day-block[id]').forEach(b=>io.observe(b));
 </script>
-<script src="../js/main.js"></script>
-<script src="../js/partials.js"></script>
-<script>
-  // Day nav highlight on scroll
-  const dayBlocks = document.querySelectorAll('.day-block[id]');
-  const dayTabs   = document.querySelectorAll('.day-tab');
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        dayTabs.forEach(t => t.classList.remove('active'));
-        const tab = document.querySelector(`.day-tab[href="#${e.target.id}"]`);
-        if (tab) {
-          tab.classList.add('active');
-          // Auto-scroll day nav to keep tab visible on mobile
-          tab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-        }
-      }
-    });
-  }, { rootMargin: '-25% 0px -65% 0px' });
-  dayBlocks.forEach(b => io.observe(b));
-</script>
-</body>
-</html>
+</body></html>
