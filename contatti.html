@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contatti — Filo d'identità</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="css/base.css" /><link rel="stylesheet" href="css/nav-footer.css" />
+  <style>
+  /* Split layout — left panel dark fills top-left, so nav starts light */
+  .contact-layout { display: grid; grid-template-columns: 1fr 1fr; min-height: 100svh; }
+
+  .contact-left {
+    background: var(--ink); color: var(--parchment);
+    padding: 9rem var(--gutter) 5rem;
+    display: flex; flex-direction: column; justify-content: space-between;
+    position: relative; overflow: hidden;
+  }
+  .contact-left::before { content: ''; position: absolute; bottom: -10rem; left: -8rem; width: 28rem; height: 28rem; border-radius: 50%; border: 1px solid rgba(226,65,119,.1); pointer-events: none; }
+
+  .contact-left h1 { color: var(--parchment); font-style: italic; font-size: clamp(2.5rem,5vw,5rem); line-height: .95; margin-top: 1.5rem; }
+  .contact-left > div > p { color: rgba(250,246,247,.45); margin-top: 1.5rem; line-height: 1.85; max-width: 36ch; }
+
+  .contact-info { display: flex; flex-direction: column; gap: 2.25rem; padding-top: 3.5rem; }
+  .contact-info h4 { font-family: var(--font-sans); font-size: .56rem; font-weight: 500; letter-spacing: .26em; text-transform: uppercase; color: var(--rosa); margin-bottom: .4rem; }
+  .contact-info a, .contact-info p { font-family: var(--font-serif); font-size: 1.05rem; font-style: italic; color: rgba(250,246,247,.65); transition: color .28s; line-height: 1.5; }
+  .contact-info a:hover { color: var(--parchment); }
+
+  .contact-social { display: flex; gap: .75rem; padding-top: 3rem; border-top: 1px solid rgba(255,255,255,.06); margin-top: auto; }
+  .contact-social a { width: 2.25rem; height: 2.25rem; border: 1px solid rgba(255,255,255,.1); display: flex; align-items: center; justify-content: center; color: rgba(250,246,247,.45); transition: all .28s; }
+  .contact-social a:hover { border-color: var(--rosa); background: var(--rosa); color: #fff; }
+  .contact-social svg { width: .9rem; height: .9rem; }
+
+  .contact-right { padding: 9rem var(--gutter) 5rem; display: flex; flex-direction: column; justify-content: center; }
+  .contact-right > .label { margin-bottom: 1.5rem; display: flex; }
+  .contact-right h2 { font-style: italic; margin-bottom: .75rem; }
+  .contact-right > p { color: var(--stone); margin-bottom: 3rem; line-height: 1.85; }
+
+  .contact-form { display: flex; flex-direction: column; gap: 1.25rem; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .form-field { display: flex; flex-direction: column; gap: .4rem; }
+  .form-field label { font-family: var(--font-sans); font-size: .58rem; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: var(--stone); }
+  .form-field input, .form-field select, .form-field textarea {
+    font-family: var(--font-sans); font-size: .9rem; color: var(--ink);
+    padding: .85rem 1rem; border: 1px solid var(--linen); background: transparent;
+    outline: none; transition: border-color .28s; width: 100%; resize: none; appearance: none;
+  }
+  .form-field input:focus, .form-field select:focus, .form-field textarea:focus { border-color: var(--rosa); }
+  .form-field input::placeholder, .form-field textarea::placeholder { color: var(--fog); }
+  .form-field textarea { min-height: 130px; }
+  .form-field select { cursor: pointer; background: var(--parchment); }
+  .form-privacy { display: flex; align-items: flex-start; gap: .7rem; font-size: .78rem; color: var(--stone); line-height: 1.6; }
+  .form-privacy input[type="checkbox"] { width: 1rem; height: 1rem; margin-top: .15rem; flex-shrink: 0; accent-color: var(--rosa); }
+  .form-privacy a { color: var(--rosa); text-decoration: underline; }
+  .form-submit { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+  .form-submit span { font-size: .72rem; color: var(--fog); }
+
+  @media (max-width: 860px) {
+    .contact-layout { grid-template-columns: 1fr; min-height: auto; }
+    .contact-left { padding-top: 7rem; padding-bottom: 4rem; }
+    .contact-right { padding-top: 3.5rem; }
+    .contact-social { margin-top: 2rem; padding-top: 2rem; }
+  }
+  @media (max-width: 560px) {
+    .form-row { grid-template-columns: 1fr; }
+    .form-submit { flex-direction: column; align-items: stretch; }
+    .form-submit .btn { text-align: center; justify-content: center; }
+  }
+  </style>
+</head>
+<!-- Left half is dark → nav testo bianco -->
+<body data-nav="light">
+
+<main>
+  <div class="contact-layout">
+
+    <div class="contact-left">
+      <div>
+        <span class="label" style="color:var(--rosa)">Contatti</span>
+        <h1>Segui<br/>il filo.</h1>
+        <p>Hai domande sul programma, vuoi collaborare o sei della stampa? Scrivici: siamo un team piccolo ma reattivo.</p>
+      </div>
+      <div class="contact-info">
+        <div><h4>Email generale</h4><a href="mailto:info@filodidentita.it">info@filodidentita.it</a></div>
+        <div><h4>Stampa</h4><a href="mailto:press@filodidentita.it">press@filodidentita.it</a></div>
+        <div><h4>Dove</h4><p>Pontedera · San Miniato<br/>Fucecchio · Montopoli in Val d'Arno</p></div>
+        <div><h4>Prossima edizione</h4><p>7–13 luglio 2025</p></div>
+      </div>
+      <div class="contact-social">
+        <a href="https://instagram.com/filodidentita" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="https://facebook.com/filodidentita" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="contact-right">
+      <span class="label fade-up">Scrivici</span>
+      <h2 class="fade-up" data-delay="60">Entra<br/>in contatto</h2>
+      <p class="fade-up" data-delay="100">Compila il modulo e ti risponderemo entro 48 ore.</p>
+      <form class="contact-form fade-up" data-delay="140"
+            action="https://formspree.io/f/TUOID"
+            method="POST" novalidate aria-label="Modulo di contatto">
+        <div class="form-row">
+          <div class="form-field">
+            <label for="nome">Nome *</label>
+            <input type="text" id="nome" name="nome" placeholder="Nome" required autocomplete="given-name" />
+          </div>
+          <div class="form-field">
+            <label for="cognome">Cognome *</label>
+            <input type="text" id="cognome" name="cognome" placeholder="Cognome" required autocomplete="family-name" />
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" placeholder="La tua email" required autocomplete="email" />
+        </div>
+        <div class="form-field">
+          <label for="motivo">Motivo del contatto</label>
+          <select id="motivo" name="motivo">
+            <option value="">Seleziona...</option>
+            <option>Informazioni sul programma</option>
+            <option>Richiesta stampa / media</option>
+            <option>Proposta di collaborazione</option>
+            <option>Sponsorizzazione / partnership</option>
+            <option>Volontariato</option>
+            <option>Altro</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="messaggio">Messaggio *</label>
+          <textarea id="messaggio" name="messaggio" placeholder="Scrivi qui..." required></textarea>
+        </div>
+        <div class="form-privacy">
+          <input type="checkbox" id="privacy" name="privacy" required />
+          <label for="privacy">Ho letto e accetto la <a href="privacy.html">Privacy Policy</a>.</label>
+        </div>
+        <div class="form-submit">
+          <span>* Campi obbligatori</span>
+          <button type="submit" class="btn btn-rosa">Invia messaggio</button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</main>
+
+<script src="js/main.js"></script><script src="js/partials.js"></script>
+</body>
+</html>

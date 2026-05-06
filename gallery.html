@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery — Filo d'identità</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="css/base.css" /><link rel="stylesheet" href="css/nav-footer.css" />
+  <style>
+  .page-hero { padding: 9rem var(--gutter) 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: end; }
+  .page-hero h1 { font-style: italic; font-size: clamp(3rem,7vw,7rem); line-height: .95; margin-top: 1.25rem; }
+  .page-hero p { color: var(--stone); line-height: 1.85; }
+
+  .gallery-tabs { border-bottom: 1px solid var(--linen); padding: 1.25rem 0; }
+  .tabs-inner { display: flex; gap: .5rem; flex-wrap: wrap; }
+  .tab-btn { font-family: var(--font-sans); font-size: .62rem; font-weight: 400; letter-spacing: .16em; text-transform: uppercase; padding: .5rem 1.1rem; background: transparent; border: 1px solid var(--linen); cursor: pointer; color: var(--stone); transition: all .25s; }
+  .tab-btn:hover { border-color: var(--ink); color: var(--ink); }
+  .tab-btn.active { background: var(--rosa); border-color: var(--rosa); color: #fff; }
+
+  .gallery-section { padding-block: 3rem var(--section-gap); }
+  .masonry { columns: 3; column-gap: 2px; }
+  .masonry-item { break-inside: avoid; margin-bottom: 2px; position: relative; overflow: hidden; cursor: pointer; background: var(--shell); }
+  .masonry-item img { width: 100%; display: block; transition: transform .6s var(--ease), opacity .4s; }
+  .masonry-item:hover img { transform: scale(1.04); opacity: .85; }
+  .masonry-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(28,16,20,.8) 0%, transparent 55%); opacity: 0; transition: opacity .35s; display: flex; flex-direction: column; justify-content: flex-end; padding: 1.25rem; }
+  .masonry-item:hover .masonry-overlay { opacity: 1; }
+  .masonry-caption { color: var(--parchment); font-family: var(--font-serif); font-size: .9rem; font-style: italic; }
+  .masonry-year { color: rgba(250,246,247,.45); font-family: var(--font-sans); font-size: .56rem; letter-spacing: .15em; text-transform: uppercase; margin-top: .2rem; }
+  .masonry-item.tall img { aspect-ratio: 2/3; object-fit: cover; }
+  .masonry-item.wide img { aspect-ratio: 4/3; object-fit: cover; }
+  .masonry-item.sq   img { aspect-ratio: 1/1; object-fit: cover; }
+
+  /* Lightbox */
+  .lightbox { position: fixed; inset: 0; background: rgba(28,16,20,.97); z-index: 200; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity .35s; padding: 2rem; }
+  .lightbox.open { opacity: 1; pointer-events: all; }
+  .lb-inner { position: relative; max-width: min(90vw, 900px); display: flex; flex-direction: column; gap: .75rem; }
+  .lb-img { max-width: 100%; max-height: 82svh; object-fit: contain; display: block; }
+  .lb-caption { color: rgba(250,246,247,.5); font-family: var(--font-serif); font-style: italic; font-size: .95rem; text-align: center; }
+  .lb-close { position: absolute; top: -3rem; right: 0; background: none; border: none; color: var(--parchment); font-size: 1.5rem; cursor: pointer; opacity: .6; transition: opacity .28s; width: 2.5rem; height: 2.5rem; display: flex; align-items: center; justify-content: center; }
+  .lb-close:hover { opacity: 1; }
+  .lb-nav { position: absolute; top: 50%; transform: translateY(-50%); display: flex; width: calc(100% + 6rem); left: -3rem; justify-content: space-between; pointer-events: none; }
+  .lb-nav button { pointer-events: all; background: rgba(250,246,247,.08); border: 1px solid rgba(250,246,247,.12); color: var(--parchment); width: 3rem; height: 3rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all .28s; font-size: 1.1rem; }
+  .lb-nav button:hover { background: var(--rosa); border-color: var(--rosa); }
+
+  @media (max-width: 860px) {
+    .page-hero { grid-template-columns: 1fr; gap: 2rem; padding-top: 7rem; }
+    .masonry { columns: 2; }
+    .lb-nav { width: calc(100% + 3rem); left: -1.5rem; }
+    .lb-nav button { width: 2.5rem; height: 2.5rem; font-size: .9rem; }
+  }
+  @media (max-width: 480px) {
+    .masonry { columns: 1; }
+    .lb-close { top: -2.5rem; }
+  }
+  </style>
+</head>
+<body data-nav="dark">
+
+<header class="container page-hero">
+  <div>
+    <span class="label fade-up">Fotografie</span>
+    <h1 class="fade-up" data-delay="70">Momenti<br/>da ricordare.</h1>
+  </div>
+  <p class="fade-up" data-delay="110">Quattro anni di incontri, emozioni e volti. Le fotografie dei nostri festival raccontano ciò che le parole faticano a descrivere: l'atmosfera, la partecipazione, la magia.</p>
+</header>
+
+<div class="gallery-tabs">
+  <div class="container"><div class="tabs-inner">
+    <button class="tab-btn active" data-year="all">Tutte</button>
+    <button class="tab-btn" data-year="2025">2025</button>
+    <button class="tab-btn" data-year="2024">2024</button>
+    <button class="tab-btn" data-year="2023">2023</button>
+    <button class="tab-btn" data-year="2022">2022</button>
+  </div></div>
+</div>
+
+<section class="gallery-section">
+  <div class="container">
+    <div class="masonry" id="masonry-grid">
+      <figure class="masonry-item tall fade-up" data-year="2024" data-caption="Serata di apertura 2024">
+        <img src="assets/gallery/foto-01.jpg" alt="Serata di apertura 2024" loading="lazy" />
+        <div class="masonry-overlay"><p class="masonry-caption">Serata di apertura</p><p class="masonry-year">2024</p></div>
+      </figure>
+      <figure class="masonry-item sq fade-up" data-delay="40" data-year="2024" data-caption="Incontro con l'autore 2024">
+        <img src="assets/gallery/foto-02.jpg" alt="Incontro con l'autore" loading="lazy" />
+        <div class="masonry-overlay"><p class="masonry-caption">Incontro con l'autore</p><p class="masonry-year">2024</p></div>
+      </figure>
+      <figure class="masonry-item wide fade-up" data-delay="80" data-year="2023" data-caption="Reading poetico 2023">
+        <img src="assets/gallery/foto-03.jpg" alt="Reading poetico 2023" loading="lazy" />
+        <div class="masonry-overlay"><p class="masonry-caption">Reading poetico</p><p class="masonry-year">2023</p></div>
+      </figure>
+      <figure class="masonry-item sq fade-up" data-year="2022" data-caption="Prima edizione 2022">
+        <img src="assets/gallery/foto-04.jpg" alt="Prima edizione 2022" loading="lazy" />
+        <div class="masonry-overlay"><p class="masonry-caption">Prima edizione</p><p class="masonry-year">2022</p></div>
+      </figure>
+      <figure class="masonry-item tall fade-up" data-delay="60" data-year="2023" data-caption="Concerto 2023">
+        <img src="assets/gallery/foto-05.jpg" alt="Concerto 2023" loading="lazy" />
+        <div class="masonry-overlay"><p class="masonry-caption">Concerto</p><p class="masonry-year">2023</p></div>
+      </figure>
+      <figure class="masonry-item wide fade-up" data-year="2024" data-caption="Il pubblico 2024">
+        <img src="assets/gallery/foto-06.jpg" alt="Il pubblico 2024" loading="lazy" />
+        <div class="masonry-overlay"><p class="masonry-caption">Il pubblico</p><p class="masonry-year">2024</p></div>
+      </figure>
+      <figure class="masonry-item sq fade-up" data-delay="40" data-year="2022" data-caption="Il team 2022">
+        <img src="assets/gallery/foto-07.jpg" alt="Il team 2022" loading="lazy" />
+        <div class="masonry-overlay"><p class="masonry-caption">Il team</p><p class="masonry-year">2022</p></div>
+      </figure>
+      <figure class="masonry-item tall fade-up" data-delay="80" data-year="2024" data-caption="Spettacolo 2024">
+        <img src="assets/gallery/foto-08.jpg" alt="Spettacolo 2024" loading="lazy" />
+        <div class="masonry-overlay"><p class="masonry-caption">Spettacolo teatrale</p><p class="masonry-year">2024</p></div>
+      </figure>
+      <figure class="masonry-item wide fade-up" data-year="2023" data-caption="Le venue 2023">
+        <img src="assets/gallery/foto-09.jpg" alt="Le venue 2023" loading="lazy" />
+        <div class="masonry-overlay"><p class="masonry-caption">Le venue</p><p class="masonry-year">2023</p></div>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visualizzatore foto">
+  <div class="lb-inner">
+    <button class="lb-close" id="lb-close" aria-label="Chiudi">✕</button>
+    <img class="lb-img" id="lb-img" src="" alt="" />
+    <p class="lb-caption" id="lb-caption"></p>
+    <div class="lb-nav">
+      <button id="lb-prev" aria-label="Precedente">←</button>
+      <button id="lb-next" aria-label="Successiva">→</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/main.js"></script><script src="js/partials.js"></script>
+<script>
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const year = btn.dataset.year;
+      document.querySelectorAll('.masonry-item').forEach(i => {
+        i.style.display = (year === 'all' || i.dataset.year === year) ? '' : 'none';
+      });
+    });
+  });
+  const items = Array.from(document.querySelectorAll('.masonry-item'));
+  const lb = document.getElementById('lightbox'), lbImg = document.getElementById('lb-img'), lbCap = document.getElementById('lb-caption');
+  let cur = 0;
+  function open(i) { cur = i; const el = items[i]; lbImg.src = el.querySelector('img').src; lbImg.alt = el.querySelector('img').alt; lbCap.textContent = el.dataset.caption || ''; lb.classList.add('open'); document.body.style.overflow = 'hidden'; }
+  function close() { lb.classList.remove('open'); document.body.style.overflow = ''; }
+  items.forEach((el, i) => { el.setAttribute('tabindex','0'); el.addEventListener('click', () => open(i)); el.addEventListener('keydown', e => e.key === 'Enter' && open(i)); });
+  document.getElementById('lb-close').addEventListener('click', close);
+  lb.addEventListener('click', e => { if (e.target === lb) close(); });
+  function nav(dir) {
+    const vis = items.filter(i => i.style.display !== 'none');
+    const idx = vis.indexOf(items[cur]);
+    open(items.indexOf(vis[(idx + dir + vis.length) % vis.length]));
+  }
+  document.getElementById('lb-prev').addEventListener('click', () => nav(-1));
+  document.getElementById('lb-next').addEventListener('click', () => nav(1));
+  document.addEventListener('keydown', e => {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowLeft') nav(-1);
+    if (e.key === 'ArrowRight') nav(1);
+  });
+</script>
+</body>
+</html>

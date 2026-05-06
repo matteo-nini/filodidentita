@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chi siamo — Filo d'identità</title>
+  <meta name="description" content="Il team dietro Filo d'identità, festival letterario e culturale tra Pisa e Firenze." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="css/base.css" /><link rel="stylesheet" href="css/nav-footer.css" />
+  <style>
+  /* ─── PAGE HERO (dark bg → nav light) ─── */
+  .page-hero {
+    padding: 9rem var(--gutter) 6rem;
+    background: var(--ink);
+    color: var(--parchment);
+    position: relative;
+    overflow: hidden;
+  }
+  /* white scallop at bottom */
+  .page-hero::after {
+    content: '';
+    position: absolute;
+    bottom: -1px; left: 0; right: 0;
+    height: 60px;
+    background: var(--parchment);
+    clip-path: ellipse(60% 100% at 50% 100%);
+  }
+  .page-hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: end; }
+  .page-hero h1 { color: var(--parchment); font-style: italic; font-size: clamp(3rem,6vw,6rem); line-height: .95; margin-top: 1.25rem; }
+  .page-hero p { color: rgba(250,246,247,.5); line-height: 1.85; }
+  .hero-deco { position: absolute; right: -5rem; top: 50%; transform: translateY(-50%); font-family: var(--font-serif); font-size: clamp(8rem,18vw,16rem); color: rgba(226,65,119,.04); line-height: 1; pointer-events: none; font-weight: 300; user-select: none; }
+
+  /* ─── MANIFESTO ─── */
+  .manifesto { padding-block: var(--section-gap); }
+  .manifesto-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 6rem; }
+  .manifesto-sticky { position: sticky; top: 6rem; }
+  .manifesto-sticky h2 { font-style: italic; margin-top: 1.25rem; }
+  .manifesto-body { display: flex; flex-direction: column; gap: 1.75rem; }
+  .manifesto-body p { color: var(--charcoal); font-size: clamp(.95rem,1.5vw,1.05rem); line-height: 1.9; }
+  .pullquote { border-left: 2px solid var(--rosa); padding-left: 2rem; margin-block: .5rem; }
+  .pullquote p { font-family: var(--font-serif); font-size: clamp(1.2rem,2.2vw,1.75rem) !important; font-style: italic; color: var(--ink) !important; line-height: 1.45 !important; }
+
+  /* ─── TEAM ─── */
+  .team { background: var(--shell); padding-block: var(--section-gap); }
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 1.5px;
+    background: var(--linen);
+    margin-top: 3.5rem;
+  }
+  .team-card { background: var(--parchment); overflow: hidden; transition: transform .4s var(--ease); }
+  .team-card:hover { transform: translateY(-3px); }
+  .team-photo { aspect-ratio: 4/5; overflow: hidden; background: var(--shell); }
+  .team-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s var(--ease); }
+  .team-card:hover .team-photo img { transform: scale(1.04); }
+  .team-info { padding: 1.5rem; }
+  .team-info h3 { font-size: 1.2rem; margin-bottom: .2rem; }
+  .team-role { font-family: var(--font-sans); font-size: .58rem; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: var(--rosa); display: block; margin-bottom: .75rem; }
+  .team-info p { font-size: .82rem; color: var(--stone); line-height: 1.7; }
+
+  /* ─── VALUES ─── */
+  .values { padding-block: var(--section-gap); }
+  .values-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid var(--linen);
+    margin-top: 3.5rem;
+  }
+  .value-item { padding: 2.75rem; border: 1px solid var(--linen); transition: background .32s; }
+  .value-item:hover { background: var(--shell); }
+  .value-num { font-family: var(--font-serif); font-size: 3.5rem; font-weight: 300; color: var(--linen); line-height: 1; margin-bottom: .75rem; transition: color .32s; }
+  .value-item:hover .value-num { color: var(--rosa); }
+  .value-item h3 { font-style: italic; font-size: 1.5rem; margin-bottom: .75rem; }
+  .value-item p { font-size: .88rem; color: var(--stone); line-height: 1.75; }
+
+  /* ─── PARTNERS ─── */
+  .partners { background: var(--ink); color: var(--parchment); padding-block: var(--section-gap); }
+  .partners h2 { color: var(--parchment); font-style: italic; margin-top: 1rem; margin-bottom: 1rem; }
+  .partners-intro { color: rgba(250,246,247,.45); margin-bottom: 3.5rem; max-width: 48ch; }
+  .partners-logos { display: flex; flex-wrap: wrap; gap: 1px; }
+  .partner-logo { width: calc(100%/5); aspect-ratio: 2.5/1; background: rgba(255,255,255,.03); display: flex; align-items: center; justify-content: center; padding: 1.5rem; transition: background .28s; }
+  .partner-logo:hover { background: rgba(255,255,255,.07); }
+  .partner-logo img { max-height: 2.75rem; width: auto; filter: brightness(0) invert(1); opacity: .4; transition: opacity .28s; }
+  .partner-logo:hover img { opacity: .8; }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 860px) {
+    .page-hero-inner { grid-template-columns: 1fr; gap: 2rem; }
+    .manifesto-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .manifesto-sticky { position: static; }
+    .team-grid { grid-template-columns: 1fr 1fr; }
+    .values-grid { grid-template-columns: 1fr; }
+    .partner-logo { width: calc(100%/3); }
+  }
+  @media (max-width: 560px) {
+    .page-hero { padding-top: 7rem; padding-bottom: 4.5rem; }
+    .team-grid { grid-template-columns: 1fr; }
+    .partner-logo { width: 50%; }
+  }
+  </style>
+</head>
+<body data-nav="light">
+
+<header class="page-hero">
+  <span class="hero-deco" aria-hidden="true">4</span>
+  <div class="container">
+    <div class="page-hero-inner">
+      <div>
+        <span class="label" style="color:var(--rosa)">Chi siamo</span>
+        <h1>Le facce<br/>dietro<br/>ogni filo.</h1>
+      </div>
+      <p>Siamo un gruppo eterogeneo di persone accomunate dalla passione per letteratura, arte e comunità. Costruiamo questo festival dal 2022 con entusiasmo e la convinzione che la cultura possa cambiare il modo in cui guardiamo noi stessi e gli altri.</p>
+    </div>
+  </div>
+</header>
+
+<section class="manifesto">
+  <div class="container">
+    <div class="manifesto-grid">
+      <div class="manifesto-sticky">
+        <span class="label fade-up">Il manifesto</span>
+        <h2 class="fade-up" data-delay="70">Perché<br/>lo facciamo</h2>
+      </div>
+      <div class="manifesto-body">
+        <p class="fade-up">Filo d'identità nasce da una domanda semplice e insieme vertiginosa: chi siamo? Non nel senso anagrafico, ma nell'accezione più profonda del termine. L'identità come processo, come costruzione continua, come dialogo con il mondo.</p>
+        <div class="pullquote fade-up" data-delay="70"><p>«L'identità non è un punto di arrivo, ma il filo stesso del cammino.»</p></div>
+        <p class="fade-up" data-delay="110">Crediamo che letteratura e arte siano strumenti privilegiati per esplorare questa domanda. Non forniscono risposte preconfezionate, ma aprono spazi di riflessione, creano empatia, avvicinano esperienze lontane.</p>
+        <p class="fade-up" data-delay="150">I quattro comuni che ci ospitano non sono semplici scenari: sono comunità vive. Portare il festival tra le strade di Pontedera, San Miniato, Fucecchio e Montopoli significa scommettere sulla cultura come bene comune, accessibile a tutte e tutti.</p>
+        <p class="fade-up" data-delay="190">Dal 2022 cresciamo insieme al nostro pubblico. Ogni edizione è un nuovo nodo in questa trama: più ospiti, più luoghi, più voci.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="team">
+  <div class="container">
+    <span class="label fade-up">Il team</span>
+    <h2 class="fade-up" data-delay="70" style="font-style:italic;margin-top:1rem">Le persone<br/>che tessono</h2>
+    <div class="team-grid">
+      <article class="team-card fade-up" data-delay="0">
+        <div class="team-photo"><img src="assets/team/member-1.jpg" alt="Nome Cognome" loading="lazy" /></div>
+        <div class="team-info"><h3>Nome Cognome</h3><span class="team-role">Direzione artistica</span><p>Breve bio del membro del team.</p></div>
+      </article>
+      <article class="team-card fade-up" data-delay="60">
+        <div class="team-photo"><img src="assets/team/member-2.jpg" alt="Nome Cognome" loading="lazy" /></div>
+        <div class="team-info"><h3>Nome Cognome</h3><span class="team-role">Comunicazione</span><p>Breve bio del membro del team.</p></div>
+      </article>
+      <article class="team-card fade-up" data-delay="120">
+        <div class="team-photo"><img src="assets/team/member-3.jpg" alt="Nome Cognome" loading="lazy" /></div>
+        <div class="team-info"><h3>Nome Cognome</h3><span class="team-role">Produzione</span><p>Breve bio del membro del team.</p></div>
+      </article>
+      <article class="team-card fade-up" data-delay="0">
+        <div class="team-photo"><img src="assets/team/member-4.jpg" alt="Nome Cognome" loading="lazy" /></div>
+        <div class="team-info"><h3>Nome Cognome</h3><span class="team-role">Relazioni esterne</span><p>Breve bio del membro del team.</p></div>
+      </article>
+      <article class="team-card fade-up" data-delay="60">
+        <div class="team-photo"><img src="assets/team/member-5.jpg" alt="Nome Cognome" loading="lazy" /></div>
+        <div class="team-info"><h3>Nome Cognome</h3><span class="team-role">Grafica e design</span><p>Breve bio del membro del team.</p></div>
+      </article>
+      <article class="team-card fade-up" data-delay="120">
+        <div class="team-photo"><img src="assets/team/member-6.jpg" alt="Nome Cognome" loading="lazy" /></div>
+        <div class="team-info"><h3>Nome Cognome</h3><span class="team-role">Coordinamento volontari</span><p>Breve bio del membro del team.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="values">
+  <div class="container">
+    <span class="label fade-up">Valori</span>
+    <h2 class="fade-up" data-delay="70" style="font-style:italic;margin-top:1rem">Cosa ci guida</h2>
+    <div class="values-grid">
+      <div class="value-item fade-up"><div class="value-num">01</div><h3>Inclusività</h3><p>Il festival è per tuttə. Lavoriamo per abbattere barriere economiche, culturali e sociali. La maggior parte degli eventi è a ingresso libero.</p></div>
+      <div class="value-item fade-up" data-delay="60"><div class="value-num">02</div><h3>Radicamento</h3><p>Siamo convintamente locali. Il territorio non è uno sfondo ma un protagonista. Coinvolgiamo realtà e comunità locali in ogni aspetto dell'organizzazione.</p></div>
+      <div class="value-item fade-up"><div class="value-num">03</div><h3>Interdisciplinarità</h3><p>Letteratura, musica, arti visive, teatro. Ogni edizione è un intreccio di linguaggi e sguardi diversi.</p></div>
+      <div class="value-item fade-up" data-delay="60"><div class="value-num">04</div><h3>Comunità</h3><p>Il festival cresce grazie a una rete di volontari, partner e sostenitori. È un progetto collettivo alimentato dalla passione di chi ci crede.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="partners">
+  <div class="container">
+    <span class="label fade-up" style="color:var(--rosa)">Sostenitori</span>
+    <h2 class="fade-up" data-delay="70">Promosso da<br/><em>e con il contributo di</em></h2>
+    <p class="partners-intro fade-up" data-delay="110">Grazie alle istituzioni, aziende e associazioni che rendono possibile ogni edizione.</p>
+    <div class="partners-logos fade-up" data-delay="150">
+      <div class="partner-logo"><img src="assets/partners/partner-1.png" alt="Partner 1" loading="lazy" /></div>
+      <div class="partner-logo"><img src="assets/partners/partner-2.png" alt="Partner 2" loading="lazy" /></div>
+      <div class="partner-logo"><img src="assets/partners/partner-3.png" alt="Partner 3" loading="lazy" /></div>
+      <div class="partner-logo"><img src="assets/partners/partner-4.png" alt="Partner 4" loading="lazy" /></div>
+      <div class="partner-logo"><img src="assets/partners/partner-5.png" alt="Partner 5" loading="lazy" /></div>
+    </div>
+  </div>
+</section>
+
+<script src="js/main.js"></script>
+<script src="js/partials.js"></script>
+</body>
+</html>
