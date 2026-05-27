@@ -309,3 +309,10 @@ body::before {
 @media (max-width: 768px) {
   :root { --section-gap: 3.5rem; }
 }
+
+/* ── Thread motif ── */
+.section-thread {
+  position: absolute;
+  pointer-events: none;
+  overflow: visible;
+}
