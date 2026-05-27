@@ -4,132 +4,47 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Filo d'identità — 4ª edizione · 7–13 luglio 2025</title>
-  <meta name="description"
-    content="Festival letterario e artistico che esplora l'identità. 4ª edizione, 7–13 luglio 2025." />
+  <title>Filo d'identità — 5ª edizione · 06–12 luglio 2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="css/base.css" />
   <link rel="stylesheet" href="css/nav-footer.css" />
 
-  <!-- SEO -->
-  <meta name="description"
-    content="Filo d'identità è un festival letterario e artistico tra Pisa e Firenze. 4ª edizione, 7–13 luglio 2025 tra Pontedera, San Miniato, Fucecchio e Montopoli." />
+  <meta name="description" content="Filo d'identità è un festival letterario e artistico tra Pisa e Firenze. 5ª edizione, 06–12 luglio 2026 tra Pontedera, San Miniato, Fucecchio e Montopoli." />
   <link rel="canonical" href="https://filodidentita.it/" />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Filo d'identità" />
   <meta property="og:locale" content="it_IT" />
-  <meta property="og:title" content="Filo d'identità" />
-  <meta property="og:description"
-    content="Filo d'identità è un festival letterario e artistico tra Pisa e Firenze. 4ª edizione, 7–13 luglio 2025 tra Pontedera, San Miniato, Fucecchio e Montopoli." />
+  <meta property="og:title" content="Filo d'identità — 5ª edizione" />
+  <meta property="og:description" content="Filo d'identità è un festival letterario e artistico tra Pisa e Firenze. 5ª edizione, 06–12 luglio 2026 tra Pontedera, San Miniato, Fucecchio e Montopoli." />
   <meta property="og:url" content="https://filodidentita.it/" />
   <meta property="og:image" content="https://filodidentita.it/assets/og/OG-IMAGE.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
 
-  <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@filodidentitafestival" />
-  <meta name="twitter:title" content="Filo d'identità" />
-  <meta name="twitter:description"
-    content="Filo d'identità è un festival letterario e artistico tra Pisa e Firenze. 4ª edizione, 7–13 luglio 2025 tra Pontedera, San Miniato, Fucecchio e Montopoli." />
+  <meta name="twitter:title" content="Filo d'identità — 5ª edizione" />
+  <meta name="twitter:description" content="Filo d'identità è un festival letterario e artistico tra Pisa e Firenze. 5ª edizione, 06–12 luglio 2026 tra Pontedera, San Miniato, Fucecchio e Montopoli." />
   <meta name="twitter:image" content="https://filodidentita.it/assets/og/OG-IMAGE.jpg" />
 
-  <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
-  <meta name="theme-color" content="#e24177" />
+  <meta name="theme-color" content="#5d9e9a" />
 
   <style>
-    /* ─── HERO ─── */
+
+    /* ════════════════════════════════════
+       HERO
+       ════════════════════════════════════ */
+
     .hero {
+      position: relative;
       min-height: 100svh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      position: relative;
-    }
-
-    .hero-left {
-      background: var(--ink);
       display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 9rem var(--gutter) 4.5rem;
-      position: relative;
-      z-index: 1;
+      align-items: flex-end;
       overflow: hidden;
-    }
-
-    .hero-left::before {
-      content: '';
-      position: absolute;
-      bottom: -12rem;
-      left: -8rem;
-      width: 30rem;
-      height: 30rem;
-      border-radius: 50%;
-      border: 1px solid rgba(226, 65, 119, .1);
-      pointer-events: none;
-    }
-
-    .hero-eyebrow {
-      font-family: var(--font-sans);
-      font-size: 0.6rem;
-      font-weight: 500;
-      letter-spacing: 0.26em;
-      text-transform: uppercase;
-      color: var(--rosa);
-      margin-bottom: 2rem;
-      display: flex;
-      align-items: center;
-      gap: 0.65rem;
-    }
-
-    .hero-eyebrow::before {
-      content: '';
-      width: 1.25rem;
-      height: 1px;
-      background: var(--rosa);
-    }
-
-    .hero-left h1 {
-      font-size: clamp(3rem, 5.5vw, 6rem);
-      color: var(--parchment);
-      line-height: 0.95;
-      margin-bottom: 1.25rem;
-    }
-
-    .hero-left h1 em {
-      font-style: italic;
-      color: var(--rosa);
-    }
-
-    .hero-subtitle {
-      font-family: var(--font-sans);
-      font-size: 0.78rem;
-      font-weight: 300;
-      color: rgba(250, 246, 247, .38);
-      margin-bottom: 3rem;
-      line-height: 1.7;
-    }
-
-    .hero-subtitle strong {
-      color: rgba(250, 246, 247, .7);
-      font-weight: 400;
-    }
-
-    .hero-ctas {
-      display: flex;
-      gap: 0.75rem;
-      flex-wrap: wrap;
-    }
-
-    .hero-right {
-      position: relative;
-      overflow: hidden;
-      min-height: 360px;
     }
 
     .hero-carousel {
@@ -144,7 +59,7 @@
       height: 100%;
       object-fit: cover;
       opacity: 0;
-      transition: opacity 1.2s ease, transform 8s var(--ease);
+      transition: opacity 1.4s ease, transform 9s var(--ease);
       transform: scale(1.04);
     }
 
@@ -157,337 +72,413 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(135deg, rgba(124, 46, 65, .28) 0%, transparent 50%),
-        linear-gradient(to top, rgba(28, 16, 20, .55) 0%, transparent 45%),
-        rgba(28, 16, 20, .15);
+        linear-gradient(
+          to top,
+          oklch(0.08 0.012 195 / 0.96)  0%,
+          oklch(0.08 0.012 195 / 0.72)  28%,
+          oklch(0.08 0.012 195 / 0.22)  62%,
+          oklch(0.08 0.012 195 / 0.06) 100%
+        ),
+        linear-gradient(
+          to right,
+          oklch(0.08 0.012 195 / 0.48) 0%,
+          oklch(0.08 0.012 195 / 0)    55%
+        );
       pointer-events: none;
+    }
+
+    .hero-thread {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      padding: 0 var(--gutter) clamp(4rem, 8svh, 6.5rem);
+    }
+
+    .hero-eyebrow {
+      font-family: var(--font-sans);
+      font-size: 0.58rem;
+      font-weight: 500;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--rosa);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      width: 1.5rem;
+      height: 1px;
+      background: var(--rosa);
+      flex-shrink: 0;
+    }
+
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(3rem, 11.5vw, 11rem);
+      font-weight: 400;
+      line-height: 0.9;
+      letter-spacing: -0.025em;
+      color: oklch(0.97 0.005 195);
+      margin-bottom: 2.25rem;
+      overflow-wrap: break-word;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--rosa);
+    }
+
+    .hero-footer {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-date {
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      font-weight: 300;
+      color: oklch(0.94 0.005 195 / 0.48);
+      line-height: 1.9;
+      letter-spacing: 0.04em;
+    }
+
+    .hero-date strong {
+      display: block;
+      font-weight: 400;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      color: oklch(0.94 0.005 195 / 0.88);
+      margin-bottom: 0.2rem;
     }
 
     .hero-vtext {
       position: absolute;
-      right: 1.25rem;
-      bottom: 2rem;
+      right: calc(var(--gutter) + 0.2rem);
+      bottom: clamp(4rem, 8svh, 6.5rem);
       writing-mode: vertical-lr;
       font-family: var(--font-serif);
-      font-size: 0.65rem;
+      font-size: 0.62rem;
       font-style: italic;
-      letter-spacing: 0.2em;
-      color: rgba(250, 246, 247, .25);
+      letter-spacing: 0.22em;
+      color: oklch(0.94 0.005 195 / 0.18);
       user-select: none;
       pointer-events: none;
     }
 
-    /* ─── INTRO ─── */
-    .intro {
-      padding-block: var(--section-gap);
-    }
 
-    .intro-grid {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 5rem;
-      align-items: start;
-    }
+    /* ════════════════════════════════════
+       MANIFESTO — teal field
+       ════════════════════════════════════ */
 
-    .intro-aside {
-      position: sticky;
-      top: 6rem;
-    }
-
-    .intro-tagline {
-      font-family: var(--font-serif);
-      font-size: clamp(1.1rem, 2vw, 1.5rem);
-      font-style: italic;
-      color: var(--stone);
-      line-height: 1.55;
-      margin-top: 1.5rem;
-    }
-
-    .intro-body {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .intro-body p {
-      font-size: clamp(.95rem, 1.5vw, 1.05rem);
-      line-height: 1.9;
-      color: var(--charcoal);
-    }
-
-    .intro-body strong {
-      font-family: var(--font-serif);
-      font-style: italic;
-      font-weight: 500;
-      color: var(--ink);
-    }
-
-    /* ─── NUMBERS ─── */
-    .numbers {
-      background: var(--shell);
-      padding-block: 5rem;
-    }
-
-    .numbers-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      border: 1px solid var(--linen);
-    }
-
-    .number-item {
-      text-align: center;
-      padding: 3rem 1.5rem;
-      border-right: 1px solid var(--linen);
+    .manifesto {
+      background: var(--teal);
+      padding-block: clamp(4.5rem, 9vw, 8rem);
+      overflow: hidden;
       position: relative;
     }
 
-    .number-item:last-child {
-      border-right: none;
-    }
-
-    .number-item::before {
-      content: '';
+    .manifesto-botanical {
       position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 2rem;
-      height: 2px;
-      background: var(--rosa);
+      right: -4%;
+      top: -12%;
+      width: 42%;
+      height: 135%;
+      pointer-events: none;
+      opacity: 0.07;
     }
 
-    .number-value {
-      font-family: var(--font-serif);
-      font-size: clamp(2.5rem, 4vw, 4.5rem);
-      font-weight: 300;
-      color: var(--ink);
-      line-height: 1;
-      margin-bottom: .5rem;
+    .manifesto-inner {
+      padding-inline: var(--gutter);
+      position: relative;
+      z-index: 1;
     }
 
-    .number-label {
+    .manifesto-eyebrow {
       font-family: var(--font-sans);
-      font-size: .58rem;
+      font-size: 0.58rem;
       font-weight: 500;
-      letter-spacing: .22em;
+      letter-spacing: 0.26em;
       text-transform: uppercase;
-      color: var(--stone);
+      color: oklch(0.97 0.005 195 / 0.5);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      margin-bottom: 2rem;
     }
 
-    /* ─── PROGRAM PREVIEW ─── */
+    .manifesto-eyebrow::before {
+      content: '';
+      width: 1.25rem;
+      height: 1px;
+      background: oklch(0.97 0.005 195 / 0.5);
+      flex-shrink: 0;
+    }
+
+    .manifesto-text {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 4vw, 4.2rem);
+      font-style: italic;
+      font-weight: 400;
+      line-height: 1.15;
+      color: oklch(0.97 0.005 195);
+      max-width: 22ch;
+    }
+
+
+    /* ════════════════════════════════════
+       PROGRAM PREVIEW
+       ════════════════════════════════════ */
+
     .program-preview {
       padding-block: var(--section-gap);
+      background: var(--paper);
     }
 
-    .events-grid {
+    .program-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .program-header h2 {
+      font-style: italic;
+      margin-top: 0.75rem;
+    }
+
+    .program-list {
+      list-style: none;
+      border-top: 1px solid var(--linen);
+    }
+
+    .program-list li {
+      border-bottom: 1px solid var(--linen);
+    }
+
+    .program-row {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5px;
-      background: var(--linen);
+      grid-template-columns: 9.5rem 1fr 4rem;
+      gap: 0 2.5rem;
+      padding-block: 1.65rem;
+      align-items: start;
+      transition: background 0.25s var(--ease);
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
     }
 
-    .event-card {
-      background: var(--parchment);
-      padding: 2.5rem 2rem;
+    .program-row:hover {
+      background: var(--paper-warm);
+    }
+
+    .program-col-left {
       display: flex;
       flex-direction: column;
-      gap: .85rem;
-      transition: background .32s var(--ease);
-      position: relative;
-      overflow: hidden;
+      gap: 0.3rem;
+      padding-top: 0.2rem;
     }
 
-    .event-card::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      height: 2px;
-      background: var(--rosa);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform .35s var(--ease);
-    }
-
-    .event-card:hover {
-      background: var(--rosa-pale);
-    }
-
-    .event-card:hover::after {
-      transform: scaleX(1);
-    }
-
-    .event-date {
+    .program-day {
       font-family: var(--font-sans);
-      font-size: .58rem;
+      font-size: 0.6rem;
       font-weight: 500;
-      letter-spacing: .22em;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--rosa);
     }
 
-    .event-card h3 {
-      font-size: clamp(1.05rem, 1.8vw, 1.45rem);
-      line-height: 1.15;
-      flex: 1;
-    }
-
-    .event-guest {
-      font-family: var(--font-serif);
-      font-size: .9rem;
-      font-style: italic;
-      color: var(--stone);
-    }
-
-    .event-meta {
-      display: flex;
-      gap: .3rem 1rem;
-      flex-wrap: wrap;
+    .program-place {
       font-family: var(--font-sans);
-      font-size: .68rem;
+      font-size: 0.56rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--charcoal);
+    }
+
+    .program-title {
+      font-family: var(--font-headline);
+      font-size: clamp(0.85rem, 1.4vw, 1.1rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      line-height: 1.18;
+      color: var(--wine);
+      margin-bottom: 0.4rem;
+    }
+
+    .program-guest {
+      font-family: var(--font-headline);
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--charcoal);
+    }
+
+    .program-venue {
+      margin-top: 0.35rem;
+      font-family: var(--font-sans);
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      color: var(--charcoal);
+    }
+
+    .program-time {
+      font-family: var(--font-sans);
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
       color: var(--fog);
-      margin-top: auto;
-      padding-top: .75rem;
-      border-top: 1px solid var(--linen);
+      text-align: right;
+      padding-top: 0.2rem;
+      white-space: nowrap;
     }
 
-    .event-card.featured {
-      background: var(--bordeaux);
-      color: var(--parchment);
-      grid-row: span 2;
+    .program-row.opening .program-title {
+      font-size: clamp(1.1rem, 2.2vw, 1.85rem);
+      line-height: 1.05;
     }
 
-    .event-card.featured::after {
-      background: var(--rosa);
+    .program-row.opening .program-col-left {
+      padding-top: 0.35rem;
     }
 
-    .event-card.featured h3 {
-      font-size: clamp(1.3rem, 2vw, 1.9rem);
-      color: var(--parchment);
-    }
 
-    .event-card.featured .event-date {
-      color: var(--rosa-tint);
-    }
+    /* ════════════════════════════════════
+       TERRITORY — teal-pale field
+       ════════════════════════════════════ */
 
-    .event-card.featured .event-guest {
-      color: rgba(250, 246, 247, .6);
-    }
-
-    .event-card.featured .event-meta {
-      color: rgba(250, 246, 247, .3);
-      border-color: rgba(255, 255, 255, .08);
-    }
-
-    .event-card.featured:hover {
-      filter: brightness(1.07);
-    }
-
-    /* ─── LOCATIONS ─── */
-    .locations {
-      background: var(--ink);
-      color: var(--parchment);
+    .territory {
+      background: var(--teal-pale);
       padding-block: var(--section-gap);
-      position: relative;
-      overflow: hidden;
     }
 
-    .locations::before {
-      content: '';
-      position: absolute;
-      top: -8rem;
-      right: -8rem;
-      width: 30rem;
-      height: 30rem;
-      border-radius: 50%;
-      border: 1px solid rgba(226, 65, 119, .07);
-      pointer-events: none;
-    }
-
-    .loc-grid {
+    .territory-top {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: start;
+      gap: 3rem;
+      align-items: end;
+      margin-bottom: 3.5rem;
     }
 
-    .loc-left h2 {
-      color: var(--parchment);
+    .territory-top h2 {
       font-style: italic;
-      margin-top: 1.25rem;
+      margin-top: 0.75rem;
+      color: var(--ink);
     }
 
-    .loc-left p {
-      color: rgba(250, 246, 247, .45);
-      margin-top: 1.5rem;
-      line-height: 1.85;
+    .territory-top p {
+      color: var(--charcoal);
+      max-width: 48ch;
+    }
+
+    .territory .label {
+      color: var(--wine);
+    }
+
+    .territory .label::before {
+      background: var(--wine);
     }
 
     .places-list {
       list-style: none;
+      padding-inline: var(--gutter);
     }
 
     .place-item {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1.25rem 0;
-      border-bottom: 1px solid rgba(255, 255, 255, .06);
-      gap: 1rem;
-      transition: color .28s;
+      align-items: baseline;
+      gap: 1.75rem;
+      padding-block: 0.9rem 0.65rem;
+      border-top: 1px solid oklch(0.78 0.025 192);
     }
 
-    .place-item:hover {
-      color: var(--rosa);
+    .place-item:last-child {
+      border-bottom: 1px solid oklch(0.78 0.025 192);
     }
 
-    .place-name {
-      font-family: var(--font-serif);
-      font-size: clamp(1.15rem, 2vw, 1.7rem);
-      font-style: italic;
+    .place-item:hover .place-name {
+      color: var(--wine);
     }
 
     .place-prov {
       font-family: var(--font-sans);
-      font-size: .56rem;
-      letter-spacing: .22em;
+      font-size: 0.56rem;
+      font-weight: 500;
+      letter-spacing: 0.24em;
       text-transform: uppercase;
-      color: var(--stone);
+      color: var(--wine);
+      min-width: 4.5rem;
       flex-shrink: 0;
-      transition: color .28s;
     }
 
-    .place-item:hover .place-prov {
-      color: var(--rosa);
+    .place-name {
+      font-family: var(--font-serif);
+      font-size: clamp(2.2rem, 5.5vw, 5.5rem);
+      font-style: italic;
+      font-weight: 400;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      transition: color 0.28s var(--ease);
+      overflow-wrap: break-word;
     }
 
-    /* ─── ABOUT STRIP ─── */
+
+    /* ════════════════════════════════════
+       ABOUT STRIP — wave clip on photo
+       ════════════════════════════════════ */
+
     .about-strip {
-      padding-block: 0;
-    }
-
-    .about-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
+      background: var(--paper-warm);
     }
 
     .about-photo {
       position: relative;
       overflow: hidden;
-      min-height: 520px;
-      background: var(--shell);
+      min-height: 560px;
+      clip-path: polygon(
+        0% 0%, 100% 0%, 100% 87%,
+        96% 91%, 90% 87%, 84% 92%, 78% 88%,
+        72% 93%, 66% 89%, 60% 94%, 54% 90%,
+        48% 95%, 42% 91%, 36% 87%, 30% 92%,
+        24% 88%, 18% 93%, 12% 89%, 6% 94%,
+        0% 90%
+      );
     }
 
     .about-photo img {
+      position: absolute;
+      inset: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
+      transition: transform 0.9s var(--ease);
+    }
+
+    .about-strip:hover .about-photo img {
+      transform: scale(1.03);
     }
 
     .about-content {
-      background: var(--shell);
-      padding: clamp(3rem, 6vw, 6rem);
+      padding: clamp(3.5rem, 7vw, 6.5rem) clamp(2.5rem, 5vw, 5rem);
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -495,414 +486,513 @@
     }
 
     .about-content h2 {
-      font-style: italic;
+      margin-top: 0.75rem;
     }
 
     .about-content p {
       color: var(--charcoal);
+      max-width: 46ch;
     }
 
-    /* ─── NEWSLETTER ─── */
+
+    /* ════════════════════════════════════
+       NEWSLETTER — ink dark
+       ════════════════════════════════════ */
+
     .newsletter {
+      background: var(--ink);
+      padding-block: clamp(4.5rem, 9vw, 7.5rem);
+    }
+
+    .newsletter-inner {
+      max-width: min(580px, 100% - var(--gutter) * 2);
+      margin-inline: auto;
+    }
+
+    .newsletter-label {
+      font-family: var(--font-sans);
+      font-size: 0.56rem;
+      font-weight: 500;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--rosa);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .newsletter-label::before {
+      content: '';
+      width: 1.25rem;
+      height: 1px;
       background: var(--rosa);
-      padding-block: 5rem;
-      text-align: center;
-      color: #fff;
+      flex-shrink: 0;
     }
 
     .newsletter h2 {
-      color: #fff;
       font-style: italic;
-      margin-bottom: .75rem;
+      color: oklch(0.97 0.005 195);
+      font-size: clamp(1.7rem, 3.5vw, 3rem);
+      line-height: 1.05;
+      margin-bottom: 1rem;
     }
 
-    .newsletter>.container>p {
-      color: rgba(255, 255, 255, .7);
-      max-width: 44ch;
-      margin: 0 auto 2.5rem;
+    .newsletter-desc {
+      color: oklch(0.94 0.005 195 / 0.44);
+      max-width: 46ch;
+      margin-bottom: 2.5rem;
+      font-size: 0.88rem;
+      line-height: 1.85;
     }
 
     .nl-form {
       display: flex;
-      max-width: 440px;
-      margin: 0 auto;
     }
 
     .nl-form input {
       flex: 1;
       padding: 1rem 1.25rem;
-      background: rgba(255, 255, 255, .15);
-      border: 1px solid rgba(255, 255, 255, .3);
+      background: oklch(0.97 0.005 195 / 0.05);
+      border: 1px solid oklch(0.97 0.005 195 / 0.12);
       border-right: none;
-      color: #fff;
+      color: oklch(0.97 0.005 195);
       font-family: var(--font-sans);
-      font-size: .88rem;
+      font-size: 0.88rem;
       outline: none;
-      transition: background .28s;
+      transition: background 0.28s, border-color 0.28s;
     }
 
     .nl-form input::placeholder {
-      color: rgba(255, 255, 255, .5);
+      color: oklch(0.94 0.005 195 / 0.25);
     }
 
     .nl-form input:focus {
-      background: rgba(255, 255, 255, .22);
+      background: oklch(0.97 0.005 195 / 0.09);
+      border-color: oklch(0.97 0.005 195 / 0.22);
     }
 
     .nl-form button {
       padding: 1rem 1.5rem;
-      background: var(--ink);
-      color: var(--parchment);
-      border: none;
+      background: var(--rosa);
+      color: oklch(0.98 0.004 0);
+      border: 1px solid var(--rosa);
       font-family: var(--font-sans);
-      font-size: .62rem;
+      font-size: 0.62rem;
       font-weight: 500;
-      letter-spacing: .18em;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
       cursor: pointer;
       white-space: nowrap;
-      transition: background .28s;
+      transition: background 0.28s, border-color 0.28s;
     }
 
     .nl-form button:hover {
-      background: var(--bordeaux);
+      background: var(--rosa-mid);
+      border-color: var(--rosa-mid);
     }
 
-    /* ═══════════════════════════════════════
-     RESPONSIVE — MOBILE FIRST CORRECTIONS
-     ═══════════════════════════════════════ */
-    @media (max-width: 900px) {
+    .nl-form button:focus-visible {
+      outline: 2px solid var(--rosa);
+      outline-offset: 2px;
+    }
 
-      /* Hero stack on mobile */
-      .hero {
+    .nl-form input:focus-visible {
+      outline: 2px solid var(--rosa);
+      outline-offset: -2px;
+    }
+
+
+    /* ════════════════════════════════════
+       RESPONSIVE
+       ════════════════════════════════════ */
+
+    @media (max-width: 960px) {
+      .program-row {
+        grid-template-columns: 8rem 1fr;
+      }
+      .program-time { display: none; }
+
+      .territory-top {
         grid-template-columns: 1fr;
-        min-height: auto;
+        gap: 1.5rem;
+        margin-bottom: 2.5rem;
       }
 
-      .hero-right {
-        order: -1;
-        min-height: 50svh;
-        max-height: 60svh;
-      }
-
-      .hero-left {
-        padding-top: 4rem;
-        padding-bottom: 3.5rem;
-        min-height: auto;
-      }
-
-      .hero-left h1 {
-        font-size: clamp(2.5rem, 8vw, 4rem);
-      }
-
-      .hero-vtext {
-        display: none;
-      }
-
-      /* Intro */
-      .intro-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-
-      .intro-aside {
-        position: static;
-      }
-
-      /* Numbers 2-col */
-      .numbers-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .number-item:nth-child(2) {
-        border-right: none;
-      }
-
-      .number-item:nth-child(3) {
-        border-right: 1px solid var(--linen);
-        border-top: 1px solid var(--linen);
-      }
-
-      .number-item:nth-child(4) {
-        border-right: none;
-        border-top: 1px solid var(--linen);
-      }
-
-      /* Events grid 1-col */
-      .events-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .event-card.featured {
-        grid-row: auto;
-      }
-
-      /* Locations */
-      .loc-grid {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
-      }
-
-      /* About */
-      .about-grid {
+      .about-strip {
         grid-template-columns: 1fr;
       }
 
       .about-photo {
-        min-height: 280px;
-      }
-
-      .about-content {
-        padding: 2.5rem var(--gutter);
-      }
-
-      /* Section header */
-      .section-header {
-        flex-direction: column;
-        align-items: flex-start;
+        min-height: 340px;
+        clip-path: polygon(
+          0% 0%, 100% 0%, 100% 85%,
+          96% 90%, 90% 85%, 84% 91%, 78% 87%,
+          72% 92%, 66% 88%, 60% 93%, 54% 89%,
+          48% 94%, 42% 90%, 36% 86%, 30% 91%,
+          24% 87%, 18% 92%, 12% 88%, 6% 93%,
+          0% 89%
+        );
       }
     }
 
-    @media (max-width: 560px) {
+    @media (max-width: 680px) {
+      .hero-vtext { display: none; }
 
-      /* Numbers 2-col stays, but items simplified */
-      .numbers-grid {
-        grid-template-columns: 1fr 1fr;
+      .hero-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
       }
 
-      /* Newsletter form stacks */
+      .program-row {
+        grid-template-columns: 1fr;
+        gap: 0.6rem;
+      }
+
+      .program-col-left {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.5rem 0.85rem;
+        padding-top: 0;
+      }
+
+      .program-place::before {
+        content: '·';
+        margin-right: 0.85rem;
+        color: var(--linen);
+      }
+
+      .place-prov {
+        min-width: 3rem;
+        font-size: 0.5rem;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .hero-title br { display: none; }
+
       .nl-form {
         flex-direction: column;
       }
 
       .nl-form input {
-        border-right: 1px solid rgba(255, 255, 255, .3);
+        border-right: 1px solid oklch(0.97 0.005 195 / 0.12);
         border-bottom: none;
       }
+    }
 
-      /* Hero CTA stacks */
-      .hero-ctas {
-        flex-direction: column;
+    @media (prefers-reduced-motion: reduce) {
+      .hero-carousel img {
+        transition: opacity 0.3s ease;
+        transform: none !important;
       }
-
-      .hero-ctas .btn {
-        text-align: center;
-        justify-content: center;
+      .hero-carousel img.active {
+        transform: none !important;
+      }
+      .about-strip:hover .about-photo img {
+        transform: none;
+      }
+      .fade-up {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
       }
     }
+
   </style>
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Filo d'identità",
+    "@type": "Event",
+    "name": "Filo d'identità — 5ª edizione",
+    "startDate": "2026-07-06",
+    "endDate": "2026-07-12",
+    "location": [
+      {"@type": "Place", "name": "Pontedera", "address": {"@type": "PostalAddress", "addressLocality": "Pontedera", "addressCountry": "IT"}},
+      {"@type": "Place", "name": "San Miniato", "address": {"@type": "PostalAddress", "addressLocality": "San Miniato", "addressCountry": "IT"}},
+      {"@type": "Place", "name": "Fucecchio", "address": {"@type": "PostalAddress", "addressLocality": "Fucecchio", "addressCountry": "IT"}},
+      {"@type": "Place", "name": "Montopoli in Val d'Arno", "address": {"@type": "PostalAddress", "addressLocality": "Montopoli in Val d'Arno", "addressCountry": "IT"}}
+    ],
+    "organizer": {
+      "@type": "Organization",
+      "name": "Filo d'identità",
+      "url": "https://filodidentita.it"
+    },
+    "description": "Festival letterario e artistico che esplora il tema dell'identità attraverso parola, immagine e suono.",
     "url": "https://filodidentita.it",
-    "logo": "https://filodidentita.it/assets/logo.svg",
-    "description": "Festival letterario e artistico che esplora l'identità attraverso parola, immagine e suono. Dal 2022 tra Pisa e Firenze.",
-    "email": "filodidentita@gmail.com",
-    "sameAs": [
-      "https://www.instagram.com/filodidentitafestival/",
-      "https://www.facebook.com/profile.php?id=100093357009221"
-    ]
+    "image": "https://filodidentita.it/assets/og/OG-IMAGE.jpg",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "isAccessibleForFree": true
   }
   </script>
 </head>
-<!-- data-nav="light": hero scura → nav iniziale con testo bianco -->
 
 <body data-nav="light">
 
+  <!-- ══ HERO ══════════════════════════════════════════════ -->
   <header class="hero" role="banner">
-    <div class="hero-left">
-      <p class="hero-eyebrow">4ª edizione · Festival letterario</p>
-      <h1>Filo<br /><em>d'identi</em>tà</h1>
-      <p class="hero-subtitle">
-        <strong>7–13 luglio 2025</strong><br />
-        Pontedera · San Miniato · Fucecchio · Montopoli in Val d'Arno
-      </p>
-      <div class="hero-ctas">
-        <a href="edizioni/4-2025.html" class="btn btn-rosa">Scopri il programma</a>
-        <a href="edizioni.html" class="btn btn-light">Edizioni passate</a>
-      </div>
+    <div class="hero-carousel" aria-hidden="true">
+      <img alt="Festival Filo d'identità, momento di incontro tra pubblico e autori" class="active" />
+      <img alt="Festival Filo d'identità" />
     </div>
-    <div class="hero-right">
-      <div class="hero-carousel">
-        <img alt="Festival Filo d'identità" class="active" />
-        <img alt="Festival Filo d'identità" />
+    <div class="hero-overlay" aria-hidden="true"></div>
+
+    <!-- Thread/filo decorative SVG -->
+    <svg class="hero-thread" aria-hidden="true" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M-60 718 C100 692, 260 738, 440 698 S690 648, 900 685 S1170 728, 1380 668 L1520 645"
+        stroke="white" stroke-width="1.2" fill="none"
+        stroke-linecap="round" stroke-linejoin="round" opacity="0.28"
+      />
+      <path
+        d="M-40 758 C120 742, 308 770, 498 752 S722 730, 942 758 S1182 772, 1400 748 L1520 742"
+        stroke="white" stroke-width="0.8" fill="none"
+        stroke-linecap="round" stroke-linejoin="round" opacity="0.14"
+      />
+    </svg>
+
+    <span class="hero-vtext" aria-hidden="true">Parola · Immagine · Suono</span>
+
+    <div class="hero-content">
+      <p class="hero-eyebrow">5ª edizione · Festival letterario</p>
+      <h1 class="hero-title fade-up">Filo<br /><em>d'identità</em></h1>
+      <div class="hero-footer">
+        <p class="hero-date fade-up" data-delay="120">
+          <strong>06–12 luglio 2026</strong>
+          Pontedera · San Miniato · Fucecchio · Montopoli
+        </p>
+        <a href="edizioni/5-2026.html" class="btn btn-rosa fade-up" data-delay="200">Scopri il programma</a>
       </div>
-      <div class="hero-overlay"></div>
-      <span class="hero-vtext" aria-hidden="true">Incontri · Storie · Corpi</span>
     </div>
   </header>
 
+
+  <!-- ══ TICKER ════════════════════════════════════════════ -->
   <div class="ticker-wrap" aria-hidden="true">
     <div class="ticker">
       <span class="ticker-item">Incontri</span>
       <span class="ticker-item">Storie</span>
-      <span class="ticker-item">Corpi</span>
+      <span class="ticker-item">Identità</span>
       <span class="ticker-item">Autori</span>
       <span class="ticker-item">Reading</span>
       <span class="ticker-item">Spettacoli</span>
       <span class="ticker-item">Concerti</span>
-      <span class="ticker-item">Identità</span>
+      <span class="ticker-item">Memoria</span>
       <span class="ticker-item">Parola</span>
       <span class="ticker-item">Immagine</span>
       <span class="ticker-item">Suono</span>
-      <span class="ticker-item">7–13 luglio 2025</span>
+      <span class="ticker-item">06–12 luglio 2026</span>
       <span class="ticker-item">Toscana</span>
     </div>
   </div>
 
-  <section class="intro">
-    <div class="container">
-      <div class="intro-grid">
-        <div class="intro-aside">
-          <span class="label fade-up">Il festival</span>
-          <p class="intro-tagline fade-up" data-delay="80">Un intreccio<br />di discipline,<br />sguardi e sensibilità.
-          </p>
-        </div>
-        <div class="intro-body">
-          <p class="fade-up">Filo d'identità è un festival che tesse <strong>incontri</strong>, intreccia
-            <strong>storie</strong>, dà <strong>corpo</strong> ai pensieri. Un progetto letterario e artistico nato dal
-            desiderio di esplorare l'identità attraverso le trame della parola, dell'immagine e del suono.
-          </p>
-          <p class="fade-up" data-delay="80">Portiamo avanti questo progetto dal 2022 tra la provincia di Pisa e quella
-            di Firenze: una settimana intensa di incontri con autori, reading, spettacoli, concerti — per tuttə.</p>
-          <div class="fade-up" data-delay="140">
-            <a href="chi-siamo.html" class="arrow-link">
-              Chi siamo
-              <svg viewBox="0 0 24 10" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-                <line x1="0" y1="5" x2="22" y2="5" />
-                <polyline points="17,1 22,5 17,9" />
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
+
+  <!-- ══ MANIFESTO ═════════════════════════════════════════ -->
+  <section class="manifesto" aria-label="Il festival">
+
+    <!-- Botanical silhouette -->
+    <svg class="manifesto-botanical" aria-hidden="true" viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg" fill="white">
+      <path d="M 208 600 C 204 500 196 400 200 300 C 204 200 196 100 200 20"
+            stroke="white" stroke-width="3" stroke-linecap="round" fill="none"/>
+      <ellipse cx="162" cy="352" rx="56" ry="18" transform="rotate(-35 162 352)"/>
+      <ellipse cx="242" cy="312" rx="50" ry="16" transform="rotate(30 242 312)"/>
+      <ellipse cx="158" cy="242" rx="48" ry="15" transform="rotate(-38 158 242)"/>
+      <ellipse cx="246" cy="202" rx="44" ry="14" transform="rotate(32 246 202)"/>
+      <ellipse cx="163" cy="142" rx="38" ry="13" transform="rotate(-30 163 142)"/>
+      <ellipse cx="238" cy="110" rx="34" ry="12" transform="rotate(28 238 110)"/>
+      <ellipse cx="192" cy="58" rx="20" ry="8" transform="rotate(-14 192 58)"/>
+      <ellipse cx="212" cy="46" rx="18" ry="7" transform="rotate(20 212 46)"/>
+    </svg>
+
+    <div class="manifesto-inner">
+      <p class="manifesto-eyebrow fade-up">Quinta edizione</p>
+      <p class="manifesto-text fade-up" data-delay="80">
+        Un festival che tesse incontri, intreccia storie, coltiva identità.
+      </p>
     </div>
   </section>
 
-  <section class="numbers" aria-label="Il festival in numeri">
-    <div class="container">
-      <div class="numbers-grid">
-        <div class="number-item fade-up">
-          <div class="number-value"><span data-count="30" data-suffix="+">0+</span></div>
-          <div class="number-label">Ospiti</div>
-        </div>
-        <div class="number-item fade-up" data-delay="70">
-          <div class="number-value"><span data-count="600" data-suffix="+">0+</span></div>
-          <div class="number-label">Partecipanti</div>
-        </div>
-        <div class="number-item fade-up" data-delay="140">
-          <div class="number-value"><span data-count="20" data-suffix="+">0+</span></div>
-          <div class="number-label">Partner</div>
-        </div>
-        <div class="number-item fade-up" data-delay="210">
-          <div class="number-value"><span data-count="40" data-suffix="+">0+</span></div>
-          <div class="number-label">Volontari</div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <section class="program-preview">
+  <!-- ══ PROGRAM PREVIEW ═══════════════════════════════════ -->
+  <section class="program-preview" aria-labelledby="program-heading">
     <div class="container">
-      <div class="section-header">
+      <div class="program-header">
         <div>
-          <span class="label fade-up">Programma 2025</span>
-          <h2 class="fade-up" data-delay="70" style="font-style:italic">Alcune anticipazioni</h2>
+          <span class="label fade-up">Programma 2026</span>
+          <h2 id="program-heading" class="fade-up" data-delay="70">Alcune anticipazioni</h2>
         </div>
-        <a href="edizioni/4-2025.html" class="btn btn-dark fade-up" data-delay="100">Programma completo</a>
+        <a href="edizioni/5-2026.html" class="btn btn-dark fade-up" data-delay="100">Programma completo</a>
       </div>
-      <div class="events-grid">
-        <article class="event-card featured fade-up">
-          <p class="event-date">7 luglio · Apertura · Fucecchio</p>
-          <h3>Il corpo come spazio narrativo</h3>
-          <p class="event-guest">Michela Panichi, Gabriele Cavallini</p>
-          <p style="color:rgba(250,246,247,.5);font-size:.85rem;line-height:1.7;flex:1">Serata inaugurale presso la
-            Libreria Blume di Fucecchio. Due voci, due libri, un unico filo narrativo.</p>
-          <div class="event-meta"><span>Libreria Blume</span><span>ore 21:00</span><span>Ingresso libero</span></div>
-        </article>
-        <article class="event-card fade-up" data-delay="60">
-          <p class="event-date">8 luglio · Fucecchio</p>
-          <h3>Indossare il corpo</h3>
-          <p class="event-guest">Chiara Tagliaferri</p>
-          <div class="event-meta"><span>Poggio Salamartano</span><span>ore 21:00</span></div>
-        </article>
-        <article class="event-card fade-up" data-delay="100">
-          <p class="event-date">9 luglio · San Miniato</p>
-          <h3>Il corpo è politico?</h3>
-          <p class="event-guest">Fumettibrutti, Veronica Lucchesi</p>
-          <div class="event-meta"><span>Loggiati San Domenico</span><span>ore 21:00</span></div>
-        </article>
-        <article class="event-card fade-up" data-delay="60">
-          <p class="event-date">10 luglio · Pontedera</p>
-          <h3>Vent'anni dopo Baghdad</h3>
-          <p class="event-guest">Giuliana Sgrena</p>
-          <div class="event-meta"><span>Cinema sotto le stelle</span><span>ore 21:00</span></div>
-        </article>
-        <article class="event-card fade-up" data-delay="100">
-          <p class="event-date">11 luglio · Montopoli</p>
-          <h3>Identità negate + live TÄRA</h3>
-          <p class="event-guest">Aldo Simeone, Emanuela Crosetti</p>
-          <div class="event-meta"><span>Piazza San Matteo</span><span>ore 21:00</span></div>
-        </article>
-      </div>
+
+      <ul class="program-list" aria-label="Anticipazioni del programma 2026">
+
+        <li>
+          <a href="edizioni/5-2026.html" class="program-row opening fade-up">
+            <div class="program-col-left">
+              <span class="program-day">6 lug · Apertura</span>
+              <span class="program-place">Fucecchio</span>
+            </div>
+            <div>
+              <p class="program-title">Le radici del sé</p>
+              <p class="program-guest">Michela Panichi, Gabriele Cavallini</p>
+              <p class="program-venue">Libreria Blume · Ingresso libero</p>
+            </div>
+            <span class="program-time" aria-label="Ore 21:00">21:00</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="edizioni/5-2026.html" class="program-row fade-up" data-delay="50">
+            <div class="program-col-left">
+              <span class="program-day">7 lug</span>
+              <span class="program-place">San Miniato</span>
+            </div>
+            <div>
+              <p class="program-title">La lingua come patria</p>
+              <p class="program-guest">Chiara Tagliaferri</p>
+              <p class="program-venue">Loggiati San Domenico</p>
+            </div>
+            <span class="program-time" aria-label="Ore 21:00">21:00</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="edizioni/5-2026.html" class="program-row fade-up" data-delay="90">
+            <div class="program-col-left">
+              <span class="program-day">8 lug</span>
+              <span class="program-place">Pontedera</span>
+            </div>
+            <div>
+              <p class="program-title">Memoria e territorio</p>
+              <p class="program-guest">Fumettibrutti, Veronica Lucchesi</p>
+              <p class="program-venue">Piazza Giovanni XXIII</p>
+            </div>
+            <span class="program-time" aria-label="Ore 21:00">21:00</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="edizioni/5-2026.html" class="program-row fade-up" data-delay="120">
+            <div class="program-col-left">
+              <span class="program-day">10 lug</span>
+              <span class="program-place">Montopoli</span>
+            </div>
+            <div>
+              <p class="program-title">Identità plurali</p>
+              <p class="program-guest">Giuliana Sgrena</p>
+              <p class="program-venue">Cinema sotto le stelle</p>
+            </div>
+            <span class="program-time" aria-label="Ore 21:00">21:00</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="edizioni/5-2026.html" class="program-row fade-up" data-delay="150">
+            <div class="program-col-left">
+              <span class="program-day">11 lug</span>
+              <span class="program-place">San Miniato</span>
+            </div>
+            <div>
+              <p class="program-title">Dove finisce il confine + live</p>
+              <p class="program-guest">Aldo Simeone, Emanuela Crosetti</p>
+              <p class="program-venue">Piazza San Matteo</p>
+            </div>
+            <span class="program-time" aria-label="Ore 21:00">21:00</span>
+          </a>
+        </li>
+
+      </ul>
     </div>
   </section>
 
-  <section class="locations">
+
+  <!-- ══ TERRITORY ═════════════════════════════════════════ -->
+  <section class="territory" aria-label="I luoghi del festival">
     <div class="container">
-      <div class="loc-grid">
-        <div class="loc-left">
-          <span class="label fade-up" style="color:var(--rosa)">Luoghi</span>
-          <h2 class="fade-up" data-delay="70">Tra Pisa<br /><em>e Firenze</em></h2>
-          <p class="fade-up" data-delay="120">Il festival attraversa quattro comuni della Toscana, portando la cultura
-            in piazze, cortili, teatri e spazi insoliti.</p>
+      <div class="territory-top">
+        <div>
+          <span class="label fade-up">Luoghi</span>
+          <h2 class="fade-up" data-delay="60">Tra Pisa<br />e Firenze</h2>
         </div>
-        <ul class="places-list fade-up" data-delay="150">
-          <li class="place-item"><span class="place-name">Pontedera</span><span class="place-prov">Pisa</span></li>
-          <li class="place-item"><span class="place-name">San Miniato</span><span class="place-prov">Pisa</span></li>
-          <li class="place-item"><span class="place-name">Fucecchio</span><span class="place-prov">Firenze</span></li>
-          <li class="place-item"><span class="place-name">Montopoli in Val d'Arno</span><span
-              class="place-prov">Pisa</span></li>
-        </ul>
+        <p class="fade-up" data-delay="100">
+          Il festival attraversa quattro comuni della Toscana, portando la cultura in piazze, cortili, teatri e spazi insoliti.
+        </p>
       </div>
     </div>
+    <ul class="places-list fade-up" data-delay="130" aria-label="Comuni del festival">
+      <li class="place-item">
+        <span class="place-prov" aria-label="Provincia di Pisa">PI</span>
+        <span class="place-name">Pontedera</span>
+      </li>
+      <li class="place-item">
+        <span class="place-prov" aria-label="Provincia di Pisa">PI</span>
+        <span class="place-name">San Miniato</span>
+      </li>
+      <li class="place-item">
+        <span class="place-prov" aria-label="Provincia di Firenze">FI</span>
+        <span class="place-name">Fucecchio</span>
+      </li>
+      <li class="place-item">
+        <span class="place-prov" aria-label="Provincia di Pisa">PI</span>
+        <span class="place-name">Montopoli in Val d'Arno</span>
+      </li>
+    </ul>
   </section>
 
+
+  <!-- ══ ABOUT STRIP ═══════════════════════════════════════ -->
   <section class="about-strip" aria-label="Chi siamo">
-    <div class="about-grid">
-      <div class="about-photo fade-up">
-        <img src="https://filodidentita.it/wp-content/uploads/2025/02/7-scaled.jpg" alt="Il team di Filo d'identità"
-          loading="lazy" />
-      </div>
-      <div class="about-content">
-        <span class="label fade-up">Ma chi siamo?</span>
-        <h2 class="fade-up" data-delay="70" style="font-style:italic">Le facce<br />dietro ogni filo</h2>
-        <p class="fade-up" data-delay="110">Siamo un gruppo di persone appassionate di letteratura, arte e comunità. Dal
-          2022 costruiamo questo festival con entusiasmo e tenacia.</p>
-        <div class="fade-up" data-delay="150">
-          <a href="chi-siamo.html" class="btn btn-dark">Conosciamoci</a>
-        </div>
+    <div class="about-photo fade-up">
+      <img
+        src="https://filodidentita.it/wp-content/uploads/2025/02/7-scaled.jpg"
+        alt="Il team di Filo d'identità in uno dei luoghi del festival in Toscana"
+        loading="lazy"
+        width="800"
+        height="1000"
+      />
+    </div>
+    <div class="about-content">
+      <span class="label fade-up">Ma chi siamo?</span>
+      <h2 class="fade-up" data-delay="70">Le facce<br /><em>dietro ogni filo</em></h2>
+      <p class="fade-up" data-delay="110">
+        Siamo un gruppo di persone appassionate di letteratura, arte e comunità. Dal 2022 costruiamo questo festival con entusiasmo e tenacia, tra i comuni della Toscana.
+      </p>
+      <div class="fade-up" data-delay="150">
+        <a href="chi-siamo.html" class="btn btn-dark">Conosciamoci</a>
       </div>
     </div>
   </section>
 
-  <section class="newsletter">
-    <div class="container">
-      <h2 class="fade-up">Resta aggiornato</h2>
-      <p class="fade-up" data-delay="70">Iscriviti alla newsletter per ricevere aggiornamenti su ospiti, programma e
-        novità della 4ª edizione.</p>
-      <form class="nl-form fade-up" data-delay="130" action="#" method="post" aria-label="Iscrizione newsletter">
-        <input type="email" name="email" placeholder="La tua email" required autocomplete="email" />
+
+  <!-- ══ NEWSLETTER ════════════════════════════════════════ -->
+  <section class="newsletter" aria-labelledby="nl-heading">
+    <div class="newsletter-inner">
+      <span class="newsletter-label fade-up">Newsletter</span>
+      <h2 id="nl-heading" class="fade-up" data-delay="60">Resta aggiornato</h2>
+      <p class="newsletter-desc fade-up" data-delay="100">
+        Iscriviti per ricevere aggiornamenti su ospiti, programma e novità della 5ª edizione.
+      </p>
+      <form class="nl-form fade-up" data-delay="150" action="#" method="post" aria-label="Iscrizione newsletter">
+        <input
+          type="email"
+          name="email"
+          placeholder="La tua email"
+          required
+          autocomplete="email"
+          aria-label="Indirizzo email"
+        />
         <button type="submit">Iscriviti</button>
       </form>
     </div>
   </section>
 
+
   <script src="js/main.js"></script>
   <script src="js/partials.js"></script>
-</body>
 
+</body>
 </html>
