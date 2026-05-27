@@ -799,6 +799,91 @@
       }
     }
 
+
+    /* ════════════════════════════════════
+       ANIMATION SYSTEM
+       ════════════════════════════════════ */
+
+    /* ── Hero entrance: richer easing + directional slides ── */
+    .hero-eyebrow.fade-up {
+      transform: translateX(-1.6rem);
+      transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .hero-eyebrow.fade-up.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .hero-title.fade-up {
+      transform: translateY(4rem);
+      transition: opacity 1.1s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 1.1s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .hero-title.fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* vtext: pure opacity fade, no translate (it's positioned text) */
+    .hero-vtext.fade-up {
+      transform: none;
+      transition: opacity 2s ease;
+    }
+    .hero-vtext.fade-up.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ── Thread paths: hidden initially; JS sets dasharray/dashoffset ── */
+    .thread-path {
+      stroke-dasharray: 9999;
+      stroke-dashoffset: 9999;
+    }
+
+    /* ── Territory town dots: stagger in after thread draws ── */
+    .town-group {
+      opacity: 0;
+      transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .town-group.visible {
+      opacity: 1;
+    }
+
+    /* ── Botanical silhouette: ambient float ── */
+    @keyframes botanical-float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      40%       { transform: translateY(-18px) rotate(0.6deg); }
+      72%       { transform: translateY(-7px) rotate(-0.35deg); }
+    }
+    .manifesto-botanical {
+      animation: botanical-float 13s ease-in-out infinite;
+      transform-origin: 50% 92%;
+    }
+
+    /* ── Reduced motion: disable all new animations ── */
+    @media (prefers-reduced-motion: reduce) {
+      .hero-eyebrow.fade-up,
+      .hero-title.fade-up,
+      .hero-vtext.fade-up {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+      .thread-path {
+        stroke-dasharray: none !important;
+        stroke-dashoffset: 0 !important;
+        transition: none !important;
+      }
+      .town-group {
+        opacity: 1 !important;
+        transition: none !important;
+      }
+      .manifesto-botanical {
+        animation: none !important;
+      }
+    }
+
   </style>
 
   <script type="application/ld+json">
@@ -835,11 +920,11 @@
     </div>
     <div class="hero-overlay" aria-hidden="true"></div>
 
-    <!-- Thread motif: curly double-path over the photo -->
-    <svg class="hero-thread" aria-hidden="true"
+    <!-- Thread motif: curly double-path over the photo — draws on page load -->
+    <svg class="hero-thread" aria-hidden="true" data-thread-hero
          viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice"
          xmlns="http://www.w3.org/2000/svg">
-      <path
+      <path class="thread-path"
         d="M -60 730
            C 80 695, 155 762, 245 720
            C 318 678, 395 752, 470 710
@@ -849,7 +934,7 @@
            C 1232 652, 1325 722, 1440 685 L 1520 690"
         stroke="white" stroke-width="1.3" fill="none"
         stroke-linecap="round" stroke-linejoin="round" opacity="0.26"/>
-      <path
+      <path class="thread-path"
         d="M -40 775
            C 130 758, 225 792, 335 770
            C 440 748, 548 786, 652 768
@@ -859,17 +944,17 @@
         stroke-linecap="round" stroke-linejoin="round" opacity="0.13"/>
     </svg>
 
-    <span class="hero-vtext" aria-hidden="true">Parola · Immagine · Suono</span>
+    <span class="hero-vtext fade-up" data-delay="1060" aria-hidden="true">Parola · Immagine · Suono</span>
 
     <div class="hero-content">
-      <p class="hero-eyebrow">5ª edizione · Festival letterario</p>
-      <h1 class="hero-title fade-up">Filo<br /><em>d'identità</em></h1>
+      <p class="hero-eyebrow fade-up">5ª edizione · Festival letterario</p>
+      <h1 class="hero-title fade-up" data-delay="220">Filo<br /><em>d'identità</em></h1>
       <div class="hero-footer">
-        <p class="hero-date fade-up" data-delay="120">
+        <p class="hero-date fade-up" data-delay="540">
           <strong>06–12 luglio 2026</strong>
           Pontedera · San Miniato · Fucecchio · Montopoli
         </p>
-        <a href="edizioni/5-2026.html" class="btn btn-rosa fade-up" data-delay="200">Scopri il programma</a>
+        <a href="edizioni/5-2026.html" class="btn btn-rosa fade-up" data-delay="740">Scopri il programma</a>
       </div>
     </div>
   </header>
@@ -912,11 +997,11 @@
       <ellipse cx="212" cy="46" rx="18" ry="7" transform="rotate(20 212 46)"/>
     </svg>
 
-    <!-- Curly thread across teal field -->
-    <svg class="manifesto-thread section-thread" aria-hidden="true"
+    <!-- Curly thread across teal field — draws on scroll -->
+    <svg class="manifesto-thread section-thread" aria-hidden="true" data-thread-svg
          viewBox="0 0 1440 44" preserveAspectRatio="none"
          xmlns="http://www.w3.org/2000/svg">
-      <path
+      <path class="thread-path"
         d="M 0 22
            C 95 4, 190 40, 300 18
            C 395 -2, 485 40, 580 20
@@ -947,10 +1032,10 @@
         <a href="edizioni/5-2026.html" class="btn btn-dark fade-up" data-delay="100">Programma completo</a>
       </div>
 
-      <!-- Curly thread-rule: hand-drawn divider between header and list -->
+      <!-- Curly thread-rule: hand-drawn divider between header and list — draws on scroll -->
       <div class="thread-rule" aria-hidden="true">
-        <svg viewBox="0 0 1440 28" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-          <path
+        <svg viewBox="0 0 1440 28" preserveAspectRatio="none" data-thread-svg xmlns="http://www.w3.org/2000/svg">
+          <path class="thread-path"
             d="M 0 14
                C 88 2, 175 26, 270 11
                C 360 -2, 448 26, 540 13
@@ -1067,21 +1152,13 @@
       aria-hidden: le stesse informazioni sono presenti nella lista accessibile sotto.
     -->
     <div class="territory-map-wrap fade-up" data-delay="80" aria-hidden="true">
-      <svg class="territory-map-svg"
+      <svg class="territory-map-svg" data-territory-map
            viewBox="0 0 1200 340"
            xmlns="http://www.w3.org/2000/svg"
            style="color: oklch(0.33 0.10 10)">
 
-        <!--
-          Percorso del filo:
-          - Parte dal bordo sinistro
-          - Fa un primo arricciamento prima di Pontedera (160, 198)
-          - Sale con loop verso San Miniato (415, 118)
-          - Scende con curve verso Montopoli (618, 225)
-          - Risale verso Fucecchio (848, 142)
-          - Continua fuori dal bordo destro
-        -->
-        <path
+        <!-- Main filo path: draws on scroll entry -->
+        <path class="thread-path"
           d="M 0 195
              C 58 158, 115 238, 160 198
              C 205 158, 248 248, 295 195
@@ -1101,74 +1178,76 @@
           opacity="0.52"/>
 
         <!-- ── Pontedera (160, 198) ── -->
-        <!-- Outer ring: hand-drawn quality -->
-        <circle cx="160" cy="198" r="10" fill="none" stroke="currentColor" stroke-width="1" opacity="0.25"/>
-        <!-- Inner dot -->
-        <circle cx="160" cy="198" r="4.5" fill="currentColor" opacity="0.62"/>
-        <!-- Label: below-right of dot -->
-        <text x="178" y="226"
-              font-family="'Bugaki', Georgia, serif"
-              font-style="italic"
-              font-size="24"
-              fill="currentColor"
-              opacity="0.72">Pontedera</text>
-        <text x="180" y="242"
-              font-family="'DM Sans', system-ui, sans-serif"
-              font-size="10.5"
-              letter-spacing="0.12"
-              fill="currentColor"
-              opacity="0.42">PI · 08–09 LUG</text>
+        <g class="town-group">
+          <circle cx="160" cy="198" r="10" fill="none" stroke="currentColor" stroke-width="1" opacity="0.25"/>
+          <circle cx="160" cy="198" r="4.5" fill="currentColor" opacity="0.62"/>
+          <text x="178" y="226"
+                font-family="'Bugaki', Georgia, serif"
+                font-style="italic"
+                font-size="24"
+                fill="currentColor"
+                opacity="0.72">Pontedera</text>
+          <text x="180" y="242"
+                font-family="'DM Sans', system-ui, sans-serif"
+                font-size="10.5"
+                letter-spacing="0.12"
+                fill="currentColor"
+                opacity="0.42">PI · 08–09 LUG</text>
+        </g>
 
         <!-- ── San Miniato (415, 118) ── -->
-        <circle cx="415" cy="118" r="10" fill="none" stroke="currentColor" stroke-width="1" opacity="0.25"/>
-        <circle cx="415" cy="118" r="4.5" fill="currentColor" opacity="0.62"/>
-        <!-- Label: above-right of dot -->
-        <text x="433" y="112"
-              font-family="'Bugaki', Georgia, serif"
-              font-style="italic"
-              font-size="24"
-              fill="currentColor"
-              opacity="0.72">San Miniato</text>
-        <text x="435" y="97"
-              font-family="'DM Sans', system-ui, sans-serif"
-              font-size="10.5"
-              letter-spacing="0.12"
-              fill="currentColor"
-              opacity="0.42">PI · 07 · 11 LUG</text>
+        <g class="town-group">
+          <circle cx="415" cy="118" r="10" fill="none" stroke="currentColor" stroke-width="1" opacity="0.25"/>
+          <circle cx="415" cy="118" r="4.5" fill="currentColor" opacity="0.62"/>
+          <text x="433" y="112"
+                font-family="'Bugaki', Georgia, serif"
+                font-style="italic"
+                font-size="24"
+                fill="currentColor"
+                opacity="0.72">San Miniato</text>
+          <text x="435" y="97"
+                font-family="'DM Sans', system-ui, sans-serif"
+                font-size="10.5"
+                letter-spacing="0.12"
+                fill="currentColor"
+                opacity="0.42">PI · 07 · 11 LUG</text>
+        </g>
 
         <!-- ── Montopoli (618, 225) ── -->
-        <circle cx="618" cy="225" r="10" fill="none" stroke="currentColor" stroke-width="1" opacity="0.25"/>
-        <circle cx="618" cy="225" r="4.5" fill="currentColor" opacity="0.62"/>
-        <!-- Label: below-right of dot -->
-        <text x="636" y="252"
-              font-family="'Bugaki', Georgia, serif"
-              font-style="italic"
-              font-size="24"
-              fill="currentColor"
-              opacity="0.72">Montopoli</text>
-        <text x="638" y="268"
-              font-family="'DM Sans', system-ui, sans-serif"
-              font-size="10.5"
-              letter-spacing="0.12"
-              fill="currentColor"
-              opacity="0.42">PI · 10–11 LUG</text>
+        <g class="town-group">
+          <circle cx="618" cy="225" r="10" fill="none" stroke="currentColor" stroke-width="1" opacity="0.25"/>
+          <circle cx="618" cy="225" r="4.5" fill="currentColor" opacity="0.62"/>
+          <text x="636" y="252"
+                font-family="'Bugaki', Georgia, serif"
+                font-style="italic"
+                font-size="24"
+                fill="currentColor"
+                opacity="0.72">Montopoli</text>
+          <text x="638" y="268"
+                font-family="'DM Sans', system-ui, sans-serif"
+                font-size="10.5"
+                letter-spacing="0.12"
+                fill="currentColor"
+                opacity="0.42">PI · 10–11 LUG</text>
+        </g>
 
         <!-- ── Fucecchio (848, 142) ── -->
-        <circle cx="848" cy="142" r="10" fill="none" stroke="currentColor" stroke-width="1" opacity="0.25"/>
-        <circle cx="848" cy="142" r="4.5" fill="currentColor" opacity="0.62"/>
-        <!-- Label: above-right of dot -->
-        <text x="866" y="136"
-              font-family="'Bugaki', Georgia, serif"
-              font-style="italic"
-              font-size="24"
-              fill="currentColor"
-              opacity="0.72">Fucecchio</text>
-        <text x="868" y="121"
-              font-family="'DM Sans', system-ui, sans-serif"
-              font-size="10.5"
-              letter-spacing="0.12"
-              fill="currentColor"
-              opacity="0.42">FI · 06 · 08 LUG</text>
+        <g class="town-group">
+          <circle cx="848" cy="142" r="10" fill="none" stroke="currentColor" stroke-width="1" opacity="0.25"/>
+          <circle cx="848" cy="142" r="4.5" fill="currentColor" opacity="0.62"/>
+          <text x="866" y="136"
+                font-family="'Bugaki', Georgia, serif"
+                font-style="italic"
+                font-size="24"
+                fill="currentColor"
+                opacity="0.72">Fucecchio</text>
+          <text x="868" y="121"
+                font-family="'DM Sans', system-ui, sans-serif"
+                font-size="10.5"
+                letter-spacing="0.12"
+                fill="currentColor"
+                opacity="0.42">FI · 06 · 08 LUG</text>
+        </g>
 
       </svg>
     </div>
@@ -1262,11 +1341,11 @@
   <!-- ══ NEWSLETTER ════════════════════════════════════════ -->
   <section class="newsletter" aria-labelledby="nl-heading">
 
-    <!-- Curly thread at the top of the dark section -->
-    <svg class="newsletter-thread section-thread" aria-hidden="true"
+    <!-- Curly thread at the top of the dark section — draws on scroll -->
+    <svg class="newsletter-thread section-thread" aria-hidden="true" data-thread-svg
          viewBox="0 0 1440 34" preserveAspectRatio="none"
          xmlns="http://www.w3.org/2000/svg">
-      <path
+      <path class="thread-path"
         d="M 0 17
            C 108 2, 215 32, 328 14
            C 440 -2, 548 30, 665 15
