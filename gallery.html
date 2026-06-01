@@ -39,8 +39,7 @@
       padding: 1.25rem 0;
       position: sticky;
       top: 4.3rem;
-      background: rgba(250, 246, 247, .96);
-      backdrop-filter: blur(12px);
+      background: var(--paper);
       z-index: 40;
     }
 
@@ -152,7 +151,7 @@
       position: relative;
       overflow: hidden;
       cursor: pointer;
-      background: var(--shell);
+      background: var(--paper-warm);
       display: block;
     }
 
@@ -170,7 +169,7 @@
     .masonry-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(28, 16, 20, .8) 0%, transparent 55%);
+      background: linear-gradient(to top, oklch(0.14 0.015 195 / 0.8) 0%, transparent 55%);
       opacity: 0;
       transition: opacity .35s;
       display: flex;
@@ -184,7 +183,7 @@
     }
 
     .masonry-caption {
-      color: var(--parchment);
+      color: var(--paper);
       font-family: var(--font-serif);
       font-size: .9rem;
       font-style: italic;
@@ -229,7 +228,7 @@
     .lightbox {
       position: fixed;
       inset: 0;
-      background: rgba(28, 16, 20, .97);
+      background: oklch(0.14 0.015 195 / 0.97);
       z-index: 200;
       display: flex;
       align-items: center;
@@ -274,7 +273,7 @@
       right: 0;
       background: none;
       border: none;
-      color: var(--parchment);
+      color: var(--paper);
       font-size: 1.5rem;
       cursor: pointer;
       opacity: .6;
@@ -305,7 +304,7 @@
       pointer-events: all;
       background: rgba(250, 246, 247, .08);
       border: 1px solid rgba(250, 246, 247, .12);
-      color: var(--parchment);
+      color: var(--paper);
       width: 3rem;
       height: 3rem;
       cursor: pointer;
@@ -348,6 +347,19 @@
     @media (max-width:480px) {
       .masonry {
         columns: 1;
+      }
+    }
+
+    /* ── Thread draw-on ── */
+    .thread-path {
+      stroke-dasharray: 9999;
+      stroke-dashoffset: 9999;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .thread-path {
+        stroke-dasharray: none !important;
+        stroke-dashoffset: 0 !important;
       }
     }
   </style>
@@ -553,11 +565,26 @@
           </div>
         </figure>
 
-        <!-- ══ EDIZIONE 2023 ══ (numeri senza Filo.marte) -->
-        <div class="gallery-section-header" data-year-group="2023"
-          style="grid-column:1/-1;break-before:column;padding-top:4rem">
-          <!-- Spazio visivo separazione edizioni — gestito da JS -->
+      </div><!-- /masonry 2024 -->
+
+      <!-- Thread rule between editions -->
+      <div style="height:28px;overflow:hidden;margin-block:2rem 0" aria-hidden="true">
+        <svg viewBox="0 0 1440 28" preserveAspectRatio="none" data-thread-svg style="width:100%;height:28px;display:block" xmlns="http://www.w3.org/2000/svg">
+          <path class="thread-path" d="M 0 14 C 88 2, 175 26, 270 11 C 360 -2, 448 26, 540 13 C 626 1, 714 26, 808 10 C 895 -2, 982 25, 1074 12 C 1158 0, 1246 25, 1340 10 L 1440 14"
+                stroke="oklch(0.33 0.10 10)" stroke-width="0.9" fill="none" stroke-linecap="round" opacity="0.22"/>
+        </svg>
+      </div>
+
+      <!-- ══ EDIZIONE 2023 ══ -->
+      <div class="gallery-section-header" data-year-group="2023" style="padding-top:1rem">
+        <span class="gsec-num">23</span>
+        <div class="gsec-info">
+          <span class="gsec-title">2ª edizione — 2023</span>
+          <span class="gsec-sub">Luglio 2023 · Pontedera, Fucecchio, San Miniato, Montopoli</span>
         </div>
+      </div>
+
+      <div class="masonry" id="masonry-grid-2023">
 
         <figure class="masonry-item wide fade-up" data-year="2023" data-caption="Filo d'identità 2023">
           <img src="https://filodidentita.it/wp-content/uploads/2025/02/28-scaled.jpg" alt="Filo d'identità 2023"
@@ -648,7 +675,7 @@
           </div>
         </figure>
 
-      </div><!-- /masonry -->
+      </div><!-- /masonry 2023 -->
 
     </div><!-- /container -->
   </section>

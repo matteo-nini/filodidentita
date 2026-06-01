@@ -1,12 +1,682 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="refresh" content="0; url=edizioni/4-2025.html" />
-  <link rel="canonical" href="edizioni/4-2025.html" />
-  <title>Programma — Filo d'identità</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Programma 2026 — Filo d'identità</title>
+  <meta name="description" content="Anticipazioni del programma della 5ª edizione di Filo d'identità, 06–12 luglio 2026 tra Pontedera, San Miniato, Fucecchio e Montopoli." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/nav-footer.css" />
+
+  <style>
+
+    /* ═══════════════════════════════════
+       HERO — teal field + thread draw-on
+       ═══════════════════════════════════ */
+
+    .prog-hero {
+      background: var(--teal);
+      padding: 9rem var(--gutter) clamp(5rem, 9vw, 8rem);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .prog-hero-botanical {
+      position: absolute;
+      right: -4%;
+      top: -10%;
+      width: 40%;
+      height: 130%;
+      pointer-events: none;
+      opacity: 0.06;
+    }
+
+    /* Thread on teal hero */
+    .prog-hero-thread {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .prog-hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: var(--container);
+      margin-inline: auto;
+      padding-inline: 0;
+    }
+
+    .prog-hero h1 {
+      font-size: clamp(3rem, 8vw, 8rem);
+      color: oklch(0.97 0.005 195);
+      font-style: italic;
+      line-height: 0.9;
+      letter-spacing: -0.025em;
+      margin-top: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .prog-hero h1 em {
+      color: var(--rosa);
+    }
+
+    .prog-hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem 2.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .prog-hero-meta span {
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      color: oklch(0.97 0.005 195 / 0.55);
+      letter-spacing: 0.06em;
+    }
+
+    .prog-hero-meta span strong {
+      color: oklch(0.97 0.005 195 / 0.85);
+      font-weight: 400;
+    }
+
+    .prog-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+    }
+
+
+    /* ═══════════════════════════════════
+       ANTICIPAZIONI
+       ═══════════════════════════════════ */
+
+    .anticipazioni {
+      padding-block: var(--section-gap);
+      background: var(--paper);
+    }
+
+    .ant-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .ant-header h2 {
+      font-style: italic;
+      margin-top: 0.75rem;
+    }
+
+    /* Reuse thread-rule from homepage */
+    .thread-rule {
+      width: 100%;
+      height: 28px;
+      margin-bottom: 0;
+    }
+
+    .thread-rule svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .prog-list {
+      list-style: none;
+      border-top: 1px solid var(--linen);
+    }
+
+    .prog-list li {
+      border-bottom: 1px solid var(--linen);
+    }
+
+    .prog-row {
+      display: grid;
+      grid-template-columns: 9.5rem 1fr;
+      gap: 0 2.5rem;
+      padding-block: 1.65rem;
+      align-items: start;
+      transition: background 0.25s var(--ease);
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .prog-row:hover {
+      background: var(--paper-warm);
+    }
+
+    .prog-col-left {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      padding-top: 0.2rem;
+    }
+
+    .prog-day {
+      font-family: var(--font-sans);
+      font-size: 0.6rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--rosa);
+    }
+
+    .prog-place {
+      font-family: var(--font-sans);
+      font-size: 0.56rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--charcoal);
+    }
+
+    .prog-title {
+      font-family: var(--font-headline);
+      font-size: clamp(0.85rem, 1.4vw, 1.1rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      line-height: 1.18;
+      color: var(--wine);
+      margin-bottom: 0.4rem;
+    }
+
+    .prog-guest {
+      font-family: var(--font-headline);
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--charcoal);
+    }
+
+    .prog-venue {
+      margin-top: 0.35rem;
+      font-family: var(--font-sans);
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      color: var(--stone);
+    }
+
+    .prog-row.opening .prog-title {
+      font-size: clamp(1.1rem, 2.2vw, 1.85rem);
+      line-height: 1.05;
+    }
+
+    .coming-soon-note {
+      padding-block: 2.5rem;
+      text-align: center;
+      border-top: 1px solid var(--linen);
+    }
+
+    .coming-soon-note p {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: clamp(1rem, 1.8vw, 1.35rem);
+      color: var(--stone);
+    }
+
+
+    /* ═══════════════════════════════════
+       LUOGHI — compact strip
+       ═══════════════════════════════════ */
+
+    .prog-luoghi {
+      background: var(--teal-pale);
+      padding-block: var(--section-gap);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .luoghi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      margin-top: 3rem;
+    }
+
+    .luogo-item {
+      padding: 2.25rem 1.75rem;
+      background: var(--paper);
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .luogo-item:hover .luogo-name {
+      color: var(--wine);
+    }
+
+    .luogo-prov {
+      font-family: var(--font-sans);
+      font-size: 0.52rem;
+      font-weight: 500;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--wine);
+    }
+
+    .luogo-name {
+      font-family: var(--font-serif);
+      font-size: clamp(1.1rem, 2vw, 1.5rem);
+      font-style: italic;
+      color: var(--ink);
+      line-height: 1.1;
+      letter-spacing: -0.015em;
+      transition: color 0.28s var(--ease);
+    }
+
+    .luogo-date {
+      font-family: var(--font-sans);
+      font-size: 0.55rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--stone);
+      margin-top: 0.25rem;
+    }
+
+
+    /* ═══════════════════════════════════
+       NEWSLETTER — dark strip
+       ═══════════════════════════════════ */
+
+    .prog-newsletter {
+      background: var(--ink);
+      padding-block: clamp(4rem, 7vw, 6rem);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .nl-thread {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 34px;
+      pointer-events: none;
+    }
+
+    .nl-inner {
+      max-width: min(560px, 100% - var(--gutter) * 2);
+      margin-inline: auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .nl-label {
+      font-family: var(--font-sans);
+      font-size: 0.56rem;
+      font-weight: 500;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--rosa);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .nl-label::before {
+      content: '';
+      width: 1.25rem;
+      height: 1px;
+      background: var(--rosa);
+      flex-shrink: 0;
+    }
+
+    .prog-newsletter h2 {
+      font-style: italic;
+      color: oklch(0.97 0.005 195);
+      font-size: clamp(1.6rem, 3vw, 2.5rem);
+      line-height: 1.05;
+      margin-bottom: 0.85rem;
+    }
+
+    .nl-desc {
+      color: oklch(0.97 0.005 195 / 0.44);
+      font-size: 0.88rem;
+      line-height: 1.85;
+      margin-bottom: 2.5rem;
+    }
+
+    .nl-form {
+      display: flex;
+    }
+
+    .nl-form input {
+      flex: 1;
+      padding: 1rem 1.25rem;
+      background: oklch(0.97 0.005 195 / 0.05);
+      border: 1px solid oklch(0.97 0.005 195 / 0.12);
+      border-right: none;
+      color: oklch(0.97 0.005 195);
+      font-family: var(--font-sans);
+      font-size: 0.88rem;
+      outline: none;
+      transition: background 0.28s, border-color 0.28s;
+    }
+
+    .nl-form input::placeholder {
+      color: oklch(0.97 0.005 195 / 0.25);
+    }
+
+    .nl-form input:focus {
+      background: oklch(0.97 0.005 195 / 0.09);
+      border-color: oklch(0.97 0.005 195 / 0.22);
+    }
+
+    .nl-form button {
+      padding: 1rem 1.5rem;
+      background: var(--rosa);
+      color: oklch(0.98 0.004 0);
+      border: 1px solid var(--rosa);
+      font-family: var(--font-sans);
+      font-size: 0.62rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.28s, border-color 0.28s;
+    }
+
+    .nl-form button:hover {
+      background: var(--rosa-mid);
+      border-color: var(--rosa-mid);
+    }
+
+    .nl-form input:focus-visible {
+      outline: 2px solid var(--rosa);
+      outline-offset: -2px;
+    }
+
+    .nl-form button:focus-visible {
+      outline: 2px solid var(--rosa);
+      outline-offset: 2px;
+    }
+
+
+    /* ═══════════════════════════════════
+       ANIMATION
+       ═══════════════════════════════════ */
+
+    .thread-path {
+      stroke-dasharray: 9999;
+      stroke-dashoffset: 9999;
+    }
+
+    @keyframes botanical-float {
+      0%, 100% { transform: translateY(0); }
+      40%       { transform: translateY(-16px) rotate(0.5deg); }
+      72%       { transform: translateY(-6px) rotate(-0.3deg); }
+    }
+
+    .prog-hero-botanical {
+      animation: botanical-float 13s ease-in-out infinite;
+      transform-origin: 50% 92%;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .thread-path { stroke-dasharray: none !important; stroke-dashoffset: 0 !important; }
+      .prog-hero-botanical { animation: none !important; }
+    }
+
+
+    /* ═══════════════════════════════════
+       RESPONSIVE
+       ═══════════════════════════════════ */
+
+    @media (max-width: 960px) {
+      .luoghi-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 680px) {
+      .prog-hero { padding-top: 7rem; }
+      .prog-row { grid-template-columns: 1fr; gap: 0.6rem; }
+      .prog-col-left {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.5rem 0.85rem;
+        padding-top: 0;
+      }
+      .nl-form { flex-direction: column; }
+      .nl-form input { border-right: 1px solid oklch(0.97 0.005 195 / 0.12); border-bottom: none; }
+    }
+
+    @media (max-width: 520px) {
+      .luoghi-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+  </style>
+
 </head>
-<body>
-  <p>Reindirizzamento in corso… <a href="edizioni/4-2025.html">Clicca qui</a> se non vieni reindirizzato.</p>
+
+<body data-nav="light">
+
+  <!-- ══ HERO ══════════════════════════════════════════════ -->
+  <header class="prog-hero" role="banner">
+
+    <!-- Botanical silhouette on teal -->
+    <svg class="prog-hero-botanical" aria-hidden="true" viewBox="0 0 400 600"
+         xmlns="http://www.w3.org/2000/svg" fill="white"
+         style="position:absolute;right:-4%;top:-10%;width:40%;height:130%;pointer-events:none;opacity:0.06">
+      <path d="M 208 600 C 204 500 196 400 200 300 C 204 200 196 100 200 20"
+            stroke="white" stroke-width="3" stroke-linecap="round" fill="none"/>
+      <ellipse cx="162" cy="352" rx="56" ry="18" transform="rotate(-35 162 352)"/>
+      <ellipse cx="242" cy="312" rx="50" ry="16" transform="rotate(30 242 312)"/>
+      <ellipse cx="158" cy="242" rx="48" ry="15" transform="rotate(-38 158 242)"/>
+      <ellipse cx="246" cy="202" rx="44" ry="14" transform="rotate(32 246 202)"/>
+      <ellipse cx="163" cy="142" rx="38" ry="13" transform="rotate(-30 163 142)"/>
+      <ellipse cx="238" cy="110" rx="34" ry="12" transform="rotate(28 238 110)"/>
+      <ellipse cx="192" cy="58" rx="20" ry="8" transform="rotate(-14 192 58)"/>
+    </svg>
+
+    <!-- Thread motif across teal hero -->
+    <svg class="prog-hero-thread" aria-hidden="true" data-thread-hero
+         viewBox="0 0 1440 500" preserveAspectRatio="xMidYMid slice"
+         xmlns="http://www.w3.org/2000/svg">
+      <path class="thread-path"
+        d="M -60 380 C 80 345, 155 412, 245 370 C 318 328, 395 402, 470 360 C 538 318, 615 392, 688 352 C 752 314, 832 396, 912 350 C 988 308, 1072 390, 1162 342 C 1232 302, 1325 372, 1440 335 L 1520 340"
+        stroke="white" stroke-width="1.1" fill="none" stroke-linecap="round" opacity="0.20"/>
+    </svg>
+
+    <div class="prog-hero-inner container">
+      <p class="label fade-up" style="color:oklch(0.97 0.005 195 / 0.5)">
+        <style>.label::before{background:oklch(0.97 0.005 195 / 0.5)}</style>
+        5ª edizione · Luglio 2026
+      </p>
+      <h1 class="fade-up" data-delay="180">Il<br /><em>programma</em></h1>
+      <div class="prog-hero-meta fade-up" data-delay="400">
+        <span><strong>06–12 luglio 2026</strong></span>
+        <span>Pontedera · San Miniato · Fucecchio · Montopoli</span>
+        <span>Ingresso prevalentemente <strong>libero</strong></span>
+      </div>
+      <div class="prog-ctas fade-up" data-delay="580">
+        <a href="edizioni.html" class="btn btn-light">Tutte le edizioni</a>
+        <a href="#newsletter" class="arrow-link" style="color:oklch(0.97 0.005 195 / 0.6)">
+          Tienimi aggiornato
+          <svg viewBox="0 0 40 14" fill="none" stroke="currentColor" stroke-width="1.4">
+            <line x1="0" y1="7" x2="38" y2="7"/>
+            <polyline points="32,2 38,7 32,12"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ══ ANTICIPAZIONI ══════════════════════════════════════ -->
+  <section class="anticipazioni" aria-labelledby="ant-heading">
+    <div class="container">
+      <div class="ant-header">
+        <div>
+          <span class="label fade-up">Programma 2026</span>
+          <h2 id="ant-heading" class="fade-up" data-delay="70">Alcune anticipazioni</h2>
+        </div>
+        <p class="fade-up" data-delay="100" style="color:var(--stone);max-width:38ch;font-size:0.88rem;line-height:1.85">
+          Il programma completo sarà pubblicato a giugno 2026. Ecco alcuni appuntamenti già confermati.
+        </p>
+      </div>
+
+      <!-- Curly thread-rule -->
+      <div class="thread-rule" aria-hidden="true">
+        <svg viewBox="0 0 1440 28" preserveAspectRatio="none" data-thread-svg xmlns="http://www.w3.org/2000/svg">
+          <path class="thread-path"
+            d="M 0 14 C 88 2, 175 26, 270 11 C 360 -2, 448 26, 540 13 C 626 1, 714 26, 808 10 C 895 -2, 982 25, 1074 12 C 1158 0, 1246 25, 1340 10 L 1440 14"
+            stroke="oklch(0.33 0.10 10)" stroke-width="0.9" fill="none" stroke-linecap="round" opacity="0.26"/>
+        </svg>
+      </div>
+
+      <ul class="prog-list" aria-label="Anticipazioni programma 2026">
+
+        <li>
+          <div class="prog-row opening fade-up">
+            <div class="prog-col-left">
+              <span class="prog-day">6 lug · Apertura</span>
+              <span class="prog-place">Fucecchio</span>
+            </div>
+            <div>
+              <p class="prog-title">Le radici del sé</p>
+              <p class="prog-guest">Michela Panichi, Gabriele Cavallini</p>
+              <p class="prog-venue">Libreria Blume · Ingresso libero</p>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <div class="prog-row fade-up" data-delay="50">
+            <div class="prog-col-left">
+              <span class="prog-day">7 lug</span>
+              <span class="prog-place">San Miniato</span>
+            </div>
+            <div>
+              <p class="prog-title">La lingua come patria</p>
+              <p class="prog-guest">Chiara Tagliaferri</p>
+              <p class="prog-venue">Loggiati San Domenico</p>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <div class="prog-row fade-up" data-delay="90">
+            <div class="prog-col-left">
+              <span class="prog-day">8 lug</span>
+              <span class="prog-place">Pontedera</span>
+            </div>
+            <div>
+              <p class="prog-title">Memoria e territorio</p>
+              <p class="prog-guest">Fumettibrutti, Veronica Lucchesi</p>
+              <p class="prog-venue">Piazza Giovanni XXIII</p>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <div class="prog-row fade-up" data-delay="120">
+            <div class="prog-col-left">
+              <span class="prog-day">10 lug</span>
+              <span class="prog-place">Montopoli</span>
+            </div>
+            <div>
+              <p class="prog-title">Identità plurali</p>
+              <p class="prog-guest">Giuliana Sgrena</p>
+              <p class="prog-venue">Cinema sotto le stelle</p>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <div class="prog-row fade-up" data-delay="150">
+            <div class="prog-col-left">
+              <span class="prog-day">11 lug</span>
+              <span class="prog-place">San Miniato</span>
+            </div>
+            <div>
+              <p class="prog-title">Dove finisce il confine + live</p>
+              <p class="prog-guest">Aldo Simeone, Emanuela Crosetti</p>
+              <p class="prog-venue">Piazza San Matteo</p>
+            </div>
+          </div>
+        </li>
+
+      </ul>
+
+      <div class="coming-soon-note fade-up">
+        <p>Altri ospiti e appuntamenti in arrivo.</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══ LUOGHI ════════════════════════════════════════════ -->
+  <section class="prog-luoghi" aria-label="I luoghi del festival">
+    <div class="container">
+      <span class="label fade-up" style="color:var(--wine)"><style>.prog-luoghi .label::before{background:var(--wine)}</style>I luoghi</span>
+      <h2 class="fade-up" data-delay="70" style="font-style:italic;color:var(--ink);margin-top:0.75rem">
+        Tra Pisa<br />e Firenze
+      </h2>
+      <div class="luoghi-grid fade-up" data-delay="120">
+        <div class="luogo-item">
+          <span class="luogo-prov">PI</span>
+          <span class="luogo-name">Pontedera</span>
+          <span class="luogo-date">08–09 luglio · Piazza Giovanni XXIII</span>
+        </div>
+        <div class="luogo-item">
+          <span class="luogo-prov">PI</span>
+          <span class="luogo-name">San Miniato</span>
+          <span class="luogo-date">07 · 11 luglio · Loggiati San Domenico</span>
+        </div>
+        <div class="luogo-item">
+          <span class="luogo-prov">FI</span>
+          <span class="luogo-name">Fucecchio</span>
+          <span class="luogo-date">06 · 08 luglio · Libreria Blume</span>
+        </div>
+        <div class="luogo-item">
+          <span class="luogo-prov">PI</span>
+          <span class="luogo-name">Montopoli in Val d'Arno</span>
+          <span class="luogo-date">10–11 luglio · Piazza San Matteo</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ NEWSLETTER ════════════════════════════════════════ -->
+  <section class="prog-newsletter" id="newsletter" aria-labelledby="nl-prog-heading">
+
+    <svg class="nl-thread section-thread" aria-hidden="true" data-thread-svg
+         viewBox="0 0 1440 34" preserveAspectRatio="none"
+         xmlns="http://www.w3.org/2000/svg">
+      <path class="thread-path"
+        d="M 0 17 C 108 2, 215 32, 328 14 C 440 -2, 548 30, 665 15 C 775 2, 885 30, 1002 14 C 1108 0, 1215 30, 1338 12 L 1440 17"
+        stroke="white" stroke-width="1.0" fill="none" stroke-linecap="round" opacity="0.15"/>
+    </svg>
+
+    <div class="nl-inner">
+      <span class="nl-label fade-up">Newsletter</span>
+      <h2 id="nl-prog-heading" class="fade-up" data-delay="60">Resta aggiornato</h2>
+      <p class="nl-desc fade-up" data-delay="100">
+        Iscriviti per ricevere il programma completo, gli aggiornamenti sugli ospiti e le novità della 5ª edizione.
+      </p>
+      <form class="nl-form fade-up" data-delay="150" action="#" method="post" aria-label="Iscrizione newsletter">
+        <input type="email" name="email" placeholder="La tua email"
+               required autocomplete="email" aria-label="Indirizzo email" />
+        <button type="submit">Iscriviti</button>
+      </form>
+    </div>
+  </section>
+
+
+  <script src="js/main.js"></script>
+  <script src="js/partials.js"></script>
+
 </body>
 </html>

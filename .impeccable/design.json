@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-06-01T00:00:00Z",
+  "title": "Design System: Filo d'identità",
+  "extensions": {
+    "colorMeta": {
+      "wine":       { "role": "primary",   "displayName": "Vino Profondo",           "canonical": "oklch(0.33 0.10 10)",   "tonalRamp": ["oklch(0.10 0.05 10)","oklch(0.18 0.08 10)","oklch(0.27 0.10 10)","oklch(0.33 0.10 10)","oklch(0.44 0.09 10)","oklch(0.57 0.08 10)","oklch(0.72 0.06 10)","oklch(0.88 0.025 10)"] },
+      "rosa":       { "role": "primary",   "displayName": "Magenta Caldo",           "canonical": "oklch(0.58 0.20 0)",    "tonalRamp": ["oklch(0.12 0.06 0)","oklch(0.22 0.10 0)","oklch(0.35 0.16 0)","oklch(0.46 0.19 0)","oklch(0.52 0.20 0)","oklch(0.58 0.20 0)","oklch(0.72 0.14 0)","oklch(0.88 0.06 0)"] },
+      "rosa-mid":   { "role": "primary",   "displayName": "Magenta Hover",           "canonical": "oklch(0.52 0.20 0)",    "tonalRamp": ["oklch(0.12 0.06 0)","oklch(0.22 0.10 0)","oklch(0.35 0.16 0)","oklch(0.46 0.19 0)","oklch(0.52 0.20 0)","oklch(0.58 0.20 0)","oklch(0.72 0.14 0)","oklch(0.88 0.06 0)"] },
+      "teal":       { "role": "secondary", "displayName": "Teal Minerale",           "canonical": "oklch(0.72 0.055 192)", "tonalRamp": ["oklch(0.16 0.025 192)","oklch(0.28 0.040 192)","oklch(0.42 0.052 192)","oklch(0.55 0.055 192)","oklch(0.65 0.055 192)","oklch(0.72 0.055 192)","oklch(0.82 0.038 192)","oklch(0.93 0.018 192)"] },
+      "teal-dark":  { "role": "secondary", "displayName": "Teal Scuro",             "canonical": "oklch(0.55 0.065 192)", "tonalRamp": ["oklch(0.14 0.030 192)","oklch(0.25 0.045 192)","oklch(0.38 0.058 192)","oklch(0.48 0.064 192)","oklch(0.55 0.065 192)","oklch(0.65 0.055 192)","oklch(0.78 0.040 192)","oklch(0.91 0.020 192)"] },
+      "teal-pale":  { "role": "secondary", "displayName": "Teal Pallido",           "canonical": "oklch(0.88 0.028 192)", "tonalRamp": ["oklch(0.20 0.012 192)","oklch(0.35 0.020 192)","oklch(0.48 0.025 192)","oklch(0.60 0.026 192)","oklch(0.72 0.028 192)","oklch(0.80 0.028 192)","oklch(0.88 0.028 192)","oklch(0.95 0.012 192)"] },
+      "gold":       { "role": "tertiary",  "displayName": "Oro della Musica",        "canonical": "oklch(0.67 0.085 70)",  "tonalRamp": ["oklch(0.20 0.040 70)","oklch(0.32 0.060 70)","oklch(0.44 0.075 70)","oklch(0.56 0.082 70)","oklch(0.67 0.085 70)","oklch(0.76 0.075 70)","oklch(0.85 0.055 70)","oklch(0.93 0.030 70)"] },
+      "paper":      { "role": "neutral",   "displayName": "Carta a Mano",            "canonical": "oklch(0.96 0.008 60)",  "tonalRamp": ["oklch(0.30 0.020 60)","oklch(0.45 0.020 60)","oklch(0.58 0.018 60)","oklch(0.70 0.015 60)","oklch(0.80 0.012 60)","oklch(0.88 0.010 60)","oklch(0.93 0.008 60)","oklch(0.96 0.008 60)"] },
+      "paper-warm": { "role": "neutral",   "displayName": "Pergamena Calda",         "canonical": "oklch(0.92 0.012 65)",  "tonalRamp": ["oklch(0.28 0.022 65)","oklch(0.42 0.022 65)","oklch(0.55 0.020 65)","oklch(0.68 0.016 65)","oklch(0.78 0.014 65)","oklch(0.86 0.013 65)","oklch(0.92 0.012 65)","oklch(0.97 0.006 65)"] },
+      "ink":        { "role": "neutral",   "displayName": "Inchiostro Minerale",     "canonical": "oklch(0.14 0.015 195)", "tonalRamp": ["oklch(0.08 0.008 195)","oklch(0.14 0.015 195)","oklch(0.22 0.018 195)","oklch(0.32 0.018 195)","oklch(0.45 0.016 195)","oklch(0.58 0.014 195)","oklch(0.72 0.012 195)","oklch(0.88 0.008 195)"] },
+      "charcoal":   { "role": "neutral",   "displayName": "Carbone",                 "canonical": "oklch(0.28 0.018 195)", "tonalRamp": ["oklch(0.10 0.010 195)","oklch(0.18 0.015 195)","oklch(0.28 0.018 195)","oklch(0.38 0.018 195)","oklch(0.50 0.016 195)","oklch(0.62 0.014 195)","oklch(0.75 0.012 195)","oklch(0.89 0.007 195)"] },
+      "stone":      { "role": "neutral",   "displayName": "Pietra",                  "canonical": "oklch(0.55 0.018 195)", "tonalRamp": ["oklch(0.12 0.008 195)","oklch(0.22 0.012 195)","oklch(0.35 0.016 195)","oklch(0.48 0.018 195)","oklch(0.55 0.018 195)","oklch(0.65 0.015 195)","oklch(0.76 0.012 195)","oklch(0.90 0.007 195)"] },
+      "fog":        { "role": "neutral",   "displayName": "Nebbia",                  "canonical": "oklch(0.75 0.012 195)", "tonalRamp": ["oklch(0.18 0.006 195)","oklch(0.30 0.009 195)","oklch(0.42 0.011 195)","oklch(0.55 0.012 195)","oklch(0.65 0.012 195)","oklch(0.75 0.012 195)","oklch(0.85 0.008 195)","oklch(0.94 0.005 195)"] },
+      "linen":      { "role": "neutral",   "displayName": "Lino",                    "canonical": "oklch(0.86 0.018 195)", "tonalRamp": ["oklch(0.20 0.010 195)","oklch(0.35 0.013 195)","oklch(0.48 0.016 195)","oklch(0.60 0.018 195)","oklch(0.72 0.018 195)","oklch(0.80 0.018 195)","oklch(0.86 0.018 195)","oklch(0.95 0.010 195)"] }
+    },
+    "typographyMeta": {
+      "display":  { "displayName": "Display — Bugaki",    "purpose": "Hero title, manifesto phrases, section headings. Always italic for brand warmth." },
+      "headline": { "displayName": "Headline — Faustina", "purpose": "Event titles and guest names in program rows. Faustina 800 UPPERCASE. Poster scale, not editorial." },
+      "title":    { "displayName": "Title — Bugaki",      "purpose": "Sub-headings, town names on mobile territory list, section intro phrases. Bugaki italic." },
+      "body":     { "displayName": "Body — DM Sans",      "purpose": "All paragraph text, festival descriptions. DM Sans 300, max 65–75ch per line." },
+      "label":    { "displayName": "Label — DM Sans",     "purpose": "Section eyebrow lines. DM Sans 500, 0.6rem, 0.24em tracking, uppercase. Preceded by 1.25rem horizontal rule." }
+    },
+    "shadows": [
+      {
+        "name": "nav-scroll",
+        "value": "0 1px 0 oklch(0.86 0.018 195)",
+        "purpose": "Navigation border on scroll. The only shadow-adjacent effect in the system. Appears with backdrop-filter: blur(16px) and 0.95 opacity paper background."
+      }
+    ],
+    "motion": [
+      { "name": "ease-standard", "value": "cubic-bezier(0.25, 0.46, 0.45, 0.94)", "purpose": "Default easing for UI state changes: hover, nav scroll, button transitions. Duration: 0.28–0.4s." },
+      { "name": "ease-out-enter", "value": "cubic-bezier(0.0, 0.0, 0.2, 1)", "purpose": "Scroll-triggered fade-up entrances. Base .fade-up class. Duration: 0.7s." },
+      { "name": "ease-out-expo", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Hero entrance sequence and thread draw-on animations. Confident, decisive deceleration. Duration: 0.65s–2.5s depending on context." }
+    ],
+    "breakpoints": [
+      { "name": "nav",    "value": "860px",  "purpose": "Navigation switches from desktop links to hamburger." },
+      { "name": "tablet", "value": "960px",  "purpose": "Program row collapses time column; about-strip goes single column." },
+      { "name": "mobile", "value": "680px",  "purpose": "Territory map hidden, hero vtext hidden, program row single-column, town names go large." },
+      { "name": "xs",     "value": "520px",  "purpose": "Hero title line breaks removed, newsletter form stacks vertically." }
+    ]
+  },
+  "components": [
+    {
+      "name": "Label (Eyebrow)",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Section eyebrow with leading horizontal rule. Rosa on paper; adapted for teal/ink surfaces.",
+      "html": "<span class=\"ds-label\">Quinta edizione</span>",
+      "css": ".ds-label { font-family: 'DM Sans', system-ui, sans-serif; font-size: 0.6rem; font-weight: 500; letter-spacing: 0.24em; text-transform: uppercase; color: oklch(0.58 0.20 0); display: inline-flex; align-items: center; gap: 0.65rem; } .ds-label::before { content: ''; display: block; width: 1.25rem; height: 1px; background: oklch(0.58 0.20 0); flex-shrink: 0; }"
+    },
+    {
+      "name": "Button Primary (btn-rosa)",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Primary CTA. Rosa fill, paper text. Zero radius. Used for hero and newsletter CTAs.",
+      "html": "<a class=\"ds-btn-primary\">Scopri il programma</a>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: 0.6rem; font-family: 'DM Sans', system-ui, sans-serif; font-size: 0.65rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; padding: 0.875rem 1.75rem; background: oklch(0.58 0.20 0); color: oklch(0.96 0.008 60); border: 1px solid oklch(0.58 0.20 0); border-radius: 0; text-decoration: none; cursor: pointer; white-space: nowrap; transition: background 0.32s cubic-bezier(0.25, 0.46, 0.45, 0.94), border-color 0.32s cubic-bezier(0.25, 0.46, 0.45, 0.94); } .ds-btn-primary:hover { background: oklch(0.52 0.20 0); border-color: oklch(0.52 0.20 0); } .ds-btn-primary:focus-visible { outline: 2px solid oklch(0.58 0.20 0); outline-offset: 2px; }"
+    },
+    {
+      "name": "Button Wine",
+      "kind": "button",
+      "refersTo": "button-wine",
+      "description": "Secondary CTA on paper surfaces. Transparent with wine border; fills on hover.",
+      "html": "<a class=\"ds-btn-wine\">Programma completo</a>",
+      "css": ".ds-btn-wine { display: inline-flex; align-items: center; font-family: 'DM Sans', system-ui, sans-serif; font-size: 0.65rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; padding: 0.875rem 1.75rem; background: transparent; color: oklch(0.33 0.10 10); border: 1px solid oklch(0.33 0.10 10); border-radius: 0; text-decoration: none; cursor: pointer; white-space: nowrap; transition: background 0.32s cubic-bezier(0.25, 0.46, 0.45, 0.94), color 0.32s cubic-bezier(0.25, 0.46, 0.45, 0.94); } .ds-btn-wine:hover { background: oklch(0.33 0.10 10); color: oklch(0.96 0.008 60); } .ds-btn-wine:focus-visible { outline: 2px solid oklch(0.33 0.10 10); outline-offset: 2px; }"
+    },
+    {
+      "name": "Button Light",
+      "kind": "button",
+      "refersTo": "button-light",
+      "description": "CTA for dark (ink) section backgrounds. Ghost with near-white border; fills on hover.",
+      "html": "<a class=\"ds-btn-light\">Iscriviti</a>",
+      "css": ".ds-btn-light { display: inline-flex; align-items: center; font-family: 'DM Sans', system-ui, sans-serif; font-size: 0.65rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; padding: 0.875rem 1.75rem; background: transparent; color: oklch(0.97 0.005 195); border: 1px solid oklch(0.97 0.005 195 / 0.35); border-radius: 0; text-decoration: none; cursor: pointer; white-space: nowrap; transition: background 0.32s cubic-bezier(0.25, 0.46, 0.45, 0.94), color 0.32s cubic-bezier(0.25, 0.46, 0.45, 0.94), border-color 0.32s cubic-bezier(0.25, 0.46, 0.45, 0.94); } .ds-btn-light:hover { background: oklch(0.97 0.005 195); color: oklch(0.14 0.015 195); border-color: oklch(0.97 0.005 195); } .ds-btn-light:focus-visible { outline: 2px solid oklch(0.97 0.005 195); outline-offset: 2px; }"
+    },
+    {
+      "name": "Nav Link",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Desktop navigation link. Underline grows from 0 on hover/active. Inverts to near-white on dark hero pages.",
+      "html": "<a class=\"ds-nav-link\">Chi siamo</a>",
+      "css": ".ds-nav-link { font-family: 'DM Sans', system-ui, sans-serif; font-size: 0.63rem; font-weight: 400; letter-spacing: 0.16em; text-transform: uppercase; color: oklch(0.14 0.015 195); position: relative; padding-bottom: 3px; text-decoration: none; transition: color 0.28s cubic-bezier(0.25, 0.46, 0.45, 0.94); } .ds-nav-link::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px; background: oklch(0.58 0.20 0); transition: width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); } .ds-nav-link:hover::after, .ds-nav-link.active::after { width: 100%; } .ds-nav-link:hover, .ds-nav-link.active { color: oklch(0.58 0.20 0); }"
+    },
+    {
+      "name": "Thread Divider",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Curly SVG thread line. wine color, draws itself on scroll via stroke-dashoffset animation. Horizontal divider variant.",
+      "html": "<div class=\"ds-thread-rule\" aria-hidden=\"true\"><svg viewBox=\"0 0 1440 28\" preserveAspectRatio=\"none\" data-thread-svg xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:28px;display:block\"><path class=\"thread-path\" d=\"M 0 14 C 88 2, 175 26, 270 11 C 360 -2, 448 26, 540 13 C 626 1, 714 26, 808 10 C 895 -2, 982 25, 1074 12 C 1158 0, 1246 25, 1340 10 L 1440 14\" stroke=\"oklch(0.33 0.10 10)\" stroke-width=\"0.9\" fill=\"none\" stroke-linecap=\"round\" opacity=\"0.26\"/></svg></div>",
+      "css": ".ds-thread-rule { width: 100%; height: 28px; } .ds-thread-rule svg { display: block; width: 100%; height: 100%; } .thread-path { stroke-dasharray: 9999; stroke-dashoffset: 9999; }"
+    },
+    {
+      "name": "Program Row",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Editorial event list row. Three-column grid: date | content | time. Faustina 800 UPPERCASE for title and guest. Hover paper-warm.",
+      "html": "<a class=\"ds-program-row\" href=\"#\"><div class=\"ds-prog-left\"><span class=\"ds-prog-day\">7 lug</span><span class=\"ds-prog-place\">San Miniato</span></div><div class=\"ds-prog-body\"><p class=\"ds-prog-title\">La lingua come patria</p><p class=\"ds-prog-guest\">Chiara Tagliaferri</p><p class=\"ds-prog-venue\">Loggiati San Domenico</p></div><span class=\"ds-prog-time\">21:00</span></a>",
+      "css": ".ds-program-row { display: grid; grid-template-columns: 9.5rem 1fr 4rem; gap: 0 2.5rem; padding: 1.65rem 0; align-items: start; border-bottom: 1px solid oklch(0.86 0.018 195); text-decoration: none; color: inherit; cursor: pointer; transition: background 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94); } .ds-program-row:hover { background: oklch(0.92 0.012 65); } .ds-prog-left { display: flex; flex-direction: column; gap: 0.3rem; padding-top: 0.2rem; } .ds-prog-day { font-family: 'DM Sans', system-ui, sans-serif; font-size: 0.6rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: oklch(0.58 0.20 0); } .ds-prog-place { font-family: 'DM Sans', system-ui, sans-serif; font-size: 0.56rem; letter-spacing: 0.14em; text-transform: uppercase; color: oklch(0.28 0.018 195); } .ds-prog-title { font-family: 'Faustina', Georgia, serif; font-size: clamp(0.85rem, 1.4vw, 1.1rem); font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; line-height: 1.18; color: oklch(0.33 0.10 10); margin-bottom: 0.4rem; } .ds-prog-guest { font-family: 'Faustina', Georgia, serif; font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: oklch(0.28 0.018 195); } .ds-prog-venue { margin-top: 0.35rem; font-family: 'DM Sans', system-ui, sans-serif; font-size: 0.6rem; letter-spacing: 0.1em; color: oklch(0.28 0.018 195); } .ds-prog-time { font-family: 'DM Sans', system-ui, sans-serif; font-size: 0.62rem; letter-spacing: 0.1em; color: oklch(0.75 0.012 195); text-align: right; padding-top: 0.2rem; white-space: nowrap; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Il Filo della Festa",
+    "overview": "The festival thread is not decoration: it IS the identity. Every SVG thread path drawn on scroll is the brand making itself visible in real time, materializing on the screen the way a festival materializes in a place. The thread animates from nothing as you arrive at each section, tracing the same line that connects the four Tuscan towns on the sketched territory map.\n\nThis is a festival that takes positions. Color is used with commitment: the mineral teal and deep wine dominate full-bleed sections. The muted magenta (the logo's inherited warmth) appears on labels and CTAs. Every tint pulls toward a brand hue; pure gray is prohibited. The palette references Italian mineral pigments, Tuscan terra cotta, and the warm grain of handmade paper.\n\nMotion is choreographed once per section, then silent. Thread SVG paths draw themselves via stroke-dashoffset transition. Town dots on the territory map materialize in staggered sequence as the thread passes through them. One well-rehearsed entrance per section; no scattered micro-interactions.",
+    "keyCharacteristics": [
+      "Full-bleed teal and ink sections span the viewport edge, never boxed",
+      "SVG curly thread paths drawn on scroll entry are the visual signature",
+      "Zero border-radius throughout: sharp corners read as intentional, handmade",
+      "Organic wave clip-paths on photos instead of rectangular frames",
+      "Faustina 800 UPPERCASE for guest names and event titles: poster weight",
+      "Botanical silhouette SVG floats on a 13s ambient loop on teal sections",
+      "prefers-reduced-motion disables all entrance animations immediately"
+    ],
+    "rules": [
+      { "name": "The No-Neutral-Gray Rule", "body": "Every tint must pull toward a brand hue (chroma >= 0.008 in OKLCH). Pure grays are prohibited.", "section": "colors" },
+      { "name": "The Rosa Reserve Rule", "body": "Rosa appears on <=15% of any screen surface, always at label scale or as a filled button. Overuse kills the warmth.", "section": "colors" },
+      { "name": "The Three-Voice Rule", "body": "Bugaki owns brand moments (headings, manifesto, hero). Faustina owns event impact (titles, guest names). DM Sans owns everything else. Never cross the streams.", "section": "typography" },
+      { "name": "The Italic Doctrine", "body": "Bugaki italic is the brand's emotional register. Section headings lean italic. 'd'identità' in the logotype is always italic.", "section": "typography" },
+      { "name": "The Single Elevation Exception", "body": "The only blur in the system is the nav scroll backdrop-filter: blur(16px). Functional, not decorative. No other shadows or blurs.", "section": "elevation" },
+      { "name": "The Flat Field Rule", "body": "If you reach for box-shadow, stop. Replace with a full border or background tint.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do use full-bleed teal and ink section backgrounds spanning 100% viewport width",
+      "Do animate thread SVG paths with stroke-dashoffset on scroll entry",
+      "Do use the wave clip-path on every featured photo",
+      "Do use Faustina 800 UPPERCASE for all event titles and guest names",
+      "Do tint every neutral toward the brand hue (chroma >= 0.008)",
+      "Do honor prefers-reduced-motion: skip all entrance animations",
+      "Do use the Label component as the eyebrow for every section",
+      "Do keep all buttons zero border-radius and full-border on all four sides",
+      "Do use cubic-bezier(0.16, 1, 0.3, 1) for hero entrances and thread draw-on",
+      "Do use the botanical silhouette SVG on teal sections with the ambient float loop"
+    ],
+    "donts": [
+      "Don't use generic festival or ticketing aesthetics: no Eventbrite-style card grids",
+      "Don't introduce corporate coldness: neutral gray palettes, detached tone",
+      "Don't apply overdesigned startup pitch deck cleanliness",
+      "Don't use border-left or border-right greater than 1px as a colored accent stripe",
+      "Don't use background-clip: text with a gradient",
+      "Don't use glassmorphism decoratively",
+      "Don't use identical card grids for event listings",
+      "Don't mix the three font roles",
+      "Don't add border-radius to buttons, inputs, or any rectangular container",
+      "Don't place --rosa on body copy at small sizes",
+      "Don't use bounce or elastic easing anywhere",
+      "Don't animate CSS layout properties"
+    ]
+  }
+}

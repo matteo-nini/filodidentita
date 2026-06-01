@@ -39,7 +39,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, var(--ink) 30%, rgba(28, 16, 20, .5) 80%);
+  background: linear-gradient(to top, var(--ink) 30%, oklch(0.14 0.015 195 / 0.5) 80%);
 }
 
 .ed-hero-content {
@@ -81,14 +81,14 @@
   letter-spacing: .22em;
   text-transform: uppercase;
   color: var(--rosa);
-  border: 1px solid rgba(226, 65, 119, .4);
+  border: 1px solid oklch(0.58 0.20 0 / 0.4);
   padding: .3rem .85rem;
   margin-bottom: 1.5rem;
 }
 
 .ed-hero h1 {
   font-size: clamp(3rem, 7vw, 6.5rem);
-  color: var(--parchment);
+  color: var(--paper);
   line-height: .95;
   margin-bottom: 1rem;
 }
@@ -255,7 +255,7 @@
 }
 
 .ev-card {
-  background: var(--shell);
+  background: var(--paper-warm);
   display: grid;
   grid-template-columns: 1fr 1.2fr;
   overflow: hidden;
@@ -263,25 +263,8 @@
   position: relative;
 }
 
-.ev-card::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 3px;
-  background: var(--rosa);
-  transform: scaleY(0);
-  transform-origin: top;
-  transition: transform .32s var(--ease);
-}
-
 .ev-card:hover {
   background: var(--rosa-pale);
-}
-
-.ev-card:hover::before {
-  transform: scaleY(1);
 }
 
 .ev-body {
@@ -315,8 +298,8 @@
 }
 
 .ev-tag.tag-music {
-  border-color: var(--bordeaux);
-  color: var(--bordeaux);
+  border-color: var(--wine);
+  color: var(--wine);
 }
 
 .ev-tag.tag-online {
@@ -325,18 +308,20 @@
 }
 
 .ev-title {
-  font-family: var(--font-serif);
-  font-size: clamp(1.1rem, 1.8vw, 1.5rem);
-  font-weight: 400;
-  line-height: 1.2;
-  color: var(--ink);
+  font-family: var(--font-headline);
+  font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  line-height: 1.15;
+  color: var(--wine);
 }
 
 .ev-book {
   font-family: var(--font-serif);
   font-style: italic;
   font-size: .9rem;
-  color: var(--bordeaux);
+  color: var(--wine);
 }
 
 .ev-guests {
@@ -346,9 +331,11 @@
 }
 
 .ev-guest-name {
-  font-family: var(--font-sans);
-  font-size: .82rem;
-  font-weight: 400;
+  font-family: var(--font-headline);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   color: var(--charcoal);
 }
 
@@ -428,7 +415,7 @@
 
 .ev-photo {
   overflow: hidden;
-  background: var(--shell);
+  background: var(--paper-warm);
   position: relative;
   min-height: 160px;
 }
@@ -471,11 +458,11 @@
 
 /* Featured (dark bordeaux) */
 .ev-card.featured {
-  background: var(--bordeaux);
+  background: var(--wine);
 }
 
 .ev-card.featured .ev-title {
-  color: var(--parchment);
+  color: var(--paper);
 }
 
 .ev-card.featured .ev-book {
@@ -507,12 +494,12 @@
 
 .ev-card.featured:hover {
   filter: brightness(1.07);
-  background: var(--bordeaux);
+  background: var(--wine);
 }
 
 /* ─── GALLERY PREVIEW ─── */
 .ed-gallery {
-  background: var(--shell);
+  background: var(--paper-warm);
   padding-block: var(--section-gap);
 }
 
@@ -556,7 +543,7 @@
 }
 
 .ed-nav h3 {
-  color: var(--parchment);
+  color: var(--paper);
   font-style: italic;
 }
 
@@ -581,7 +568,7 @@
 
 .btn-ghost:hover {
   background: rgba(255, 255, 255, .08);
-  color: var(--parchment);
+  color: var(--paper);
 }
 
 /* ─── RESPONSIVE ─── */
