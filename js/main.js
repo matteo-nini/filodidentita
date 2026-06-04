@@ -245,4 +245,82 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 
+  /* ════════════════════════════════════════
+     THREAD DRAW-ON
+     Each SVG path with .thread-path draws itself
+     via stroke-dashoffset animation when it enters
+     the viewport. The hero thread fires on load.
+     ════════════════════════════════════════ */
+  (function () {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      // Immediately reveal all thread paths for reduced-motion users
+      document.querySelectorAll('.thread-path').forEach(p => {
+        p.style.strokeDasharray = 'none';
+        p.style.strokeDashoffset = '0';
+      });
+      document.querySelectorAll('.town-group').forEach(g => g.classList.add('visible'));
+      return;
+    }
+
+    const EXPO = 'cubic-bezier(0.16, 1, 0.3, 1)';
+
+    function prepPath(path) {
+      const len = Math.ceil(path.getTotalLength());
+      path.style.strokeDasharray = len;
+      path.style.strokeDashoffset = len;
+      return len;
+    }
+
+    function drawPath(path, duration, delay) {
+      setTimeout(() => {
+        path.style.transition = `stroke-dashoffset ${duration}ms ${EXPO}`;
+        path.style.strokeDashoffset = '0';
+      }, delay);
+    }
+
+    // ── Hero thread: fires ~600ms after DOMContentLoaded ──
+    const heroThread = document.querySelector('[data-thread-hero]');
+    if (heroThread) {
+      heroThread.querySelectorAll('.thread-path').forEach((path, i) => {
+        prepPath(path);
+        drawPath(path, 2500, 600 + i * 320);
+      });
+    }
+
+    // ── Scroll-triggered thread SVGs ──
+    document.querySelectorAll('[data-thread-svg]').forEach(svg => {
+      const paths = [...svg.querySelectorAll('.thread-path')];
+      paths.forEach(prepPath);
+
+      const io = new IntersectionObserver(([entry]) => {
+        if (!entry.isIntersecting) return;
+        paths.forEach((path, i) => drawPath(path, 1900, 20 + i * 260));
+        io.unobserve(svg);
+      }, { threshold: 0.15 });
+
+      io.observe(svg);
+    });
+
+    // ── Territory map: thread draws first, then town dots stagger in ──
+    const mapSvg = document.querySelector('[data-territory-map]');
+    if (mapSvg) {
+      const mainPath = mapSvg.querySelector('.thread-path');
+      const townGroups = [...mapSvg.querySelectorAll('.town-group')];
+      if (mainPath) prepPath(mainPath);
+
+      const io = new IntersectionObserver(([entry]) => {
+        if (!entry.isIntersecting) return;
+        if (mainPath) drawPath(mainPath, 2100, 20);
+        // Dots appear while thread is drawing (starting at 700ms, 230ms apart)
+        townGroups.forEach((g, i) => {
+          setTimeout(() => g.classList.add('visible'), 700 + i * 230);
+        });
+        io.unobserve(mapSvg);
+      }, { threshold: 0.2 });
+
+      io.observe(mapSvg);
+    }
+  })();
+
+
 });

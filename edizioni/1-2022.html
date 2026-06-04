@@ -21,9 +21,7 @@
     position: relative;
     transition: background .32s;
   }
-  .ev-card-online::before { content:''; position:absolute; left:0; top:0; bottom:0; width:3px; background:var(--rosa); transform:scaleY(0); transform-origin:top; transition:transform .32s var(--ease); }
   .ev-card-online:hover { background:var(--rosa-pale); }
-  .ev-card-online:hover::before { transform:scaleY(1); }
   .ev-card-online .ev-body { padding:2.25rem 2.25rem 2.25rem 2.5rem; display:flex; flex-direction:column; gap:.7rem; }
   .ev-card-online .ev-photo-wrap { overflow:hidden; background:var(--linen); min-height:200px; position:relative; }
   .ev-card-online .ev-photo-wrap img { width:100%; height:100%; object-fit:cover; object-position:top; display:block; transition:transform .6s var(--ease); }
@@ -31,12 +29,12 @@
 
   .note-online {
     background: var(--rosa-pale);
-    border: 1px solid var(--rosa-tint);
-    border-left: 3px solid var(--rosa);
+    border: 1px solid oklch(0.58 0.20 0 / 0.25);
+    border-top: 2px solid var(--rosa);
     padding: 1.25rem 1.75rem;
     margin-bottom: 3rem;
     font-size: .88rem;
-    color: var(--bordeaux);
+    color: var(--wine);
     line-height: 1.75;
   }
   .note-online strong { font-family: var(--font-serif); font-style: italic; }

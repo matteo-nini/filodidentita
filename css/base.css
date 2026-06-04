@@ -1,10 +1,9 @@
 /* ============================================
    FILO D'IDENTITÀ — BASE STYLES
-   Palette estratta dal logo ufficiale
+   5ª edizione — OKLCH palette
    ============================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Faustina:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap');
 
 @font-face {
   font-family: 'Bugaki';
@@ -25,46 +24,40 @@
 }
 
 :root {
-  /* ── Palette brand (dal logo SVG) ── */
-  --rosa: #e24177;
-  /* rosa/fucsia — colore principale */
-  --bordeaux: #7c2e41;
-  /* prugna — colore secondario */
-  --rosa-mid: #cb3a69;
-  /* rosa medio per hover */
-  --rosa-pale: #fdf0f4;
-  /* rosa quasi-bianco */
-  --rosa-tint: #f5d5e2;
-  /* tinta rosa chiara */
+  /* ── 5th edition palette (OKLCH) ── */
+  --teal:       oklch(0.72 0.055 192);   /* Mineral field */
+  --teal-dark:  oklch(0.55 0.065 192);   /* Darker teal */
+  --teal-pale:  oklch(0.88 0.028 192);   /* Light teal wash */
+  --wine:       oklch(0.33 0.10 10);     /* Deep wine/plum */
+  --rosa:       oklch(0.58 0.20 0);      /* Muted magenta */
+  --rosa-mid:   oklch(0.52 0.20 0);      /* Rosa hover */
+  --rosa-pale:  oklch(0.94 0.018 0);     /* Very light rosa tint */
+  --paper:      oklch(0.96 0.008 60);    /* Off-white paper */
+  --paper-warm: oklch(0.92 0.012 65);    /* Warm paper */
+  --ink:        oklch(0.14 0.015 195);   /* Near-black, teal-tinted */
+  --charcoal:   oklch(0.28 0.018 195);   /* Dark text */
+  --stone:      oklch(0.55 0.018 195);   /* Secondary text */
+  --fog:        oklch(0.75 0.012 195);   /* Tertiary text */
+  --linen:      oklch(0.86 0.018 195);   /* Borders, dividers */
+  --gold:       oklch(0.67 0.085 70);    /* Music/special accent */
 
-  /* ── Neutri caldi ── */
-  --ink: #1c1014;
-  /* quasi-nero con caldo bordeaux */
-  --charcoal: #2e1e24;
-  /* grigio scuro caldo */
-  --stone: #6b545b;
-  /* grigio medio caldo */
-  --fog: #c2aeb5;
-  /* grigio chiaro */
-  --parchment: #faf6f7;
-  /* sfondo principale */
-  --shell: #f2eaec;
-  /* sfondo sezioni alternate */
-  --linen: #e4d6da;
-  --gold: #B8924a;
-  /* bordi */
+  /* ── Backwards-compat aliases ── */
+  --parchment:  var(--paper);
+  --shell:      var(--paper-warm);
+  --bordeaux:   var(--wine);
 
   /* ── Typography ── */
-  /* --font-serif: 'Cormorant Garamond', Georgia, serif; */
-  --font-serif: 'Bugaki', Georgia, serif;
-  --font-sans: 'DM Sans', system-ui, sans-serif;
+  --font-display:  'Bugaki', Georgia, serif;
+  --font-serif:    'Bugaki', Georgia, serif;
+  --font-headline: 'Faustina', Georgia, serif;
+  --font-sans:     'DM Sans', system-ui, sans-serif;
 
   /* ── Layout ── */
   --section-gap: clamp(4rem, 9vw, 8rem);
-  --container: 1160px;
-  --gutter: clamp(1.25rem, 4vw, 2.5rem);
-  --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  --ease-out: cubic-bezier(0.0, 0.0, 0.2, 1);
+  --container:   1160px;
+  --gutter:      clamp(1.25rem, 4vw, 2.5rem);
+  --ease:        cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-out:    cubic-bezier(0.0, 0.0, 0.2, 1);
 }
 
 *,
@@ -81,8 +74,8 @@ html {
 }
 
 body {
-  background: var(--parchment);
-  color: var(--ink);
+  background: var(--paper);
+  color: var(--charcoal);
   font-family: var(--font-sans);
   font-weight: 300;
   line-height: 1.7;
@@ -91,7 +84,7 @@ body {
 
 ::selection {
   background: var(--rosa);
-  color: #fff;
+  color: var(--paper);
 }
 
 .container {
@@ -100,27 +93,16 @@ body {
 }
 
 /* ── Typography ── */
-h1,
-h2,
-h3,
-h4 {
-  font-family: var(--font-serif);
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
   font-weight: 400;
   line-height: 1.05;
   letter-spacing: -0.02em;
 }
 
-h1 {
-  font-size: clamp(3rem, 8vw, 7.5rem);
-}
-
-h2 {
-  font-size: clamp(2rem, 4.5vw, 4rem);
-}
-
-h3 {
-  font-size: clamp(1.35rem, 2.5vw, 2rem);
-}
+h1 { font-size: clamp(3rem, 8vw, 7.5rem); }
+h2 { font-size: clamp(2rem, 4.5vw, 4rem); }
+h3 { font-size: clamp(1.35rem, 2.5vw, 2rem); }
 
 p {
   font-size: clamp(0.875rem, 1.4vw, 1rem);
@@ -181,44 +163,48 @@ section {
 }
 
 .btn-dark {
-  color: var(--ink);
+  color: var(--charcoal);
+}
+.btn-dark:hover {
+  background: var(--charcoal);
+  color: var(--paper);
 }
 
-.btn-dark:hover {
-  background: var(--ink);
-  color: var(--parchment);
+.btn-wine {
+  color: var(--wine);
+}
+.btn-wine:hover {
+  background: var(--wine);
+  color: var(--paper);
 }
 
 .btn-light {
-  color: var(--parchment);
-  border-color: rgba(250, 246, 247, 0.35);
+  color: oklch(0.97 0.005 195);
+  border-color: oklch(0.97 0.005 195 / 0.35);
 }
-
 .btn-light:hover {
-  background: var(--parchment);
+  background: oklch(0.97 0.005 195);
   color: var(--ink);
-  border-color: var(--parchment);
+  border-color: oklch(0.97 0.005 195);
 }
 
 .btn-rosa {
   background: var(--rosa);
-  color: #fff;
+  color: var(--paper);
   border-color: var(--rosa);
 }
-
 .btn-rosa:hover {
-  background: var(--bordeaux);
-  border-color: var(--bordeaux);
+  background: var(--rosa-mid);
+  border-color: var(--rosa-mid);
 }
 
 .btn-outline {
   color: var(--rosa);
   border-color: var(--rosa);
 }
-
 .btn-outline:hover {
   background: var(--rosa);
-  color: #fff;
+  color: var(--paper);
 }
 
 /* Arrow link */
@@ -234,11 +220,7 @@ section {
   color: var(--rosa);
   transition: gap 0.28s var(--ease);
 }
-
-.arrow-link:hover {
-  gap: 0.85rem;
-}
-
+.arrow-link:hover { gap: 0.85rem; }
 .arrow-link svg {
   width: 1.5rem;
   height: 0.875rem;
@@ -252,7 +234,7 @@ body::before {
   inset: 0;
   pointer-events: none;
   z-index: 9999;
-  opacity: 0.02;
+  opacity: 0.022;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   background-size: 200px;
 }
@@ -263,10 +245,17 @@ body::before {
   transform: translateY(1.5rem);
   transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
 }
-
 .fade-up.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-up {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
 }
 
 /* ── Ticker ── */
@@ -274,21 +263,18 @@ body::before {
   overflow: hidden;
   border-block: 1px solid var(--linen);
   padding-block: 0.7rem;
-  background: var(--parchment);
+  background: var(--paper);
 }
-
 .ticker {
   display: flex;
   width: max-content;
   animation: ticker 28s linear infinite;
 }
-
 .ticker-wrap:hover .ticker {
   animation-play-state: paused;
 }
-
 .ticker-item {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: 1rem;
   font-style: italic;
   color: var(--stone);
@@ -299,22 +285,15 @@ body::before {
   align-items: center;
   gap: 0.5rem;
 }
-
 .ticker-item::before {
   content: '✦';
   color: var(--rosa);
   font-style: normal;
   font-size: 0.5rem;
 }
-
 @keyframes ticker {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(-50%);
-  }
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
 }
 
 /* ── Section header ── */
@@ -328,7 +307,12 @@ body::before {
 }
 
 @media (max-width: 768px) {
-  :root {
-    --section-gap: 3.5rem;
-  }
+  :root { --section-gap: 3.5rem; }
+}
+
+/* ── Thread motif ── */
+.section-thread {
+  position: absolute;
+  pointer-events: none;
+  overflow: visible;
 }

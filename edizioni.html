@@ -107,14 +107,14 @@
       letter-spacing: .22em;
       text-transform: uppercase;
       color: var(--rosa);
-      border: 1px solid rgba(226, 65, 119, .4);
+      border: 1px solid oklch(0.58 0.20 0 / 0.4);
       padding: .3rem .8rem;
       width: fit-content;
       margin-bottom: 1.25rem;
     }
 
     .ed-visual h2 {
-      color: var(--parchment);
+      color: var(--paper);
       font-size: clamp(2.5rem, 5vw, 4.5rem);
       font-style: italic;
       line-height: .95;
@@ -171,7 +171,7 @@
     }
 
     .past {
-      background: var(--shell);
+      background: var(--paper-warm);
       padding-block: var(--section-gap);
     }
 
@@ -184,15 +184,10 @@
     }
 
     .past-card {
-      background: var(--parchment);
+      background: var(--paper);
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      transition: transform .4s var(--ease);
-    }
-
-    .past-card:hover {
-      transform: translateY(-4px);
     }
 
     .past-img {
@@ -222,7 +217,7 @@
       font-family: var(--font-serif);
       font-size: 3.5rem;
       font-weight: 300;
-      color: var(--parchment);
+      color: var(--paper);
       opacity: .22;
       line-height: 1;
     }
@@ -326,6 +321,19 @@
         padding-top: 7rem;
       }
     }
+
+    /* ── Thread draw-on ── */
+    .thread-path {
+      stroke-dasharray: 9999;
+      stroke-dashoffset: 9999;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .thread-path {
+        stroke-dasharray: none !important;
+        stroke-dashoffset: 0 !important;
+      }
+    }
   </style>
 </head>
 <!-- Hero chiaro → nav scura (default, nessun data-nav necessario, ma lo indichiamo) -->
@@ -335,14 +343,14 @@
   <header class="page-hero">
     <div class="container">
       <span class="label fade-up">Dal 2022</span>
-      <h1 class="fade-up" data-delay="70">Quattro anni<br />di filo.</h1>
+      <h1 class="fade-up" data-delay="70">Cinque anni<br />di filo.</h1>
       <div class="hero-sub">
         <p class="fade-up" data-delay="110">Dal 2022 costruiamo ogni anno un'edizione del festival, ciascuna con una
           propria identità ma con lo stesso filo conduttore: la parola, l'incontro, la comunità.</p>
         <div class="ed-counts fade-up" data-delay="150">
-          <div class="ec"><span class="ec-n">4</span><span class="ec-l">Edizioni</span></div>
+          <div class="ec"><span class="ec-n">5</span><span class="ec-l">Edizioni</span></div>
           <div class="ec"><span class="ec-n">4</span><span class="ec-l">Comuni</span></div>
-          <div class="ec"><span class="ec-n">100+</span><span class="ec-l">Ospiti totali</span></div>
+          <div class="ec"><span class="ec-n">120+</span><span class="ec-l">Ospiti totali</span></div>
         </div>
       </div>
     </div>
@@ -352,30 +360,36 @@
     <div class="container">
       <div class="ed-current-inner">
         <div class="ed-visual">
-          <img src="assets/edition-2025.jpg" alt="Filo d'identità 2025" loading="lazy" />
+          <img src="assets/edition-2026.jpg" alt="Filo d'identità 2026" loading="lazy" />
           <div class="ed-visual-overlay">
-            <span class="ed-badge-current">4ª edizione · L'ultima edizione</span>
-            <h2>7–13<br />luglio<br />2025</h2>
+            <span class="ed-badge-current">5ª edizione · In arrivo</span>
+            <h2>06–12<br />luglio<br />2026</h2>
             <p class="ed-dates">Pontedera · San Miniato · Fucecchio · Montopoli</p>
           </div>
         </div>
         <div class="ed-content fade-up" data-delay="80">
-          <span class="label">L'ultima edizione</span>
-          <h3>La 4ª edizione</h3>
-          <p>Sette giorni di incontri, letture, performance musicali e spettacoli teatrali. Il tema: l'identità
-            attraverso il corpo — come spazio narrativo, politico, culturale.</p>
+          <span class="label">L'edizione in arrivo</span>
+          <h3>La 5ª edizione</h3>
+          <p>Sette sere tra Pisa e Firenze. La quinta edizione del festival porta la parola, l'immagine e il suono nei borghi della Toscana. Il programma completo è in arrivo.</p>
           <div class="ed-highlights">
-            <div class="ed-hi"><span class="ed-hi-dot"></span>7–13 luglio 2025 · 7 giornate</div>
-            <div class="ed-hi"><span class="ed-hi-dot"></span>4 comuni · oltre 15 venue</div>
-            <div class="ed-hi"><span class="ed-hi-dot"></span>Ospiti: Tagliaferri, Lucchesi, Sgrena, Fumettibrutti e
-              altri</div>
+            <div class="ed-hi"><span class="ed-hi-dot"></span>06–12 luglio 2026 · 7 serate</div>
+            <div class="ed-hi"><span class="ed-hi-dot"></span>4 comuni · Pontedera, San Miniato, Fucecchio, Montopoli</div>
+            <div class="ed-hi"><span class="ed-hi-dot"></span>Ospiti: Michela Panichi, Chiara Tagliaferri, Fumettibrutti e altri</div>
             <div class="ed-hi"><span class="ed-hi-dot"></span>Ingresso libero per la maggior parte degli eventi</div>
           </div>
-          <a href="edizioni/4-2025.html" class="btn btn-rosa">Programma completo</a>
+          <a href="programma.html" class="btn btn-rosa">Scopri le anticipazioni</a>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- Thread rule -->
+  <div style="height:28px;overflow:hidden" aria-hidden="true">
+    <svg viewBox="0 0 1440 28" preserveAspectRatio="none" data-thread-svg style="width:100%;height:28px;display:block" xmlns="http://www.w3.org/2000/svg">
+      <path class="thread-path" d="M 0 14 C 88 2, 175 26, 270 11 C 360 -2, 448 26, 540 13 C 626 1, 714 26, 808 10 C 895 -2, 982 25, 1074 12 C 1158 0, 1246 25, 1340 10 L 1440 14"
+            stroke="oklch(0.33 0.10 10)" stroke-width="0.9" fill="none" stroke-linecap="round" opacity="0.22"/>
+    </svg>
+  </div>
 
   <section class="past">
     <div class="container">
@@ -383,6 +397,20 @@
       <h2 class="fade-up" data-delay="70" style="font-style:italic;margin-top:1rem">Le edizioni<br />passate</h2>
       <div class="past-grid">
         <article class="past-card fade-up">
+          <div class="past-img"><img src="assets/edition-2025.jpg" alt="2025" loading="lazy" /><span
+              class="past-year">25</span><span class="past-badge">4ª edizione</span></div>
+          <div class="past-body">
+            <h3>Edizione 2025</h3>
+            <div class="past-meta"><span>Luglio 2025</span><span>30+ ospiti</span><span>600+ partecipanti</span></div>
+            <p>Il corpo come spazio narrativo, politico e culturale. Sette giorni tra i quattro comuni, con Tagliaferri, Lucchesi, Sgrena, Fumettibrutti e altri.</p>
+            <a href="edizioni/4-2025.html" class="past-link">Scopri l'edizione <svg viewBox="0 0 24 10" fill="none"
+                stroke="currentColor" stroke-width="1.5">
+                <line x1="0" y1="5" x2="22" y2="5" />
+                <polyline points="17,1 22,5 17,9" />
+              </svg></a>
+          </div>
+        </article>
+        <article class="past-card fade-up" data-delay="60">
           <div class="past-img"><img src="assets/edition-2024.jpg" alt="2024" loading="lazy" /><span
               class="past-year">24</span><span class="past-badge">3ª edizione</span></div>
           <div class="past-body">
@@ -397,7 +425,7 @@
               </svg></a>
           </div>
         </article>
-        <article class="past-card fade-up" data-delay="60">
+        <article class="past-card fade-up">
           <div class="past-img"><img src="assets/edition-2023.jpg" alt="2023" loading="lazy" /><span
               class="past-year">23</span><span class="past-badge">2ª edizione</span></div>
           <div class="past-body">
@@ -412,13 +440,13 @@
               </svg></a>
           </div>
         </article>
-        <article class="past-card fade-up" data-delay="120">
+        <article class="past-card fade-up" data-delay="60">
           <div class="past-img"><img src="assets/edition-2022.jpg" alt="2022" loading="lazy" /><span
               class="past-year">22</span><span class="past-badge">1ª edizione</span></div>
           <div class="past-body">
             <h3>Edizione 2022</h3>
             <div class="past-meta"><span>Maggio 2022</span><span>10+ ospiti</span><span>200+ partecipanti</span></div>
-            <p>Tutto è cominciato qui. La prima edizione ha dimostrato che c'era spazio — e desiderio — per un festival
+            <p>Tutto è cominciato qui. La prima edizione ha dimostrato che c'era spazio e desiderio per un festival
               così.</p>
             <a href="edizioni/1-2022.html" class="past-link">Scopri l'edizione <svg viewBox="0 0 24 10" fill="none"
                 stroke="currentColor" stroke-width="1.5">
