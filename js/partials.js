@@ -20,7 +20,7 @@
   <ul class="nav-links" role="list">
     <li><a href="${ROOT}chi-siamo.html">Chi siamo</a></li>
     <li><a href="${ROOT}edizioni.html">Edizioni</a></li>
-    <li><a href="${ROOT}edizioni/4-2025.html">Programma</a></li>
+    <li><a href="${ROOT}edizioni/5-2026.html">Programma</a></li>
     <li><a href="${ROOT}gallery.html">Gallery</a></li>
     <li><a href="${ROOT.replace(/\/$/, '') || '.'}/../blog" target="_self">Blog</a></li>
     <li><a href="${ROOT}contatti.html" class="nav-cta">Segui il filo</a></li>
@@ -36,7 +36,7 @@
   </button>
   <a href="${ROOT}chi-siamo.html">Chi siamo</a>
   <a href="${ROOT}edizioni.html">Edizioni</a>
-  <a href="${ROOT}edizioni/4-2025.html">Programma</a>
+  <a href="${ROOT}edizioni/5-2026.html">Programma</a>
   <a href="${ROOT}gallery.html">Gallery</a>
   <a href="/blog">Blog</a>
   <a href="${ROOT}contatti.html" class="nav-mobile-cta">Segui il filo →</a>
@@ -61,7 +61,7 @@
         <ul>
           <li><a href="${ROOT}chi-siamo.html">Chi siamo</a></li>
           <li><a href="${ROOT}edizioni.html">Edizioni</a></li>
-          <li><a href="${ROOT}edizioni/4-2025.html">Programma 2025</a></li>
+          <li><a href="${ROOT}edizioni/5-2026.html">Programma 2026</a></li>
           <li><a href="${ROOT}gallery.html">Gallery</a></li>
           <li><a href="/blog">Blog</a></li>
         </ul>
