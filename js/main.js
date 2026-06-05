@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
      HERO CAROUSEL
      ════════════════════════════════════════ */
   (function () {
-    const BASE = 'https://filodidentita.it/wp-content/uploads/2025/02/';
+    const BASE = 'https://filodidentita.it/blog/wp-content/uploads/2025/02/';
     const files = [
       'Filo.marte-10-scaled.jpg','Filo.marte-11-scaled.jpg','Filo.marte-12-scaled.jpg',
       'Filo.marte-15-scaled.jpg','Filo.marte-16-scaled.jpg','Filo.marte-17-scaled.jpg',
@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
      IMMAGINI PER EDIZIONE
      ════════════════════════════════════════ */
   (function () {
-    const B = 'https://filodidentita.it/wp-content/uploads/';
+    const B = 'https://filodidentita.it/blog/wp-content/uploads/';
 
     const PHOTOS = {
       2025: [
