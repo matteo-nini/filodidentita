@@ -10,7 +10,8 @@
   <link rel="stylesheet" href="css/base.css" />
   <link rel="stylesheet" href="css/nav-footer.css" />
 
-  <meta name="description" content="Filo d'identità è un festival letterario e artistico tra Pisa e Firenze. 5ª edizione, 06–12 luglio 2026 tra Pontedera, San Miniato, Fucecchio e Montopoli." />
+  <meta name="description"
+    content="Filo d'identità è un festival letterario e artistico tra Pisa e Firenze. 5ª edizione, 06–12 luglio 2026 tra Pontedera, San Miniato, Fucecchio e Montopoli." />
   <link rel="canonical" href="https://filodidentita.it/" />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
 
@@ -18,7 +19,8 @@
   <meta property="og:site_name" content="Filo d'identità" />
   <meta property="og:locale" content="it_IT" />
   <meta property="og:title" content="Filo d'identità — 5ª edizione" />
-  <meta property="og:description" content="Filo d'identità è un festival letterario e artistico tra Pisa e Firenze. 5ª edizione, 06–12 luglio 2026 tra Pontedera, San Miniato, Fucecchio e Montopoli." />
+  <meta property="og:description"
+    content="Filo d'identità è un festival letterario e artistico tra Pisa e Firenze. 5ª edizione, 06–12 luglio 2026 tra Pontedera, San Miniato, Fucecchio e Montopoli." />
   <meta property="og:url" content="https://filodidentita.it/" />
   <meta property="og:image" content="https://filodidentita.it/assets/og/OG-IMAGE.jpg" />
   <meta property="og:image:width" content="1200" />
@@ -27,14 +29,14 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@filodidentitafestival" />
   <meta name="twitter:title" content="Filo d'identità — 5ª edizione" />
-  <meta name="twitter:description" content="Filo d'identità è un festival letterario e artistico tra Pisa e Firenze. 5ª edizione, 06–12 luglio 2026 tra Pontedera, San Miniato, Fucecchio e Montopoli." />
+  <meta name="twitter:description"
+    content="Filo d'identità è un festival letterario e artistico tra Pisa e Firenze. 5ª edizione, 06–12 luglio 2026 tra Pontedera, San Miniato, Fucecchio e Montopoli." />
   <meta name="twitter:image" content="https://filodidentita.it/assets/og/OG-IMAGE.jpg" />
 
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
   <meta name="theme-color" content="#5d9e9a" />
 
   <style>
-
     /* ════════════════════════════════════
        HERO
        ════════════════════════════════════ */
@@ -72,20 +74,16 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(
-          to top,
-          oklch(0.08 0.012 195 / 0.98)  0%,
-          oklch(0.08 0.012 195 / 0.88)  20%,
-          oklch(0.08 0.012 195 / 0.64)  38%,
-          oklch(0.08 0.012 195 / 0.28)  62%,
-          oklch(0.08 0.012 195 / 0.06) 100%
-        ),
-        linear-gradient(
-          to right,
+        linear-gradient(to top,
+          oklch(0.08 0.012 195 / 0.98) 0%,
+          oklch(0.08 0.012 195 / 0.88) 20%,
+          oklch(0.08 0.012 195 / 0.64) 38%,
+          oklch(0.08 0.012 195 / 0.28) 62%,
+          oklch(0.08 0.012 195 / 0.06) 100%),
+        linear-gradient(to right,
           oklch(0.08 0.012 195 / 0.58) 0%,
           oklch(0.08 0.012 195 / 0.12) 48%,
-          oklch(0.08 0.012 195 / 0)    65%
-        );
+          oklch(0.08 0.012 195 / 0) 65%);
       pointer-events: none;
     }
 
@@ -517,14 +515,12 @@
       position: relative;
       overflow: hidden;
       min-height: 560px;
-      clip-path: polygon(
-        0% 0%, 100% 0%, 100% 87%,
-        96% 91%, 90% 87%, 84% 92%, 78% 88%,
-        72% 93%, 66% 89%, 60% 94%, 54% 90%,
-        48% 95%, 42% 91%, 36% 87%, 30% 92%,
-        24% 88%, 18% 93%, 12% 89%, 6% 94%,
-        0% 90%
-      );
+      clip-path: polygon(0% 0%, 100% 0%, 100% 87%,
+          96% 91%, 90% 87%, 84% 92%, 78% 88%,
+          72% 93%, 66% 89%, 60% 94%, 54% 90%,
+          48% 95%, 42% 91%, 36% 87%, 30% 92%,
+          24% 88%, 18% 93%, 12% 89%, 6% 94%,
+          0% 90%);
     }
 
     .about-photo img {
@@ -688,6 +684,40 @@
 
 
     /* ════════════════════════════════════
+       HERO SUBTITLE — edition theme
+       ════════════════════════════════════ */
+
+    .hero-subtitle {
+      font-family: var(--font-headline);
+      font-weight: 800;
+      font-size: clamp(1.1rem, 2.8vw, 2.2rem);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--rosa);
+      margin-top: 0.6rem;
+      margin-bottom: 2.25rem;
+      line-height: 1;
+    }
+
+
+    /* ════════════════════════════════════
+       MANIFESTO — edition theme headline
+       ════════════════════════════════════ */
+
+    .manifesto-theme {
+      font-family: var(--font-headline);
+      font-size: clamp(3rem, 9vw, 9.5rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      line-height: 0.9;
+      color: var(--rosa);
+      margin-bottom: 1.75rem;
+      max-width: 14ch;
+    }
+
+
+    /* ════════════════════════════════════
        RESPONSIVE
        ════════════════════════════════════ */
 
@@ -695,7 +725,10 @@
       .program-row {
         grid-template-columns: 8rem 1fr;
       }
-      .program-time { display: none; }
+
+      .program-time {
+        display: none;
+      }
 
       .territory-top {
         grid-template-columns: 1fr;
@@ -709,20 +742,23 @@
 
       .about-photo {
         min-height: 340px;
-        clip-path: polygon(
-          0% 0%, 100% 0%, 100% 85%,
-          96% 90%, 90% 85%, 84% 91%, 78% 87%,
-          72% 92%, 66% 88%, 60% 93%, 54% 89%,
-          48% 94%, 42% 90%, 36% 86%, 30% 91%,
-          24% 87%, 18% 92%, 12% 88%, 6% 93%,
-          0% 89%
-        );
+        clip-path: polygon(0% 0%, 100% 0%, 100% 85%,
+            96% 90%, 90% 85%, 84% 91%, 78% 87%,
+            72% 92%, 66% 88%, 60% 93%, 54% 89%,
+            48% 94%, 42% 90%, 36% 86%, 30% 91%,
+            24% 87%, 18% 92%, 12% 88%, 6% 93%,
+            0% 89%);
       }
     }
 
     @media (max-width: 680px) {
-      .hero-vtext { display: none; }
-      .hero-content { padding-right: var(--gutter); }
+      .hero-vtext {
+        display: none;
+      }
+
+      .hero-content {
+        padding-right: var(--gutter);
+      }
 
       .hero-footer {
         flex-direction: column;
@@ -750,7 +786,9 @@
       }
 
       /* On mobile: hide map, restore large place names */
-      .territory-map-wrap { display: none; }
+      .territory-map-wrap {
+        display: none;
+      }
 
       .place-name {
         font-size: clamp(2rem, 5.5vw, 4.5rem);
@@ -763,13 +801,19 @@
         padding-block: 0.8rem 0.6rem;
       }
 
-      .place-when { display: none; }
+      .place-when {
+        display: none;
+      }
 
-      .place-prov { font-size: 0.5rem; }
+      .place-prov {
+        font-size: 0.5rem;
+      }
     }
 
     @media (max-width: 520px) {
-      .hero-title br { display: none; }
+      .hero-title br {
+        display: none;
+      }
 
       .nl-form {
         flex-direction: column;
@@ -786,12 +830,15 @@
         transition: opacity 0.3s ease;
         transform: none !important;
       }
+
       .hero-carousel img.active {
         transform: none !important;
       }
+
       .about-strip:hover .about-photo img {
         transform: none;
       }
+
       .fade-up {
         opacity: 1 !important;
         transform: none !important;
@@ -808,8 +855,9 @@
     .hero-eyebrow.fade-up {
       transform: translateX(-1.6rem);
       transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
-                  transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+        transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
     }
+
     .hero-eyebrow.fade-up.visible {
       opacity: 1;
       transform: translateX(0);
@@ -818,8 +866,9 @@
     .hero-title.fade-up {
       transform: translateY(4rem);
       transition: opacity 1.1s cubic-bezier(0.16, 1, 0.3, 1),
-                  transform 1.1s cubic-bezier(0.16, 1, 0.3, 1);
+        transform 1.1s cubic-bezier(0.16, 1, 0.3, 1);
     }
+
     .hero-title.fade-up.visible {
       opacity: 1;
       transform: translateY(0);
@@ -830,6 +879,7 @@
       transform: none;
       transition: opacity 2s ease;
     }
+
     .hero-vtext.fade-up.visible {
       opacity: 1;
       transform: none;
@@ -846,16 +896,28 @@
       opacity: 0;
       transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     }
+
     .town-group.visible {
       opacity: 1;
     }
 
     /* ── Botanical silhouette: ambient float ── */
     @keyframes botanical-float {
-      0%, 100% { transform: translateY(0) rotate(0deg); }
-      40%       { transform: translateY(-18px) rotate(0.6deg); }
-      72%       { transform: translateY(-7px) rotate(-0.35deg); }
+
+      0%,
+      100% {
+        transform: translateY(0) rotate(0deg);
+      }
+
+      40% {
+        transform: translateY(-18px) rotate(0.6deg);
+      }
+
+      72% {
+        transform: translateY(-7px) rotate(-0.35deg);
+      }
     }
+
     .manifesto-botanical {
       animation: botanical-float 13s ease-in-out infinite;
       transform-origin: 50% 92%;
@@ -863,6 +925,7 @@
 
     /* ── Reduced motion: disable all new animations ── */
     @media (prefers-reduced-motion: reduce) {
+
       .hero-eyebrow.fade-up,
       .hero-title.fade-up,
       .hero-vtext.fade-up {
@@ -870,20 +933,22 @@
         transform: none !important;
         transition: none !important;
       }
+
       .thread-path {
         stroke-dasharray: none !important;
         stroke-dashoffset: 0 !important;
         transition: none !important;
       }
+
       .town-group {
         opacity: 1 !important;
         transition: none !important;
       }
+
       .manifesto-botanical {
         animation: none !important;
       }
     }
-
   </style>
 
   <script type="application/ld+json">
@@ -921,27 +986,22 @@
     <div class="hero-overlay" aria-hidden="true"></div>
 
     <!-- Thread motif: curly double-path over the photo — draws on page load -->
-    <svg class="hero-thread" aria-hidden="true" data-thread-hero
-         viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice"
-         xmlns="http://www.w3.org/2000/svg">
-      <path class="thread-path"
-        d="M -60 730
+    <svg class="hero-thread" aria-hidden="true" data-thread-hero viewBox="0 0 1440 900"
+      preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <path class="thread-path" d="M -60 730
            C 80 695, 155 762, 245 720
            C 318 678, 395 752, 470 710
            C 538 668, 615 742, 688 702
            C 752 664, 832 746, 912 700
            C 988 658, 1072 740, 1162 692
-           C 1232 652, 1325 722, 1440 685 L 1520 690"
-        stroke="white" stroke-width="1.3" fill="none"
-        stroke-linecap="round" stroke-linejoin="round" opacity="0.26"/>
-      <path class="thread-path"
-        d="M -40 775
+           C 1232 652, 1325 722, 1440 685 L 1520 690" stroke="white" stroke-width="1.3" fill="none"
+        stroke-linecap="round" stroke-linejoin="round" opacity="0.26" />
+      <path class="thread-path" d="M -40 775
            C 130 758, 225 792, 335 770
            C 440 748, 548 786, 652 768
            C 752 750, 858 784, 962 765
-           C 1058 748, 1164 780, 1305 765 L 1520 768"
-        stroke="white" stroke-width="0.85" fill="none"
-        stroke-linecap="round" stroke-linejoin="round" opacity="0.13"/>
+           C 1058 748, 1164 780, 1305 765 L 1520 768" stroke="white" stroke-width="0.85" fill="none"
+        stroke-linecap="round" stroke-linejoin="round" opacity="0.13" />
     </svg>
 
     <span class="hero-vtext fade-up" data-delay="1060" aria-hidden="true">Parola · Immagine · Suono</span>
@@ -949,6 +1009,7 @@
     <div class="hero-content">
       <p class="hero-eyebrow fade-up">5ª edizione · Festival letterario</p>
       <h1 class="hero-title fade-up" data-delay="220">Filo<br /><em>d'identità</em></h1>
+      <!-- <p class="hero-subtitle fade-up" data-delay="380">Cambiare forma.</p> --><!-- Optional edition theme subtitle below the main title -->
       <div class="hero-footer">
         <p class="hero-date fade-up" data-delay="540">
           <strong>06–12 luglio 2026</strong>
@@ -984,37 +1045,36 @@
   <section class="manifesto" aria-label="Il festival">
 
     <!-- Botanical silhouette -->
-    <svg class="manifesto-botanical" aria-hidden="true" viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg" fill="white">
-      <path d="M 208 600 C 204 500 196 400 200 300 C 204 200 196 100 200 20"
-            stroke="white" stroke-width="3" stroke-linecap="round" fill="none"/>
-      <ellipse cx="162" cy="352" rx="56" ry="18" transform="rotate(-35 162 352)"/>
-      <ellipse cx="242" cy="312" rx="50" ry="16" transform="rotate(30 242 312)"/>
-      <ellipse cx="158" cy="242" rx="48" ry="15" transform="rotate(-38 158 242)"/>
-      <ellipse cx="246" cy="202" rx="44" ry="14" transform="rotate(32 246 202)"/>
-      <ellipse cx="163" cy="142" rx="38" ry="13" transform="rotate(-30 163 142)"/>
-      <ellipse cx="238" cy="110" rx="34" ry="12" transform="rotate(28 238 110)"/>
-      <ellipse cx="192" cy="58" rx="20" ry="8" transform="rotate(-14 192 58)"/>
-      <ellipse cx="212" cy="46" rx="18" ry="7" transform="rotate(20 212 46)"/>
+    <svg class="manifesto-botanical" aria-hidden="true" viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg"
+      fill="white">
+      <path d="M 208 600 C 204 500 196 400 200 300 C 204 200 196 100 200 20" stroke="white" stroke-width="3"
+        stroke-linecap="round" fill="none" />
+      <ellipse cx="162" cy="352" rx="56" ry="18" transform="rotate(-35 162 352)" />
+      <ellipse cx="242" cy="312" rx="50" ry="16" transform="rotate(30 242 312)" />
+      <ellipse cx="158" cy="242" rx="48" ry="15" transform="rotate(-38 158 242)" />
+      <ellipse cx="246" cy="202" rx="44" ry="14" transform="rotate(32 246 202)" />
+      <ellipse cx="163" cy="142" rx="38" ry="13" transform="rotate(-30 163 142)" />
+      <ellipse cx="238" cy="110" rx="34" ry="12" transform="rotate(28 238 110)" />
+      <ellipse cx="192" cy="58" rx="20" ry="8" transform="rotate(-14 192 58)" />
+      <ellipse cx="212" cy="46" rx="18" ry="7" transform="rotate(20 212 46)" />
     </svg>
 
     <!-- Curly thread across teal field — draws on scroll -->
-    <svg class="manifesto-thread section-thread" aria-hidden="true" data-thread-svg
-         viewBox="0 0 1440 44" preserveAspectRatio="none"
-         xmlns="http://www.w3.org/2000/svg">
-      <path class="thread-path"
-        d="M 0 22
+    <svg class="manifesto-thread section-thread" aria-hidden="true" data-thread-svg viewBox="0 0 1440 44"
+      preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path class="thread-path" d="M 0 22
            C 95 4, 190 40, 300 18
            C 395 -2, 485 40, 580 20
            C 670 2, 758 40, 858 18
            C 952 -2, 1040 40, 1140 18
-           C 1228 -2, 1318 38, 1440 20"
-        stroke="white" stroke-width="1.1" fill="none"
-        stroke-linecap="round" opacity="0.20"/>
+           C 1228 -2, 1318 38, 1440 20" stroke="white" stroke-width="1.1" fill="none" stroke-linecap="round"
+        opacity="0.20" />
     </svg>
 
     <div class="manifesto-inner">
-      <p class="manifesto-eyebrow fade-up">Quinta edizione</p>
-      <p class="manifesto-text fade-up" data-delay="80">
+      <p class="manifesto-eyebrow fade-up">Quinta edizione · 06–12 luglio 2026</p>
+      <!-- <p class="manifesto-theme fade-up" data-delay="60">Cambiare forma.</p> --><!-- Optional edition theme headline -->
+      <p class="manifesto-text fade-up" data-delay="160">
         Un festival che tesse incontri, intreccia storie, coltiva identità.
       </p>
     </div>
@@ -1035,16 +1095,14 @@
       <!-- Curly thread-rule: hand-drawn divider between header and list — draws on scroll -->
       <div class="thread-rule" aria-hidden="true">
         <svg viewBox="0 0 1440 28" preserveAspectRatio="none" data-thread-svg xmlns="http://www.w3.org/2000/svg">
-          <path class="thread-path"
-            d="M 0 14
+          <path class="thread-path" d="M 0 14
                C 88 2, 175 26, 270 11
                C 360 -2, 448 26, 540 13
                C 626 1, 714 26, 808 10
                C 895 -2, 982 25, 1074 12
                C 1158 0, 1246 25, 1340 10
-               L 1440 14"
-            stroke="oklch(0.33 0.10 10)" stroke-width="0.9" fill="none"
-            stroke-linecap="round" opacity="0.26"/>
+               L 1440 14" stroke="oklch(0.33 0.10 10)" stroke-width="0.9" fill="none" stroke-linecap="round"
+            opacity="0.26" />
         </svg>
       </div>
 
@@ -1140,7 +1198,8 @@
           <h2 class="fade-up" data-delay="60">Tra Pisa<br />e Firenze</h2>
         </div>
         <p class="fade-up" data-delay="100">
-          Quattro borghi, sette sere, un solo filo. Il festival si muove tra le colline toscane: ogni luogo porta il segno del territorio che lo ospita.
+          Quattro borghi, sette sere, un solo filo. Il festival si muove tra le colline toscane: ogni luogo porta il
+          segno del territorio che lo ospita.
         </p>
       </div>
     </div>
@@ -1152,14 +1211,11 @@
       aria-hidden: le stesse informazioni sono presenti nella lista accessibile sotto.
     -->
     <div class="territory-map-wrap fade-up" data-delay="80" aria-hidden="true">
-      <svg class="territory-map-svg" data-territory-map
-           viewBox="0 0 1200 340"
-           xmlns="http://www.w3.org/2000/svg"
-           style="color: oklch(0.33 0.10 10)">
+      <svg class="territory-map-svg" data-territory-map viewBox="0 0 1200 340" xmlns="http://www.w3.org/2000/svg"
+        style="color: oklch(0.33 0.10 10)">
 
         <!-- Main filo path: draws on scroll entry -->
-        <path class="thread-path"
-          d="M 0 195
+        <path class="thread-path" d="M 0 195
              C 58 158, 115 238, 160 198
              C 205 158, 248 248, 295 195
              C 338 142, 382 88, 415 118
@@ -1169,84 +1225,47 @@
              C 758 152, 808 120, 848 142
              C 882 162, 928 198, 978 175
              C 1018 155, 1068 180, 1120 165
-             L 1200 168"
-          stroke="currentColor"
-          stroke-width="1.8"
-          fill="none"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          opacity="0.52"/>
+             L 1200 168" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"
+          stroke-linejoin="round" opacity="0.52" />
 
         <!-- ── Pontedera (160, 198) ── -->
         <g class="town-group">
-          <circle cx="160" cy="198" r="10" fill="none" stroke="currentColor" stroke-width="1" opacity="0.25"/>
-          <circle cx="160" cy="198" r="4.5" fill="currentColor" opacity="0.62"/>
-          <text x="178" y="226"
-                font-family="'Bugaki', Georgia, serif"
-                font-style="italic"
-                font-size="24"
-                fill="currentColor"
-                opacity="0.72">Pontedera</text>
-          <text x="180" y="242"
-                font-family="'DM Sans', system-ui, sans-serif"
-                font-size="10.5"
-                letter-spacing="0.12"
-                fill="currentColor"
-                opacity="0.42">PI · 08–09 LUG</text>
+          <circle cx="160" cy="198" r="10" fill="none" stroke="currentColor" stroke-width="1" opacity="0.25" />
+          <circle cx="160" cy="198" r="4.5" fill="currentColor" opacity="0.62" />
+          <text x="178" y="226" font-family="'Bugaki', Georgia, serif" font-style="italic" font-size="24"
+            fill="currentColor" opacity="0.72">Pontedera</text>
+          <text x="180" y="242" font-family="'DM Sans', system-ui, sans-serif" font-size="10.5" letter-spacing="0.12"
+            fill="currentColor" opacity="0.42">PI · 07 LUG</text>
         </g>
 
         <!-- ── San Miniato (415, 118) ── -->
         <g class="town-group">
-          <circle cx="415" cy="118" r="10" fill="none" stroke="currentColor" stroke-width="1" opacity="0.25"/>
-          <circle cx="415" cy="118" r="4.5" fill="currentColor" opacity="0.62"/>
-          <text x="433" y="112"
-                font-family="'Bugaki', Georgia, serif"
-                font-style="italic"
-                font-size="24"
-                fill="currentColor"
-                opacity="0.72">San Miniato</text>
-          <text x="435" y="97"
-                font-family="'DM Sans', system-ui, sans-serif"
-                font-size="10.5"
-                letter-spacing="0.12"
-                fill="currentColor"
-                opacity="0.42">PI · 07 · 11 LUG</text>
+          <circle cx="415" cy="118" r="10" fill="none" stroke="currentColor" stroke-width="1" opacity="0.25" />
+          <circle cx="415" cy="118" r="4.5" fill="currentColor" opacity="0.62" />
+          <text x="433" y="112" font-family="'Bugaki', Georgia, serif" font-style="italic" font-size="24"
+            fill="currentColor" opacity="0.72">San Miniato</text>
+          <text x="435" y="97" font-family="'DM Sans', system-ui, sans-serif" font-size="10.5" letter-spacing="0.12"
+            fill="currentColor" opacity="0.42">PI · 08 · 09 LUG</text>
         </g>
 
         <!-- ── Montopoli (618, 225) ── -->
         <g class="town-group">
-          <circle cx="618" cy="225" r="10" fill="none" stroke="currentColor" stroke-width="1" opacity="0.25"/>
-          <circle cx="618" cy="225" r="4.5" fill="currentColor" opacity="0.62"/>
-          <text x="636" y="252"
-                font-family="'Bugaki', Georgia, serif"
-                font-style="italic"
-                font-size="24"
-                fill="currentColor"
-                opacity="0.72">Montopoli</text>
-          <text x="638" y="268"
-                font-family="'DM Sans', system-ui, sans-serif"
-                font-size="10.5"
-                letter-spacing="0.12"
-                fill="currentColor"
-                opacity="0.42">PI · 10–11 LUG</text>
+          <circle cx="618" cy="225" r="10" fill="none" stroke="currentColor" stroke-width="1" opacity="0.25" />
+          <circle cx="618" cy="225" r="4.5" fill="currentColor" opacity="0.62" />
+          <text x="636" y="252" font-family="'Bugaki', Georgia, serif" font-style="italic" font-size="24"
+            fill="currentColor" opacity="0.72">Montopoli</text>
+          <text x="638" y="268" font-family="'DM Sans', system-ui, sans-serif" font-size="10.5" letter-spacing="0.12"
+            fill="currentColor" opacity="0.42">PI · 10–12 LUG</text>
         </g>
 
         <!-- ── Fucecchio (848, 142) ── -->
         <g class="town-group">
-          <circle cx="848" cy="142" r="10" fill="none" stroke="currentColor" stroke-width="1" opacity="0.25"/>
-          <circle cx="848" cy="142" r="4.5" fill="currentColor" opacity="0.62"/>
-          <text x="866" y="136"
-                font-family="'Bugaki', Georgia, serif"
-                font-style="italic"
-                font-size="24"
-                fill="currentColor"
-                opacity="0.72">Fucecchio</text>
-          <text x="868" y="121"
-                font-family="'DM Sans', system-ui, sans-serif"
-                font-size="10.5"
-                letter-spacing="0.12"
-                fill="currentColor"
-                opacity="0.42">FI · 06 · 08 LUG</text>
+          <circle cx="848" cy="142" r="10" fill="none" stroke="currentColor" stroke-width="1" opacity="0.25" />
+          <circle cx="848" cy="142" r="4.5" fill="currentColor" opacity="0.62" />
+          <text x="866" y="136" font-family="'Bugaki', Georgia, serif" font-style="italic" font-size="24"
+            fill="currentColor" opacity="0.72">Fucecchio</text>
+          <text x="868" y="121" font-family="'DM Sans', system-ui, sans-serif" font-size="10.5" letter-spacing="0.12"
+            fill="currentColor" opacity="0.42">FI · 06 · 11 LUG</text>
         </g>
 
       </svg>
@@ -1259,36 +1278,36 @@
         <span class="place-prov" aria-label="Provincia di Pisa">PI</span>
         <div class="place-body">
           <span class="place-name">Pontedera</span>
-          <span class="place-venue-small">08–09 lug · Piazza Giovanni XXIII</span>
+          <span class="place-venue-small">07 lug · Cinema sotto le stelle</span>
         </div>
-        <span class="place-when" aria-hidden="true">08–09 lug</span>
+        <span class="place-when" aria-hidden="true">07 lug</span>
       </li>
 
       <li class="place-item">
         <span class="place-prov" aria-label="Provincia di Pisa">PI</span>
         <div class="place-body">
           <span class="place-name">San Miniato</span>
-          <span class="place-venue-small">07 · 11 lug · Loggiati San Domenico</span>
+          <span class="place-venue-small">08–09 lug · Giardino della Cisterna · Cigoli</span>
         </div>
-        <span class="place-when" aria-hidden="true">07 · 11 lug</span>
+        <span class="place-when" aria-hidden="true">08–09 lug</span>
       </li>
 
       <li class="place-item">
         <span class="place-prov" aria-label="Provincia di Firenze">FI</span>
         <div class="place-body">
           <span class="place-name">Fucecchio</span>
-          <span class="place-venue-small">06 · 08 lug · Libreria Blume</span>
+          <span class="place-venue-small">06 · 11 lug · Libreria Blume · La Limonaia Club</span>
         </div>
-        <span class="place-when" aria-hidden="true">06 · 08 lug</span>
+        <span class="place-when" aria-hidden="true">06 · 11 lug</span>
       </li>
 
       <li class="place-item">
         <span class="place-prov" aria-label="Provincia di Pisa">PI</span>
         <div class="place-body">
           <span class="place-name">Montopoli in Val d'Arno</span>
-          <span class="place-venue-small">10–11 lug · Piazza San Matteo</span>
+          <span class="place-venue-small">10–12 lug · Piazza San Matteo · Bosco di Montopoli</span>
         </div>
-        <span class="place-when" aria-hidden="true">10–11 lug</span>
+        <span class="place-when" aria-hidden="true">10–12 lug</span>
       </li>
 
     </ul>
@@ -1298,38 +1317,30 @@
   <!-- ══ ABOUT STRIP ═══════════════════════════════════════ -->
   <section class="about-strip" aria-label="Chi siamo">
     <div class="about-photo fade-up">
-      <img
-        src="https://filodidentita.it/wp-content/uploads/2025/02/7-scaled.jpg"
-        alt="Il team di Filo d'identità in uno dei luoghi del festival in Toscana"
-        loading="lazy"
-        width="800"
-        height="1000"
-      />
+      <img src="https://filodidentita.it/blog/wp-content/uploads/2025/02/7-scaled.jpg"
+        alt="Il team di Filo d'identità in uno dei luoghi del festival in Toscana" loading="lazy" width="800"
+        height="1000" />
       <!-- Thread overlaid on the photo, white on dark image -->
-      <svg class="about-photo-thread" aria-hidden="true"
-           viewBox="0 0 800 1000" preserveAspectRatio="xMidYMid slice"
-           xmlns="http://www.w3.org/2000/svg">
-        <path
-          d="M -20 452
+      <svg class="about-photo-thread" aria-hidden="true" viewBox="0 0 800 1000" preserveAspectRatio="xMidYMid slice"
+        xmlns="http://www.w3.org/2000/svg">
+        <path d="M -20 452
              C 105 415, 185 495, 295 455
              C 390 415, 468 492, 570 452
-             C 658 415, 738 492, 840 452"
-          stroke="white" stroke-width="1.4" fill="none"
-          stroke-linecap="round" opacity="0.30"/>
-        <path
-          d="M -20 530
+             C 658 415, 738 492, 840 452" stroke="white" stroke-width="1.4" fill="none" stroke-linecap="round"
+          opacity="0.30" />
+        <path d="M -20 530
              C 120 510, 215 550, 325 528
              C 430 506, 525 548, 638 528
-             C 728 510, 780 542, 840 528"
-          stroke="white" stroke-width="0.8" fill="none"
-          stroke-linecap="round" opacity="0.14"/>
+             C 728 510, 780 542, 840 528" stroke="white" stroke-width="0.8" fill="none" stroke-linecap="round"
+          opacity="0.14" />
       </svg>
     </div>
     <div class="about-content">
       <span class="label fade-up">Ma chi siamo?</span>
       <h2 class="fade-up" data-delay="70">Le facce<br /><em>dietro ogni filo</em></h2>
       <p class="fade-up" data-delay="110">
-        Siamo un gruppo di persone appassionate di letteratura, arte e comunità. Dal 2022 costruiamo questo festival con entusiasmo e tenacia, tra i comuni della Toscana.
+        Siamo un gruppo di persone appassionate di letteratura, arte e comunità. Dal 2022 costruiamo questo festival con
+        entusiasmo e tenacia, tra i comuni della Toscana.
       </p>
       <div class="fade-up" data-delay="150">
         <a href="chi-siamo.html" class="btn btn-dark">Conosciamoci</a>
@@ -1342,18 +1353,14 @@
   <section class="newsletter" aria-labelledby="nl-heading">
 
     <!-- Curly thread at the top of the dark section — draws on scroll -->
-    <svg class="newsletter-thread section-thread" aria-hidden="true" data-thread-svg
-         viewBox="0 0 1440 34" preserveAspectRatio="none"
-         xmlns="http://www.w3.org/2000/svg">
-      <path class="thread-path"
-        d="M 0 17
+    <svg class="newsletter-thread section-thread" aria-hidden="true" data-thread-svg viewBox="0 0 1440 34"
+      preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path class="thread-path" d="M 0 17
            C 108 2, 215 32, 328 14
            C 440 -2, 548 30, 665 15
            C 775 2, 885 30, 1002 14
            C 1108 0, 1215 30, 1338 12
-           L 1440 17"
-        stroke="white" stroke-width="1.0" fill="none"
-        stroke-linecap="round" opacity="0.15"/>
+           L 1440 17" stroke="white" stroke-width="1.0" fill="none" stroke-linecap="round" opacity="0.15" />
     </svg>
 
     <div class="newsletter-inner">
@@ -1363,14 +1370,8 @@
         Iscriviti per ricevere aggiornamenti su ospiti, programma e novità della 5ª edizione.
       </p>
       <form class="nl-form fade-up" data-delay="150" action="#" method="post" aria-label="Iscrizione newsletter">
-        <input
-          type="email"
-          name="email"
-          placeholder="La tua email"
-          required
-          autocomplete="email"
-          aria-label="Indirizzo email"
-        />
+        <input type="email" name="email" placeholder="La tua email" required autocomplete="email"
+          aria-label="Indirizzo email" />
         <button type="submit">Iscriviti</button>
       </form>
     </div>
@@ -1381,4 +1382,5 @@
   <script src="js/partials.js"></script>
 
 </body>
+
 </html>
