@@ -3,65 +3,72 @@
 
   <url>
     <loc>https://filodidentita.it/</loc>
-    <lastmod>2025-07-01</lastmod>
+    <lastmod>2026-06-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://filodidentita.it/chi-siamo.html</loc>
-    <lastmod>2025-07-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://filodidentita.it/edizioni/5-2026.html</loc>
+    <lastmod>2026-06-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
   </url>
 
   <url>
     <loc>https://filodidentita.it/edizioni.html</loc>
-    <lastmod>2025-07-01</lastmod>
+    <lastmod>2026-06-08</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
+    <loc>https://filodidentita.it/chi-siamo.html</loc>
+    <lastmod>2026-06-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://filodidentita.it/gallery.html</loc>
-    <lastmod>2025-07-01</lastmod>
+    <lastmod>2026-06-08</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://filodidentita.it/contatti.html</loc>
-    <lastmod>2025-07-01</lastmod>
+    <lastmod>2026-06-08</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
     <loc>https://filodidentita.it/edizioni/4-2025.html</loc>
-    <lastmod>2025-07-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-
-  <url>
-    <loc>https://filodidentita.it/edizioni/3-2024.html</loc>
-    <lastmod>2025-07-01</lastmod>
+    <lastmod>2025-07-13</lastmod>
     <changefreq>never</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://filodidentita.it/edizioni/2-2023.html</loc>
-    <lastmod>2025-07-01</lastmod>
+    <loc>https://filodidentita.it/edizioni/3-2024.html</loc>
+    <lastmod>2024-07-13</lastmod>
     <changefreq>never</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://filodidentita.it/edizioni/1-2022.html</loc>
-    <lastmod>2025-07-01</lastmod>
+    <loc>https://filodidentita.it/edizioni/2-2023.html</loc>
+    <lastmod>2023-07-15</lastmod>
     <changefreq>never</changefreq>
     <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://filodidentita.it/edizioni/1-2022.html</loc>
+    <lastmod>2022-05-31</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.4</priority>
   </url>
 
 </urlset>
