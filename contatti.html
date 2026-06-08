@@ -14,7 +14,8 @@
   <meta property="og:site_name" content="Filo d'identità" />
   <meta property="og:locale" content="it_IT" />
   <meta property="og:title" content="Contatti — Filo d'identità" />
-  <meta property="og:description" content="Contatta Filo d'identità — festival letterario e artistico tra Pisa e Firenze. Scrivici per informazioni, collaborazioni o proposte." />
+  <meta property="og:description"
+    content="Contatta Filo d'identità — festival letterario e artistico tra Pisa e Firenze. Scrivici per informazioni, collaborazioni o proposte." />
   <meta property="og:url" content="https://filodidentita.it/contatti.html" />
   <meta property="og:image" content="https://filodidentita.it/assets/og/OG-IMAGE.jpg" />
   <meta property="og:image:width" content="1200" />
@@ -24,7 +25,8 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@filodidentitafestival" />
   <meta name="twitter:title" content="Contatti — Filo d'identità" />
-  <meta name="twitter:description" content="Contatta Filo d'identità — festival letterario e artistico tra Pisa e Firenze. Scrivici per informazioni, collaborazioni o proposte." />
+  <meta name="twitter:description"
+    content="Contatta Filo d'identità — festival letterario e artistico tra Pisa e Firenze. Scrivici per informazioni, collaborazioni o proposte." />
   <meta name="twitter:image" content="https://filodidentita.it/assets/og/OG-IMAGE.jpg" />
 
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
@@ -308,6 +310,24 @@
         justify-content: center;
       }
     }
+
+    /* ─── Breadcrumb (dark surface override) ─── */
+    .ed-breadcrumb {
+      margin-bottom: 1rem;
+    }
+
+    .ed-breadcrumb,
+    .ed-breadcrumb a {
+      color: oklch(0.97 0.005 195 / .3);
+    }
+
+    .ed-breadcrumb a:hover {
+      color: var(--rosa);
+    }
+
+    .ed-breadcrumb span {
+      color: oklch(0.97 0.005 195 / .15);
+    }
   </style>
 
   <script type="application/ld+json">
@@ -340,8 +360,8 @@
             stroke="white" stroke-width="0.7" fill="none" stroke-linecap="round" opacity="0.10" />
         </svg>
         <div>
-          <nav class="ed-breadcrumb" aria-label="Breadcrumb" style="margin-bottom:1rem;opacity:.6">
-            <a href="index.html" style="color:var(--parchment)">Home</a><span>›</span>
+          <nav class="ed-breadcrumb" aria-label="Breadcrumb">
+            <a href="index.html">Home</a><span>›</span>
             <span>Contatti</span>
           </nav>
           <span class="label" style="color:var(--rosa)">Contatti</span>
@@ -373,7 +393,8 @@
               <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
             </svg>
           </a>
-          <a href="https://facebook.com/filodidentita" target="_blank" rel="noopener" aria-label="Facebook">
+          <a href="https://www.facebook.com/profile.php?id=100093357009221" target="_blank" rel="noopener"
+            aria-label="Facebook">
             <svg viewBox="0 0 24 24" fill="currentColor">
               <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
             </svg>

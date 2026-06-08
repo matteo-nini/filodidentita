@@ -317,6 +317,24 @@ body::before {
   overflow: visible;
 }
 
+/* ── Breadcrumb navigation ── */
+.ed-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  font-family: var(--font-sans);
+  font-size: .58rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+.ed-breadcrumb a {
+  color: var(--charcoal);
+  transition: color .28s;
+}
+.ed-breadcrumb a:hover { color: var(--rosa); }
+.ed-breadcrumb span { color: var(--fog); }
+
 /* ── Visually hidden (screen-reader only) ── */
 .sr-only {
   position: absolute;

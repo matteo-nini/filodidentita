@@ -348,6 +348,14 @@
       }
     }
 
+    /* ─── Breadcrumb (dark surface override) ─── */
+    .ed-breadcrumb,
+    .ed-breadcrumb a {
+      color: oklch(0.97 0.005 195 / .3);
+    }
+    .ed-breadcrumb a:hover { color: var(--rosa); }
+    .ed-breadcrumb span { color: oklch(0.97 0.005 195 / .15); }
+
     /* ── Thread draw-on ── */
     .thread-path {
       stroke-dasharray: 9999;
@@ -376,7 +384,7 @@
         "areaServed": {"@type": "Place", "name": "Toscana, Italia"},
         "sameAs": [
           "https://www.instagram.com/filodidentita",
-          "https://www.facebook.com/filodidentita"
+          "https://www.facebook.com/profile.php?id=100093357009221"
         ]
       },
       {
@@ -403,7 +411,7 @@
         stroke="white" stroke-width="1.2" fill="none" stroke-linecap="round" opacity="0.22" />
     </svg>
     <div class="container">
-      <nav class="ed-breadcrumb" aria-label="Breadcrumb" style="margin-bottom:1.5rem">
+      <nav class="ed-breadcrumb" aria-label="Breadcrumb">
         <a href="index.html">Home</a><span>›</span>
         <span>Chi siamo</span>
       </nav>
