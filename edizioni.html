@@ -360,6 +360,17 @@
       }
     }
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://filodidentita.it/"},
+      {"@type": "ListItem", "position": 2, "name": "Edizioni", "item": "https://filodidentita.it/edizioni.html"}
+    ]
+  }
+  </script>
 </head>
 <!-- Hero chiaro → nav scura (default, nessun data-nav necessario, ma lo indichiamo) -->
 
@@ -367,6 +378,10 @@
 
   <header class="page-hero">
     <div class="container">
+      <nav class="ed-breadcrumb" aria-label="Breadcrumb" style="margin-bottom:1.5rem">
+        <a href="index.html">Home</a><span>›</span>
+        <span>Edizioni</span>
+      </nav>
       <span class="label fade-up">Dal 2022</span>
       <h1 class="fade-up" data-delay="70">Cinque anni<br />di filo.</h1>
       <div class="hero-sub">
@@ -402,7 +417,7 @@
             <div class="ed-hi"><span class="ed-hi-dot"></span>Ospiti: Michela Panichi, Chiara Tagliaferri, Fumettibrutti e altri</div>
             <div class="ed-hi"><span class="ed-hi-dot"></span>Ingresso libero per la maggior parte degli eventi</div>
           </div>
-          <a href="programma.html" class="btn btn-rosa">Scopri le anticipazioni</a>
+          <a href="edizioni/5-2026.html" class="btn btn-rosa">Scopri le anticipazioni</a>
         </div>
       </div>
     </div>

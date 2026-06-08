@@ -309,6 +309,17 @@
       }
     }
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://filodidentita.it/"},
+      {"@type": "ListItem", "position": 2, "name": "Contatti", "item": "https://filodidentita.it/contatti.html"}
+    ]
+  }
+  </script>
 </head>
 <!-- Left half is dark → nav testo bianco -->
 
@@ -329,6 +340,10 @@
             stroke="white" stroke-width="0.7" fill="none" stroke-linecap="round" opacity="0.10" />
         </svg>
         <div>
+          <nav class="ed-breadcrumb" aria-label="Breadcrumb" style="margin-bottom:1rem;opacity:.6">
+            <a href="index.html" style="color:var(--parchment)">Home</a><span>›</span>
+            <span>Contatti</span>
+          </nav>
           <span class="label" style="color:var(--rosa)">Contatti</span>
           <h1>Segui<br />il filo.</h1>
           <p>Hai domande sul programma, vuoi collaborare o sei della stampa? Scrivici: siamo un team piccolo ma
@@ -336,17 +351,17 @@
         </div>
         <div class="contact-info">
           <div>
-            <h4>Email generale</h4><a href="mailto:info@filodidentita.it">info@filodidentita.it</a>
+            <h3>Email generale</h3><a href="mailto:info@filodidentita.it">info@filodidentita.it</a>
           </div>
           <div style="display: none;">
-            <h4>Stampa</h4><a href="mailto:press@filodidentita.it">press@filodidentita.it</a>
+            <h3>Stampa</h3><a href="mailto:press@filodidentita.it">press@filodidentita.it</a>
           </div>
           <div>
-            <h4>Dove</h4>
+            <h3>Dove</h3>
             <p>Pontedera · San Miniato<br />Fucecchio · Montopoli in Val d'Arno</p>
           </div>
           <div>
-            <h4>Prossima edizione</h4>
+            <h3>Prossima edizione</h3>
             <p>06–12 luglio 2026</p>
           </div>
         </div>

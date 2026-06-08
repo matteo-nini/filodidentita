@@ -361,6 +361,34 @@
       }
     }
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "Filo d'identità",
+        "url": "https://filodidentita.it",
+        "logo": "https://filodidentita.it/assets/favicon.svg",
+        "description": "Festival letterario e artistico che esplora il tema dell'identità attraverso parola, immagine e suono. Dal 2022 tra Pontedera, San Miniato, Fucecchio e Montopoli in Val d'Arno.",
+        "foundingDate": "2022",
+        "areaServed": {"@type": "Place", "name": "Toscana, Italia"},
+        "sameAs": [
+          "https://www.instagram.com/filodidentita",
+          "https://www.facebook.com/filodidentita"
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://filodidentita.it/"},
+          {"@type": "ListItem", "position": 2, "name": "Chi siamo", "item": "https://filodidentita.it/chi-siamo.html"}
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body data-nav="light">
@@ -375,6 +403,10 @@
         stroke="white" stroke-width="1.2" fill="none" stroke-linecap="round" opacity="0.22" />
     </svg>
     <div class="container">
+      <nav class="ed-breadcrumb" aria-label="Breadcrumb" style="margin-bottom:1.5rem">
+        <a href="index.html">Home</a><span>›</span>
+        <span>Chi siamo</span>
+      </nav>
       <div class="page-hero-inner">
         <div>
           <span class="label" style="color:var(--rosa)">Chi siamo</span>
@@ -424,7 +456,7 @@
     </svg>
   </div>
 
-  <section class="team">
+  <section class="team" style="display:none" aria-hidden="true">
     <div class="container">
       <span class="label fade-up">Il team</span>
       <h2 class="fade-up" data-delay="70" style="font-style:italic;margin-top:1rem">Le persone<br />che tessono</h2>
