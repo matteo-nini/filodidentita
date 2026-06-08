@@ -12,7 +12,7 @@
 
   <meta name="description"
     content="Filo d'identità è un festival letterario e artistico tra Pisa e Firenze. 5ª edizione, 06–12 luglio 2026 tra Pontedera, San Miniato, Fucecchio e Montopoli." />
-  <link rel="canonical" href="https://filodidentita.it/blog/" />
+  <link rel="canonical" href="https://filodidentita.it/" />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
 
   <meta property="og:type" content="website" />
@@ -21,8 +21,8 @@
   <meta property="og:title" content="Filo d'identità — 5ª edizione" />
   <meta property="og:description"
     content="Filo d'identità è un festival letterario e artistico tra Pisa e Firenze. 5ª edizione, 06–12 luglio 2026 tra Pontedera, San Miniato, Fucecchio e Montopoli." />
-  <meta property="og:url" content="https://filodidentita.it/blog/" />
-  <meta property="og:image" content="https://filodidentita.it/blog/assets/og/OG-IMAGE.jpg" />
+  <meta property="og:url" content="https://filodidentita.it/" />
+  <meta property="og:image" content="https://filodidentita.it/assets/og/OG-IMAGE.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
 
@@ -31,7 +31,7 @@
   <meta name="twitter:title" content="Filo d'identità — 5ª edizione" />
   <meta name="twitter:description"
     content="Filo d'identità è un festival letterario e artistico tra Pisa e Firenze. 5ª edizione, 06–12 luglio 2026 tra Pontedera, San Miniato, Fucecchio e Montopoli." />
-  <meta name="twitter:image" content="https://filodidentita.it/blog/assets/og/OG-IMAGE.jpg" />
+  <meta name="twitter:image" content="https://filodidentita.it/assets/og/OG-IMAGE.jpg" />
 
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
   <meta name="theme-color" content="#5d9e9a" />
@@ -684,6 +684,40 @@
 
 
     /* ════════════════════════════════════
+       HERO SUBTITLE — edition theme
+       ════════════════════════════════════ */
+
+    .hero-subtitle {
+      font-family: var(--font-headline);
+      font-weight: 800;
+      font-size: clamp(1.1rem, 2.8vw, 2.2rem);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--rosa);
+      margin-top: 0.6rem;
+      margin-bottom: 2.25rem;
+      line-height: 1;
+    }
+
+
+    /* ════════════════════════════════════
+       MANIFESTO — edition theme headline
+       ════════════════════════════════════ */
+
+    .manifesto-theme {
+      font-family: var(--font-headline);
+      font-size: clamp(3rem, 9vw, 9.5rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      line-height: 0.9;
+      color: var(--rosa);
+      margin-bottom: 1.75rem;
+      max-width: 14ch;
+    }
+
+
+    /* ════════════════════════════════════
        RESPONSIVE
        ════════════════════════════════════ */
 
@@ -933,7 +967,7 @@
     "organizer": {"@type": "Organization", "name": "Filo d'identità", "url": "https://filodidentita.it"},
     "description": "Festival letterario e artistico che esplora il tema dell'identità attraverso parola, immagine e suono.",
     "url": "https://filodidentita.it",
-    "image": "https://filodidentita.it/blog/assets/og/OG-IMAGE.jpg",
+    "image": "https://filodidentita.it/assets/og/OG-IMAGE.jpg",
     "eventStatus": "https://schema.org/EventScheduled",
     "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
     "isAccessibleForFree": true
@@ -975,6 +1009,7 @@
     <div class="hero-content">
       <p class="hero-eyebrow fade-up">5ª edizione · Festival letterario</p>
       <h1 class="hero-title fade-up" data-delay="220">Filo<br /><em>d'identità</em></h1>
+      <!-- <p class="hero-subtitle fade-up" data-delay="380">Cambiare forma.</p> --><!-- Optional edition theme subtitle below the main title -->
       <div class="hero-footer">
         <p class="hero-date fade-up" data-delay="540">
           <strong>06–12 luglio 2026</strong>
@@ -1037,8 +1072,9 @@
     </svg>
 
     <div class="manifesto-inner">
-      <p class="manifesto-eyebrow fade-up">Quinta edizione</p>
-      <p class="manifesto-text fade-up" data-delay="80">
+      <p class="manifesto-eyebrow fade-up">Quinta edizione · 06–12 luglio 2026</p>
+      <!-- <p class="manifesto-theme fade-up" data-delay="60">Cambiare forma.</p> --><!-- Optional edition theme headline -->
+      <p class="manifesto-text fade-up" data-delay="160">
         Un festival che tesse incontri, intreccia storie, coltiva identità.
       </p>
     </div>
@@ -1199,7 +1235,7 @@
           <text x="178" y="226" font-family="'Bugaki', Georgia, serif" font-style="italic" font-size="24"
             fill="currentColor" opacity="0.72">Pontedera</text>
           <text x="180" y="242" font-family="'DM Sans', system-ui, sans-serif" font-size="10.5" letter-spacing="0.12"
-            fill="currentColor" opacity="0.42">PI · 08–09 LUG</text>
+            fill="currentColor" opacity="0.42">PI · 07 LUG</text>
         </g>
 
         <!-- ── San Miniato (415, 118) ── -->
@@ -1209,7 +1245,7 @@
           <text x="433" y="112" font-family="'Bugaki', Georgia, serif" font-style="italic" font-size="24"
             fill="currentColor" opacity="0.72">San Miniato</text>
           <text x="435" y="97" font-family="'DM Sans', system-ui, sans-serif" font-size="10.5" letter-spacing="0.12"
-            fill="currentColor" opacity="0.42">PI · 07 · 11 LUG</text>
+            fill="currentColor" opacity="0.42">PI · 08 · 09 LUG</text>
         </g>
 
         <!-- ── Montopoli (618, 225) ── -->
@@ -1219,7 +1255,7 @@
           <text x="636" y="252" font-family="'Bugaki', Georgia, serif" font-style="italic" font-size="24"
             fill="currentColor" opacity="0.72">Montopoli</text>
           <text x="638" y="268" font-family="'DM Sans', system-ui, sans-serif" font-size="10.5" letter-spacing="0.12"
-            fill="currentColor" opacity="0.42">PI · 10–11 LUG</text>
+            fill="currentColor" opacity="0.42">PI · 10–12 LUG</text>
         </g>
 
         <!-- ── Fucecchio (848, 142) ── -->
@@ -1229,7 +1265,7 @@
           <text x="866" y="136" font-family="'Bugaki', Georgia, serif" font-style="italic" font-size="24"
             fill="currentColor" opacity="0.72">Fucecchio</text>
           <text x="868" y="121" font-family="'DM Sans', system-ui, sans-serif" font-size="10.5" letter-spacing="0.12"
-            fill="currentColor" opacity="0.42">FI · 06 · 08 LUG</text>
+            fill="currentColor" opacity="0.42">FI · 06 · 11 LUG</text>
         </g>
 
       </svg>
@@ -1239,10 +1275,28 @@
     <ul class="places-list fade-up" data-delay="150" aria-label="Comuni del festival">
 
       <li class="place-item">
+        <span class="place-prov" aria-label="Provincia di Firenze">FI</span>
+        <div class="place-body">
+          <span class="place-name">Fucecchio</span>
+          <span class="place-venue-small">06 · 11 lug · Libreria Blume · La Limonaia Club</span>
+        </div>
+        <span class="place-when" aria-hidden="true">06 · 11 lug</span>
+      </li>
+
+      <li class="place-item">
         <span class="place-prov" aria-label="Provincia di Pisa">PI</span>
         <div class="place-body">
           <span class="place-name">Pontedera</span>
-          <span class="place-venue-small">08–09 lug · Piazza Giovanni XXIII</span>
+          <span class="place-venue-small">07 lug · Cinema sotto le stelle</span>
+        </div>
+        <span class="place-when" aria-hidden="true">07 lug</span>
+      </li>
+
+      <li class="place-item">
+        <span class="place-prov" aria-label="Provincia di Pisa">PI</span>
+        <div class="place-body">
+          <span class="place-name">San Miniato</span>
+          <span class="place-venue-small">08–09 lug · Giardino della Cisterna · Cigoli</span>
         </div>
         <span class="place-when" aria-hidden="true">08–09 lug</span>
       </li>
@@ -1250,28 +1304,10 @@
       <li class="place-item">
         <span class="place-prov" aria-label="Provincia di Pisa">PI</span>
         <div class="place-body">
-          <span class="place-name">San Miniato</span>
-          <span class="place-venue-small">07 · 11 lug · Loggiati San Domenico</span>
-        </div>
-        <span class="place-when" aria-hidden="true">07 · 11 lug</span>
-      </li>
-
-      <li class="place-item">
-        <span class="place-prov" aria-label="Provincia di Firenze">FI</span>
-        <div class="place-body">
-          <span class="place-name">Fucecchio</span>
-          <span class="place-venue-small">06 · 08 lug · Libreria Blume</span>
-        </div>
-        <span class="place-when" aria-hidden="true">06 · 08 lug</span>
-      </li>
-
-      <li class="place-item">
-        <span class="place-prov" aria-label="Provincia di Pisa">PI</span>
-        <div class="place-body">
           <span class="place-name">Montopoli in Val d'Arno</span>
-          <span class="place-venue-small">10–11 lug · Piazza San Matteo</span>
+          <span class="place-venue-small">10 · 11 · 12 lug · Piazza San Matteo · Palazzo Guicciardini · Bosco di Montopoli</span>
         </div>
-        <span class="place-when" aria-hidden="true">10–11 lug</span>
+        <span class="place-when" aria-hidden="true">10–12 lug</span>
       </li>
 
     </ul>

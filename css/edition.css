@@ -413,6 +413,10 @@
   grid-template-columns: repeat(2, 1fr);
 }
 
+.ev-photos.p6 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
 .ev-photo {
   overflow: hidden;
   background: var(--paper-warm);
@@ -584,7 +588,8 @@
 
   .ev-photos.p2,
   .ev-photos.p3,
-  .ev-photos.p4 {
+  .ev-photos.p4,
+  .ev-photos.p6 {
     grid-template-columns: repeat(2, 1fr);
   }
 
